@@ -1,0 +1,48 @@
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4em;
+  z-index: 999;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--mid-grey);
+  padding: 0 1em;
+  font: var(--reg-16);
+}
+
+.logo {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1em;
+  z-index: 10000;
+  width: 80px;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: var(--white);
+}
+
+.content {
+  width: 100%;
+  height: 100vh;
+  background: var(--white);
+  position: relative;
+  padding: 0 4em;
+}
+
+/*** LANDING PAGE ***/
+.sec1__hello h1 {
+  font: var(--reg-40);
+
+}
