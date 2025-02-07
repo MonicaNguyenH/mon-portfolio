@@ -1,0 +1,23 @@
+.filterContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.filterItem {
+    font: var(--reg-16);
+    color: var(--mid-grey);
+}
+
+.filterItem:hover{
+    color: var(--pink);
+    transition: color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.active {
+    font: var(--reg-16);
+    color: var(--pink);
+    transition: color 0.3s ease-in-out; /* Smooth transition */
+}

@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/public/fonts/Satoshi-Black.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-BlackItalic.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-Bold.tff') format('ttf'),
+       url('/public/fonts/Satoshi-BoldItalic.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-Italic.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-Light.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-LightItalic.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-Medium.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-MediumItalic.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-Regular.ttf') format('ttf');
+}
+
+:root {
+  --white: #FFFEFF;
+  --black: #11030D;
+  --pink: #F42272;
+  --light-pink: #FDBBCB;
+  --mid-grey: #7D7B7D;
+
+  --reg-16: 16px 'Satoshi', sans-serif;
+  --reg-40: 40px 'Satoshi', sans-serif;
+  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  padding:  30px;
+}

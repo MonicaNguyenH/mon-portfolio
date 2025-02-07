@@ -1,0 +1,18 @@
+import styles from './NavBar.module.css';
+
+function NavBar() {
+    return (
+        <>
+            <div className={styles.nav}>
+                <div className={styles.items_left}>
+                <a href="#">Work</a>
+                <a href="#">Gallery</a>
+                </div>
+                <div className={styles.items_right}>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                </div>
+            </div>
+        </>
+    )
+};

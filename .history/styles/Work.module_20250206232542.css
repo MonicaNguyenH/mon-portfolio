@@ -1,0 +1,13 @@
+.mainContainer {
+    padding: 90px 30px 0 30px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header__filter {
+
+}

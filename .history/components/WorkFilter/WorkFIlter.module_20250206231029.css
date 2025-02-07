@@ -1,0 +1,12 @@
+.filterContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.filterItem {
+    font: var(--reg-16);
+    color: var(--mid-grey);
+}
