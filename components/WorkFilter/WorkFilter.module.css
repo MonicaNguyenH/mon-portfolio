@@ -10,6 +10,7 @@
     font: var(--reg-16);
     color: var(--mid-grey);
     transition: color 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .filterItem:hover{

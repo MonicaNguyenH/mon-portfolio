@@ -19,22 +19,27 @@ export default function Work() {
         ),
         "GRAPHIC DESIGN": (
             <div className={styles.gridContainer}>
-                    <Card link="/work/trea" image="/img/graphic/trea/cover.png" title="TREA" year="2024" gridSize="wide" />
-                    <Card link="/work/vietname" image="/img/graphic/vietname/TN.png" title="VIETNAME" year="2024" gridSize="Small" />
-                    <Card link="/work/forelsket" image="/img/graphic/menu/TN.png" title="FORELSKET" year="2024" gridSize="small" />
+                    <Card link="/work/trea" image="/img/graphic/trea/cover.webp" title="TREA" year="2024" gridSize="wide" />
+                    <Card link="/work/vietname" image="/img/graphic/vietname/cover.webp" title="VIETNAME" year="2024" gridSize="small" />
+                    <Card link="/work/forelsket" image="/img/graphic/vietname/cover.webp" title="FORELSKET" year="2024" gridSize="small" />
 
-                    <Card link="/work/millenova" image="/img/graphic/millenova/TN.png" title="FORELSKET" year="2024" gridSize="small" />
-                    <Card link="/work/forelsket" image="/img/graphic/menu/TN.png" title="FORELSKET" year="2024" gridSize="small" />
-                    <Card link="/work/forelsket" image="/img/graphic/menu/TN.png" title="FORELSKET" year="2024" gridSize="small" />
+                    <Card link="/work/millenova" image="/img/graphic/millenova/cover.webp" title="MILLENOVA" year="2024" gridSize="small" />
+                    <Card link="/work/forelsket" image="/img/graphic/lalaland/cover.webp" title="LALALAND" year="2024" gridSize="small" />
+                    <Card link="/work/forelsket" image="/img/graphic/object/cover.webp" title="ELECTRICAL DEVICE" year="2023" gridSize="wide" />
 
-                    <Card link="/work/forelsket" image="/img/graphic/menu/TN.png" title="FORELSKET" year="2024" gridSize="small" />
+                    <Card link="/work/forelsket" image="/img/graphic/book/cover.webp" title="THE STARFRUIT TREE" year="2024" gridSize="wide" />
             </div>
         ),
         "UX/UI DESIGN": (
-            <></>
+            <div className={styles.gridContainer}>
+                    <Card link="/work/beep" image="/img/graphic/beep/TN.png" title="BEEP" year="2024" gridSize="wide" />
+                    <Card link="/work/artflow" image="/img/graphic/artflow/TN.png" title="Artflow" year="2024" gridSize="wide" />
+            </div>
         ),
         "MOTION GRAPHIC": (
-            <></>
+            <div className={styles.gridContainer}>
+                    <Card link="/work/addicted" image="/img/graphic/addict/TN.webp" title="ADDICTED" year="2024" gridSize="wide" />
+            </div>
         ),
     };
 
