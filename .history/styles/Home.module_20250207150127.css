@@ -5,21 +5,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 0 4em;
   z-index: 999;
 }
 
 .nav a {
   text-decoration: none;
   color: var(--mid-grey);
-  /* padding: 0 1em; */
+  padding: 0 1em;
   font: var(--reg-16);
-}
-
-.nav .items_right, .items_left {
-  display: flex;
-  flex-direction: row;
-  gap: 35px;
 }
 
 .logo {
@@ -27,8 +21,7 @@
   top: 25px;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 0.4em;
-  margin-left: -0.4em;
+  margin: 1em;
   z-index: 10000;
   width: 80px;
   height: auto;

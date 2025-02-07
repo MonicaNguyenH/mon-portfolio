@@ -19,6 +19,5 @@
 .nav .items_right, .items_left {
   display: flex;
   flex-direction: row;
-  gap: 35px;
 }
 

@@ -12,13 +12,12 @@
 .nav a {
   text-decoration: none;
   color: var(--mid-grey);
-  /* padding: 0 1em; */
+  padding: 0 1em;
   font: var(--reg-16);
 }
 
 .nav .items_right, .items_left {
   display: flex;
   flex-direction: row;
-  gap: 35px;
 }
 
