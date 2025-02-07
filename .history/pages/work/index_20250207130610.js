@@ -22,7 +22,7 @@ export default function Work() {
                     <Card link="/work/trea" image="/img/graphic/trea/cover.png" title="TREA" year="2024" gridSize="wide" />
                     <Card link="/work/vietname" image="/img/graphic/vietname/TN.png" title="VIETNAME" year="2024" gridSize="Small" />
                     <Card link="/work/forelsket" image="/img/graphic/menu/TN.png" title="FORELSKET" year="2024" gridSize="small" />
-
+HDHD
                     <Card link="/work/millenova" image="/img/graphic/millenova/TN.png" title="FORELSKET" year="2024" gridSize="small" />
                     <Card link="/work/forelsket" image="/img/graphic/menu/TN.png" title="FORELSKET" year="2024" gridSize="small" />
                     <Card link="/work/forelsket" image="/img/graphic/menu/TN.png" title="FORELSKET" year="2024" gridSize="small" />
