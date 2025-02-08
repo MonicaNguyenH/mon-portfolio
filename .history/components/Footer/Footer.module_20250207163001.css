@@ -1,0 +1,9 @@
+.footer {
+    height: 100vh; /* Make footer take up the entire viewport */
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--white); 
+}

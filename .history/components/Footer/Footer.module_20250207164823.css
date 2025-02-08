@@ -1,0 +1,46 @@
+.footer {
+    height: 100vh; /* Make footer take up the entire viewport */
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    background-color: var(--white); 
+}
+
+.contact__links a {
+    font: var(--reg-85);
+    text-decoration: none;
+    color: var(--black);
+}
+
+.closer {
+    margin-top: -30px;
+}
+
+.contact__links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__caption {
+    width: calc(100vw - 60px);;
+    display: flex;
+    flex-direction: row;
+    font: var(--reg-16);
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.contact__caption img {
+    width: 1010px;
+    height: auto;
+}
+
+.footer__info {
+    margin-bottom: 30px;
+}
+
+
+
