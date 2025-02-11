@@ -39,9 +39,6 @@ export default function Millenova() {
                 });
 
                 ScrollTrigger.refresh();
-                window.addEventListener("load", () => {
-                    ScrollTrigger.refresh();
-                }); // New fix for local host gsap
             });
         });
 
