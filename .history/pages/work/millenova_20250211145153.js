@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import ProjectHeader from "@/components/ProjectHeader";
 import styles from "@/styles/Millenova.module.css";
 import { useEffect, useRef } from "react";
-// import gsap from "gsap";
+import gsap from "gsap";
 import dynamic from "next/dynamic";
 
 export default function Millenova() {
@@ -14,9 +14,9 @@ export default function Millenova() {
     useEffect(() => {
         if (typeof window === "undefined") return; // Prevents SSR issues
 
-        import("gsap").then(({ default: gsap }) => {
-            import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-                gsap.registerPlugin(ScrollTrigger);
+        // gsap.then(({ default: gsap }) => {
+        //     import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+                // gsap.registerPlugin(ScrollTrigger);
 
                 const horizontal = horizontalRef.current;
                 if (!horizontal) return; // Prevents crash if ref is null
@@ -43,8 +43,8 @@ export default function Millenova() {
                 window.addEventListener("load", () => {
                     ScrollTrigger.refresh();
                 }); // New fix for local host gsap 
-            }); 
-        });
+            // });
+        // });
 
         return () => {
             import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
