@@ -1,0 +1,19 @@
+.preview {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    pointer-events: none;
+    transform-origin: center;
+    /* transform: scale(0); */
+    z-index: 2;
+}
+
+.preview__img {
+    width: 1005;
+    height: 100%;
+    background: url('/public/img/mon-logo.png');
+    background-size: cover;
+    background-position: 0 0;
+    pointer-events: none;
+}
