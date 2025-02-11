@@ -11,36 +11,56 @@ export default function Millenova() {
     const horizontalRef = useRef(null);
 
     useEffect(() => {
-        if (typeof window === "undefined") return; // Prevents SSR issues
+        if (typeof window === "undefined") return;
+        async function loadGSAP() {
+            const gsapModule = await import("gsap");
+            const ScrollTriggerModule = await import("gsap/ScrollTrigger");
 
-        import("gsap").then(({ default: gsap }) => {
-            import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-                gsap.registerPlugin(ScrollTrigger);
+            const { default: gsap } = gsapModule;
+            const { ScrollTrigger } = ScrollTriggerModule;
 
-                const horizontal = horizontalRef.current;
-                if (!horizontal) return; // Prevents crash if ref is null
+            gsap.registerPlugin(ScrollTrigger);
 
-                // Ensure the width is valid before animating
-                const scrollWidth = horizontal.scrollWidth - window.innerWidth;
-                if (scrollWidth <= 0) return; // Prevents invalid scroll width
+            const horizontal = horizontalRef.current;
+            if (!horizontal) return; // Prevent crash if ref is null
+            
+            const contents = gsap.utils.toArray(".content");
 
-                gsap.to(horizontal, {
-                    x: `-${scrollWidth}px`,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: horizontal,
-                        start: "top top",
-                        end: `+=${scrollWidth}`,
-                        pin: true,
-                        scrub: 1.2,
-                        anticipatePin: 0.3,
-                        invalidateOnRefresh: true,
-                    }
-                });
-
-                ScrollTrigger.refresh();
+            ScrollTrigger.create({
+                trigger: horizontal,
+                start: "top top+=1", // Wait until the section fully enters
+                end: () => `+=${horizontal.scrollWidth || 1000}`, // 🔥 Fix: Prevent crash
+                pin: true,
+                anticipatePin: 0.3, // Reduce aggressive snap
+                scrub: 1.2, // Make it smoother
+                onEnter: () => console.log("Scrolling into slider"),
+                onLeaveBack: () => console.log("Leaving slider (scrolling up)"),
+                invalidateOnRefresh: true,
             });
-        });
+
+            gsap.to(horizontal, {
+                x: () => `-${horizontal.scrollWidth - window.innerWidth || 1000}px`, // 🔥 Fix: Prevent crash
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: horizontal,
+                    start: "top top+=5%", // Prevent early activation
+                    end: () => `+=${horizontal.scrollWidth - 50 || 1000}`, // 🔥 Fix: Prevent crash
+                    scrub: 1.5,
+                    snap: {
+                        snapTo: 1 / (contents.length - 1),
+                        duration: 0.4,
+                        ease: "power2.inOut",
+                    },
+                    anticipatePin: 0.5,
+                    invalidateOnRefresh: true,
+                }
+            });
+
+            ScrollTrigger.refresh();
+            
+        }
+
+        loadGSAP();
 
         return () => {
             import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
