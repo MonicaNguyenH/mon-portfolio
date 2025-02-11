@@ -1,0 +1,30 @@
+.img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.slider__img {
+    display: block;
+}
+
+/*** SLIDER ***/
+.content img {
+    width: 100%;
+    object-fit: cover;
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+}
+
+.horizontal {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.horizontal .content:nth-child(1) {
+    
+}

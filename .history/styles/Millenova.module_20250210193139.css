@@ -1,0 +1,29 @@
+.img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.slider__img {
+    display: block;
+}
+
+/*** SLIDER ***/
+.horizontal .content {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+}
+
+.horizontal {
+    display: flex;
+
+}
+
+.horizontal .content:nth-child(1) {
+    
+}
