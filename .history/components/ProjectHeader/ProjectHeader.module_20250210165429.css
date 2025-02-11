@@ -1,0 +1,9 @@
+.main {
+    margin: 90px 30px 100px 30px;
+}
+
+.main img {
+    width: 1363px;
+    height: 900px;
+    flex-shrink: 0;
+}
