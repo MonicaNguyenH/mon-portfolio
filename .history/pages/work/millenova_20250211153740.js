@@ -44,17 +44,12 @@ export default function Millenova() {
                 //     ScrollTrigger.refresh();
                 // }); // New fix for local host gsap 
 
-                // 🔥 Ensure GSAP runs AFTER page load
                 window.onload = () => {
-                    console.log("GSAP: Window Loaded - Refreshing ScrollTrigger");
-                    ScrollTrigger.refresh();
-                };
-
-                // 🔥 Delay refresh to account for hydration issues
-                setTimeout(() => {
-                    console.log("GSAP: Delayed Refresh Triggered");
-                    ScrollTrigger.refresh();
-                }, 500);
+                    setTimeout(() => {
+                        ScrollTrigger.refresh();
+                    }, 300); // Delay to ensure full load
+                };                
+                
             }); 
         });
 
