@@ -2,7 +2,7 @@ import HeaderArea from "@/components/HeadArea";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import ProjectHeader from "@/components/ProjectHeader";
-import styles from "@/styles/Millenova.module.css";
+import styles from "@/styles/Lalaland.module.css";
 import { useEffect, useRef } from "react";
 
 export default function Millenova() {
@@ -74,11 +74,11 @@ export default function Millenova() {
                     </div>
 
                     <div className={styles.content}>
-                        <img src="/img/graphic/millenova/slider2.webp" alt="Millenova slider 2" className={styles.slider__img} />
+                        <img src="/img/graphic/millenova/slider2.webp" alt="Millenova slider 1" className={styles.slider__img} />
                     </div>
 
                     <div className={styles.content}>
-                        <img src="/img/graphic/millenova/slider3.webp" alt="Millenova slider 3" className={styles.slider__img}/>
+                        <img src="/img/graphic/millenova/slider3.webp" alt="Millenova slider 1" />
                     </div>
                 </section>
 

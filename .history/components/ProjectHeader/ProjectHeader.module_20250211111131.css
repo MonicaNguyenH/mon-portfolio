@@ -14,8 +14,6 @@
     font: var(--bod-200);
     margin: 0;
     padding: 0;
-    text-transform: uppercase;
-    
 }
 
 .main > p {

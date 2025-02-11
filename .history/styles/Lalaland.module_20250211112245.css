@@ -1,0 +1,28 @@
+.img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+/*** SLIDER ***/
+.content img {
+    width: 102%;
+    height: 100vh;
+    object-fit: cover;
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+}
+
+.horizontal {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+/* 
+    will-change: transform;
+    scroll-behavior: smooth; */
+
+    /* overflow-x: hidden; */
+}

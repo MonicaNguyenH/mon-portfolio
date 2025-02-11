@@ -74,11 +74,11 @@ export default function Millenova() {
                     </div>
 
                     <div className={styles.content}>
-                        <img src="/img/graphic/millenova/slider2.webp" alt="Millenova slider 2" className={styles.slider__img} />
+                        <img src="/img/graphic/millenova/slider2.webp" alt="Millenova slider 1" className={styles.slider__img} />
                     </div>
 
                     <div className={styles.content}>
-                        <img src="/img/graphic/millenova/slider3.webp" alt="Millenova slider 3" className={styles.slider__img}/>
+                        <img src="/img/graphic/millenova/slider3.webp" alt="Millenova slider 1" />
                     </div>
                 </section>
 
