@@ -1,0 +1,82 @@
+[
+    {
+        "id": "p1",
+        "name": "BEEP",
+        "category": "Development | UX UI Design",
+        "year": 2024,
+        "image": "/img/graphic/beep/cover.png",
+        "link": "/work/beep"
+    },
+    {
+        "id": "p2",
+        "name": "ARTFLOW",
+        "category": "Development | UX UI Design",
+        "year": 2024,
+        "image": "/img/graphic/artflow/TN.png",
+        "link": "/work/artflow"
+    },
+    {
+        "id": "p3",
+        "name": "TREA",
+        "category": "Graphic Design",
+        "year": 2024,
+        "image": "/img/graphic/trea/cover.webp",
+        "link": "/work/trea"
+    },
+    {
+        "id": "p4",
+        "name": "VIETNAME",
+        "category": "Graphic Design",
+        "year": 2024,
+        "image": "/img/graphic/vietname/cover.webp",
+        "link": "/work/vietname"
+    },
+    {
+        "id": "p5",
+        "name": "FORELSKET",
+        "category": "Graphic Design",
+        "year": 2024,
+        "image": "/img/graphic/menu/TN.png",
+        "link": "/work/forelsket"
+    },
+    {
+        "id": "p6",
+        "name": "MILLENOVA",
+        "category": "Graphic Design",
+        "year": 2024,
+        "image": "/img/graphic/millenova/cover.webp",
+        "link": "/work/millenova"
+    },
+    {
+        "id": "p7",
+        "name": "LALALAND",
+        "category": "Graphic Design",
+        "year": 2024,
+        "image": "/img/graphic/lalaland/cover.webp",
+        "link": "/work/lalaland"
+    },
+    {
+        "id": "p8",
+        "name": "ELECTRICAL DEVICE",
+        "category": "Graphic Design",
+        "year": 2023,
+        "image": "/img/graphic/object/cover.webp",
+        "link": "/work/electrical-device"
+    },
+    {
+        "id": "p9",
+        "name": "THE STARFRUIT TREE",
+        "category": "Graphic Design",
+        "year": 2024,
+        "image": "/img/graphic/book/cover.webp",
+        "link": "/work/the-starfruit-tree"
+    },
+    {
+        "id": "p10",
+        "name": "ADDICTED",
+        "category": "Motion Graphic",
+        "year": 2024,
+        "image": "/img/graphic/addict/TN.webp",
+        "link": "/work/addicted"
+    }
+]

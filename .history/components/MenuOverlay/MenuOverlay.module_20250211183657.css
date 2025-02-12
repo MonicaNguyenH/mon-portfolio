@@ -15,10 +15,10 @@
 }
 
 .previewImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block; 
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important; 
 }
 
 .category p {
@@ -62,10 +62,10 @@
 }
 
 .projects a {
-    all: unset !important;
-    text-decoration: none !important;
-    color: inherit !important; 
-    display: block !important; 
+    all: unset !important; /* Reset all inherited styles */
+    text-decoration: none !important; /* Ensure no underline */
+    color: inherit !important; /* Ensure no color change */
+    display: block !important; /* Ensures proper layout */
 }
 
 

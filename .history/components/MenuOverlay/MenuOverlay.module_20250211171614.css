@@ -5,20 +5,29 @@
 
 .preview {
     position: absolute;
-    width: 250px;
-    height: 250px;
+    width: 250px; /* Fixed square size */
+    height: 250px; /* Ensure it's a perfect square */
     overflow: hidden;
     pointer-events: none;
     transform-origin: center;
-    transform: scale(1) !important;
-    z-index: 1000; 
+    transform: scale(0);
+    z-index: 2;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .previewImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block; 
+    width: 100%; /* Fit inside the square */
+    height: 100%; /* Maintain square shape */
+    object-fit: cover; /* Ensures images fill the box without stretching */
+}
+
+.project p {
+    font: var(--reg-40);
+    text-transform: uppercase;
+    line-height: 100%;
 }
 
 .category p {
@@ -46,28 +55,7 @@
     align-items: center;
     border-bottom: 1px solid var(--mid-grey);
     cursor: pointer;
-
-    text-decoration: none !important; 
-    color: inherit !important; 
-    cursor: pointer; 
 }
-
-.project p {
-    font: var(--reg-40);
-    color: var(--black);
-    text-transform: uppercase;
-    line-height: 100%;
-    text-decoration: none;
-    color: inherit;
-}
-
-.projects a {
-    all: unset !important;
-    text-decoration: none !important;
-    color: inherit !important; 
-    display: block !important; 
-}
-
 
 .project > div {
     flex: 3;
@@ -83,4 +71,3 @@
         display: none;
     }
 }
-

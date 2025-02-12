@@ -10,15 +10,37 @@
     overflow: hidden;
     pointer-events: none;
     transform-origin: center;
-    transform: scale(1) !important;
-    z-index: 1000; 
+    transform: scale(0);
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.previewImg {
-    width: 100%;
+.preview__img {
+    /* width: 1005;
     height: 100%;
-    object-fit: cover;
-    display: block; 
+    background: url('/public/img/mon-logo.png');
+    background-size: cover;
+    background-position: 0 0;
+    pointer-events: none; */
+
+    width: 100%;  /* Ensure it takes full container width */
+    height: 100%; /* Ensure it takes full container height */
+    
+    background: url('/img/mon-logo.png'); /* Correct path, remove `/public/` */
+    background-size: contain;  /* Ensures full image fits inside */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image from repeating */
+
+    pointer-events: none;
+}
+
+.project p {
+    font: var(--reg-40);
+    text-transform: uppercase;
+    line-height: 100%;
 }
 
 .category p {
@@ -46,28 +68,7 @@
     align-items: center;
     border-bottom: 1px solid var(--mid-grey);
     cursor: pointer;
-
-    text-decoration: none !important; 
-    color: inherit !important; 
-    cursor: pointer; 
 }
-
-.project p {
-    font: var(--reg-40);
-    color: var(--black);
-    text-transform: uppercase;
-    line-height: 100%;
-    text-decoration: none;
-    color: inherit;
-}
-
-.projects a {
-    all: unset !important;
-    text-decoration: none !important;
-    color: inherit !important; 
-    display: block !important; 
-}
-
 
 .project > div {
     flex: 3;
@@ -83,4 +84,3 @@
         display: none;
     }
 }
-

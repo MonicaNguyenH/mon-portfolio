@@ -3,14 +3,14 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import ProjectHeader from "@/components/ProjectHeader";
 import styles from "@/styles/Lalaland.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 
 export default function Millenova() {
     const projectTools = ["Adobe Photoshop", "Adobe Illustrator"];
     const horizontalRef = useRef(null);
     const [isReady, setIsReady] = useState(false);
-    
+
     useEffect(() => {
         if (typeof window === "undefined") return; // Prevents SSR issues
 

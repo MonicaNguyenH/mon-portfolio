@@ -26,9 +26,9 @@ export default function Work() {
 
                     <Card link="/work/millenova" image="/img/graphic/millenova/cover.webp" title="MILLENOVA" year="2024" gridSize="small" />
                     <Card link="/work/lalaland" image="/img/graphic/lalaland/cover.webp" title="LALALAND" year="2024" gridSize="small" />
-                    <Card link="/work/electrical-device" image="/img/graphic/object/cover.webp" title="ELECTRICAL DEVICE" year="2023" gridSize="wide" />
+                    <Card link="/work/forelsket" image="/img/graphic/object/cover.webp" title="ELECTRICAL DEVICE" year="2023" gridSize="wide" />
 
-                    <Card link="/work/the-starfruit-tree" image="/img/graphic/book/cover.webp" title="THE STARFRUIT TREE" year="2024" gridSize="wide" />
+                    <Card link="/work/electrical-device" image="/img/graphic/book/cover.webp" title="THE STARFRUIT TREE" year="2024" gridSize="wide" />
             </div>
         ),
         "UX/UI DESIGN": (

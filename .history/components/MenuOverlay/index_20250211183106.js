@@ -67,7 +67,7 @@ export default function MenuOverlay() {
                                     onMouseLeave={() => setActiveImage(null)}
                                 >
                                     <div className={styles.client}>
-                                        <p>{project.name}</p>
+                                        <p style={{ textDecoration: "none" }}>{project.name}</p>
                                     </div>
                                     <div className={styles.category}>
                                         <p>{project.category}</p>

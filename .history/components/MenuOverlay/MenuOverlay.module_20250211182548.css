@@ -10,15 +10,28 @@
     overflow: hidden;
     pointer-events: none;
     transform-origin: center;
-    transform: scale(1) !important;
-    z-index: 1000; 
+    transform: scale(1) !important; /* ✅ Ensure it's visible */
+    z-index: 1000; /* Make sure it's above everything */
+
+    /* Debug border */
+    border: 2px solid red !important;
+    background: rgba(0, 0, 0, 0.5) !important; /* Add a semi-transparent background */
 }
 
 .previewImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block; 
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* ✅ Ensure it scales properly */
+    display: block !important; /* ✅ Ensure it's rendered */
+}
+
+.project p {
+    font: var(--reg-40);
+    color: var(--black);
+    text-transform: uppercase;
+    line-height: 100%;
+    text-decoration: none;
+    color: inherit;
 }
 
 .category p {
@@ -47,27 +60,11 @@
     border-bottom: 1px solid var(--mid-grey);
     cursor: pointer;
 
-    text-decoration: none !important; 
-    color: inherit !important; 
-    cursor: pointer; 
-}
+    text-decoration: none !important; /* Ensure underline never appears */
+    color: inherit !important; /* Inherit color */
+    cursor: pointer; /* Keep it interactive */
 
-.project p {
-    font: var(--reg-40);
-    color: var(--black);
-    text-transform: uppercase;
-    line-height: 100%;
-    text-decoration: none;
-    color: inherit;
 }
-
-.projects a {
-    all: unset !important;
-    text-decoration: none !important;
-    color: inherit !important; 
-    display: block !important; 
-}
-
 
 .project > div {
     flex: 3;
@@ -83,4 +80,3 @@
         display: none;
     }
 }
-
