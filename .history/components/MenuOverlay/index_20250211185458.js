@@ -9,9 +9,9 @@ export default function MenuOverlay() {
     const [activeImage, setActiveImage] = useState(null);
     const [projects, setProjects] = useState([]);
 
-    // Fetch project data and randomize selection
+    // 🔥 Fetch project data and randomize selection
     useEffect(() => {
-        fetch("/data/projects.json") // Fetch JSON from public/data
+        fetch("/data/projects.json") // ✅ Fetch JSON from public/data
             .then((res) => {
                 if (!res.ok) {
                     throw new Error(`HTTP error! Status: ${res.status}`);
@@ -19,7 +19,7 @@ export default function MenuOverlay() {
                 return res.json();
             })
             .then((data) => {
-                console.log("Fetched Data:", data); // Debug
+                console.log("Fetched Data:", data); // ✅ Debug: Check if JSON is loading
                 const shuffled = data.sort(() => 0.5 - Math.random()).slice(0, 4);
                 setProjects(shuffled);
             })
@@ -48,7 +48,7 @@ export default function MenuOverlay() {
                             src={activeImage} 
                             alt="Preview" 
                             className={styles.previewImg} 
-                            onError={() => console.error("Failed to load image:", activeImage)} // Detect broken images
+                            onError={() => console.error("Failed to load image:", activeImage)} // ❌ Detect broken images
                         />
                         <p style={{ color: "white", textAlign: "center" }}>{activeImage}</p> {/* ✅ Debug: Shows image path */}
                     </>
@@ -66,10 +66,14 @@ export default function MenuOverlay() {
                                     onMouseMove={moveProject}
                                     onMouseEnter={() => {
                                         if (activeImage !== project.image) {
+                                            const prevIndex = projects.findIndex(p => p.image === activeImage);
+                                            const newIndex = projects.findIndex(p => p.image === project.image);
+                                            const direction = prevIndex < newIndex ? 1 : -1; // Determines up or down
+                                    
                                             gsap.fromTo(
                                                 previewRef.current,
-                                                { filter: "blur(10px)", opacity: 0 }, // Start blurry
-                                                { filter: "blur(0px)", opacity: 1, duration: 0.4, ease: "power2.out" } // Fade in sharp
+                                                { y: `+=${direction * 50}`, opacity: 0 }, // Move it up/down & fade out
+                                                { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" } // Bring it back
                                             );
                                     
                                             setActiveImage(project.image);
@@ -92,7 +96,7 @@ export default function MenuOverlay() {
                             </Link>
                         ))
                     ) : (
-                        <p style={{ color: "red", textAlign: "center" }}>No projects loaded</p> // Debug
+                        <p style={{ color: "red", textAlign: "center" }}>No projects loaded</p> // ❌ Debug: Displays error if no projects load
                     )}
                 </div>
             </div>
