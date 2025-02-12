@@ -1,0 +1,13 @@
+import styles from './String.module.css'
+
+export default function String() {
+    return (
+        <>
+            <div className={styles.string}>
+                <svg width="190" height="160" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 10 80 Q 95 10 180 80" stroke="black" fill="transparent"/>
+                </svg>
+            </div>
+        </>
+    )
+}

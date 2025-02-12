@@ -61,39 +61,37 @@ export default function MenuOverlay() {
                 <div className={styles.projects}>
                     {projects.length > 0 ? (
                         projects.map((project) => (
-                            <div>
-                                <Link key={project.id} href={project.link} passHref>
-                                    <div
-                                        className={`${styles.project} ${styles[project.id]}`}
-                                        onMouseMove={moveProject}
-                                        onMouseEnter={() => {
-                                            if (activeImage !== project.image) {
-                                                gsap.fromTo(
-                                                    previewRef.current,
-                                                    { filter: "blur(10px)", opacity: 0 }, // Start blurry
-                                                    { filter: "blur(0px)", opacity: 1, duration: 0.4, ease: "power2.out" } // Fade in sharp
-                                                );
-                                        
-                                                setActiveImage(project.image);
-                                            }
-                                        }}
-                                        onMouseLeave={() => {
-                                            gsap.to(previewRef.current, { opacity: 0, duration: 0.3, ease: "power2.out" });
-                                        }}                          
-                                    >
-                                        <div className={styles.client}>
-                                            <p>{project.name}</p>
-                                        </div>
-                                        <div className={styles.category}>
-                                            <p>{project.category}</p>
-                                        </div>
-                                        <div className={styles.year}>
-                                            <p>{project.year}</p>
-                                        </div>
+                            <Link key={project.id} href={project.link} passHref>
+                                <div
+                                    className={`${styles.project} ${styles[project.id]}`}
+                                    onMouseMove={moveProject}
+                                    onMouseEnter={() => {
+                                        if (activeImage !== project.image) {
+                                            gsap.fromTo(
+                                                previewRef.current,
+                                                { filter: "blur(10px)", opacity: 0 }, // Start blurry
+                                                { filter: "blur(0px)", opacity: 1, duration: 0.4, ease: "power2.out" } // Fade in sharp
+                                            );
+                                    
+                                            setActiveImage(project.image);
+                                        }
+                                    }}
+                                    onMouseLeave={() => {
+                                        gsap.to(previewRef.current, { opacity: 0, duration: 0.3, ease: "power2.out" });
+                                    }}                          
+                                >
+                                    <div className={styles.client}>
+                                        <p>{project.name}</p>
                                     </div>
-                                </Link>
+                                    <div className={styles.category}>
+                                        <p>{project.category}</p>
+                                    </div>
+                                    <div className={styles.year}>
+                                        <p>{project.year}</p>
+                                    </div>
+                                </div>
                                 <String />
-                            </div>
+                            </Link>
                         ))
                     ) : (
                         <p style={{ color: "red", textAlign: "center" }}>No projects loaded</p> // Debug

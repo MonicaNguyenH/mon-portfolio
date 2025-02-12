@@ -10,7 +10,7 @@
     overflow: hidden;
     pointer-events: none;
     transform-origin: center;
-    z-index: 999;
+    z-index: 1000;
     transition: opacity 0.15s ease-out, transform 0.15s ease-out;
 }
 
@@ -41,7 +41,7 @@
 
 .project {
     width: 100%;
-    /* padding: 2.5em 1em; */
+    padding: 2.5em 1em;
     display: flex;
     align-items: center;
     /* border-bottom: 1px solid var(--mid-grey); */

@@ -10,7 +10,7 @@
     overflow: hidden;
     pointer-events: none;
     transform-origin: center;
-    z-index: 999;
+    z-index: 1000;
     transition: opacity 0.15s ease-out, transform 0.15s ease-out;
 }
 

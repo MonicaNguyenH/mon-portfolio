@@ -1,0 +1,16 @@
+.string {
+    height: 200px;
+    width: 100%;
+    /* background-color: red; */
+    z-index: -1;
+    margin: -50px;
+    bottom: 10px;
+}
+
+.svg {
+    pointer-events: none;
+}
+
+.svg path {
+    pointer-events: none;
+}

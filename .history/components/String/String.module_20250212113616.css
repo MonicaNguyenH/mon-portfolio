@@ -1,0 +1,6 @@
+.string {
+    height: 200px;
+    width: 100%;
+    /* background-color: red; */
+    z-index: 3;
+}
