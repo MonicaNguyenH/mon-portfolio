@@ -6,6 +6,7 @@ import NavBar from '@/components/NavBar';
 import WorkFilter from '@/components/WorkFilter';
 import Card from '@/components/CardImg';
 import Footer from '@/components/Footer';
+import MenuOverlay from '@/components/MenuOverlay';
 
 export default function Work() {
     const [selectedFilter, setSelectedFilter] = useState("DEVELOPMENT");
@@ -14,8 +15,8 @@ export default function Work() {
     const content = {
         DEVELOPMENT: (
             <div className={styles.gridContainer}>
-                    <Card link="/work/beep" image="/img/graphic/beep/TN.webp" title="BEEP" year="2024" gridSize="wide" />
-                    <Card link="/work/artflow" image="/img/graphic/artflow/TN.webp" title="Artflow" year="2024" gridSize="wide" />
+                    <Card link="/work/beep" image="/img/graphic/beep/TN.png" title="BEEP" year="2024" gridSize="wide" />
+                    <Card link="/work/artflow" image="/img/graphic/artflow/TN.png" title="Artflow" year="2024" gridSize="wide" />
             </div>
         ),
         "GRAPHIC DESIGN": (
@@ -33,8 +34,8 @@ export default function Work() {
         ),
         "UX/UI DESIGN": (
             <div className={styles.gridContainer}>
-                    <Card link="/work/beep" image="/img/graphic/beep/TN.webp" title="BEEP" year="2024" gridSize="wide" />
-                    <Card link="/work/artflow" image="/img/graphic/artflow/TN.webp" title="Artflow" year="2024" gridSize="wide" />
+                    <Card link="/work/beep" image="/img/graphic/beep/TN.png" title="BEEP" year="2024" gridSize="wide" />
+                    <Card link="/work/artflow" image="/img/graphic/artflow/TN.png" title="Artflow" year="2024" gridSize="wide" />
             </div>
         ),
         "MOTION GRAPHIC": (
