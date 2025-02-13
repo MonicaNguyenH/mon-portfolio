@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./MenuOverlay.module.css";
 import gsap from "gsap";
 import Link from "next/link";
-// import String from "../String";
+import String from "../String";
 
 export default function MenuOverlay() {
     const previewRef = useRef(null);
@@ -41,9 +41,6 @@ export default function MenuOverlay() {
 
     return (
         <div className={styles.main}>
-            {/* Header */}
-            <h1 className={styles.header}>More Work</h1>
-
             {/* Hover Preview Image */}
             <div ref={previewRef} className={styles.preview}>
                 {activeImage && (
@@ -107,8 +104,8 @@ export default function MenuOverlay() {
                                     </div>
                                 </Link>
 
-                                {/* ✅ Add the line only between projects (not after the last one) 
-                                {index !== projects.length - 1 && <String />} */}
+                                {/* ✅ Add the line only between projects (not after the last one)  */}
+                                {index !== projects.length - 1 && <String />}
 
                             </div>
                         ))

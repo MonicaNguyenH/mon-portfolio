@@ -1,7 +1,7 @@
 .main {
     color: var(--white);
     background-color: var(--black);
-    padding: 50px 30px 150px 30px;
+    padding: 150px 30px;
     position: relative;
     display: flex;
     flex-direction: column;

@@ -33,8 +33,8 @@ export default function MenuOverlay() {
     
         gsap.to(previewRef.current, {
             duration: 0.3,
-            x: e.clientX - 125, // Centering the image (125px is half of 250px width)
-            y: e.clientY - 125,
+            x: e.clientX - 100, // Centering the image (125px is half of 250px width)
+            y: e.clientY - 100,
             ease: "power2.out"
         });
     };    

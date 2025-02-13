@@ -1,7 +1,7 @@
 .main {
     color: var(--white);
     background-color: var(--black);
-    padding: 50px 30px 150px 30px;
+    padding: 80px 30px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
 .header {
     font: var(--reg-85);
     text-transform: uppercase;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .preview {

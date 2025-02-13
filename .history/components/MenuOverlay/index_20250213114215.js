@@ -41,9 +41,6 @@ export default function MenuOverlay() {
 
     return (
         <div className={styles.main}>
-            {/* Header */}
-            <h1 className={styles.header}>More Work</h1>
-
             {/* Hover Preview Image */}
             <div ref={previewRef} className={styles.preview}>
                 {activeImage && (

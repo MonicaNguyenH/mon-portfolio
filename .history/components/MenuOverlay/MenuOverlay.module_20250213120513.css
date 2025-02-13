@@ -1,7 +1,8 @@
 .main {
+    height: 80vh;
     color: var(--white);
     background-color: var(--black);
-    padding: 50px 30px 150px 30px;
+    padding: 0 30px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -11,7 +12,7 @@
 .header {
     font: var(--reg-85);
     text-transform: uppercase;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .preview {
@@ -64,7 +65,7 @@
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.projectContainer:not(:last-child) {
+.projects > .project:not(:last-child) {
     border-bottom: 1px solid var(--white);
 }
 
