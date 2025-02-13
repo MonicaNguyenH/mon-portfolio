@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./MenuOverlay.module.css";
 import gsap from "gsap";
 import Link from "next/link";
-// import String from "../String";
+import String from "../String";
 
 export default function MenuOverlay() {
     const previewRef = useRef(null);
@@ -55,42 +55,33 @@ export default function MenuOverlay() {
                     </>
                 )}
             </div>
+
+            <String />
+
             {/* Projects List */}
             <div ref={containerRef} className={styles.menuContainer}>
                 <div className={styles.projects}>
                     {projects.length > 0 ? (
-                        projects.map((project, index) => (
-                            <div key={project.id} className={styles.projectContainer}>
-                                <Link href={project.link} passHref>
+                        projects.map((project) => (
+                            <div>
+                                <Link key={project.id} href={project.link} passHref>
                                     <div
                                         className={`${styles.project} ${styles[project.id]}`}
                                         onMouseMove={moveProject}
                                         onMouseEnter={() => {
                                             if (activeImage !== project.image) {
                                                 gsap.fromTo(
-                                                    // previewRef.current,
-                                                    // { filter: "blur(10px)", opacity: 0 },
-                                                    // { filter: "blur(0px)", opacity: 1, duration: 0.4, ease: "power2.out" },
                                                     previewRef.current,
-                                                    {
-                                                        scale: 0.8,          // Start smaller
-                                                        opacity: 0,         // Start faded out
-                                                        filter: "blur(10px)" // Start blurry
-                                                    },
-                                                    {
-                                                        scale: 1,            // Expand to normal size
-                                                        opacity: 1,         // Fully visible
-                                                        filter: "blur(0px)", // Clear focus
-                                                        duration: 0.4,      // Smooth transition speed
-                                                        ease: "power2.out"  // Natural easing
-                                                    }
+                                                    { filter: "blur(10px)", opacity: 0 }, // Start blurry
+                                                    { filter: "blur(0px)", opacity: 1, duration: 0.4, ease: "power2.out" } // Fade in sharp
                                                 );
+                                        
                                                 setActiveImage(project.image);
                                             }
                                         }}
                                         onMouseLeave={() => {
                                             gsap.to(previewRef.current, { opacity: 0, duration: 0.3, ease: "power2.out" });
-                                        }}
+                                        }}                          
                                     >
                                         <div className={styles.client}>
                                             <p>{project.name}</p>
@@ -103,16 +94,16 @@ export default function MenuOverlay() {
                                         </div>
                                     </div>
                                 </Link>
-
-                                {/* ✅ Add the line only between projects (not after the last one) 
-                                {index !== projects.length - 1 && <String />} */}
-
+                                <hr/>
                             </div>
                         ))
                     ) : (
-                        <p style={{ color: "red", textAlign: "center" }}>No projects loaded</p>
+                        <p style={{ color: "red", textAlign: "center" }}>No projects loaded</p> // Debug
                     )}
-                </div>    
+                </div>
+
+                <String />
+                
             </div>
         </div>
     );

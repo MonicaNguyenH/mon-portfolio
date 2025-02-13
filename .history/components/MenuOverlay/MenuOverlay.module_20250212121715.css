@@ -28,8 +28,10 @@
 .menuContainer {
     width: 100%;
     height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .projects {
@@ -40,15 +42,21 @@
 
 .project {
     width: 100%;
-    padding: 30px;
+    /* padding: 2.5em 1em; */
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--white);
+    /* border-bottom: 1px solid var(--mid-grey); */
     cursor: pointer;
     text-decoration: none; 
     color: inherit; 
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
+
+/* .project:hover {
+    background-color: var(--pink);
+    color: var(--black) !important; 
+    border-bottom: 0;
+} */
 
 .project p {
     font: var(--reg-40);

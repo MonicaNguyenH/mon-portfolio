@@ -19,15 +19,15 @@ export default function String() {
             // Normalize input (minimized movement effect)
             const t = offsetX / 1000;
             
-            const maxOffsetX = 5; // Extremely small controlled movement
-            const maxOffsetY = 5;
+            const maxOffsetX = 6; // Extremely small controlled movement
+            const maxOffsetY = 4;
 
             // Tiny nudges to control points
-            const controlX1 = 250 + ((offsetX - 500) * t * 0.04); 
-            const controlY1 = 100 + ((offsetY - 100) * t * maxOffsetY * 0.3); 
+            const controlX1 = 250 + ((offsetX - 500) * t * 0.02); 
+            const controlY1 = 100 + ((offsetY - 100) * t * maxOffsetY * 0.2); 
 
-            const controlX2 = 750 + ((offsetX - 500) * (1 - t) * 0.04);
-            const controlY2 = 100 + ((offsetY - 100) * (1 - t) * maxOffsetY * 0.3);
+            const controlX2 = 750 + ((offsetX - 500) * (1 - t) * 0.02);
+            const controlY2 = 100 + ((offsetY - 100) * (1 - t) * maxOffsetY * 0.2);
 
             const newPath = `M 10 100 C ${controlX1} ${controlY1}, ${controlX2} ${controlY2}, 990 100`;
 

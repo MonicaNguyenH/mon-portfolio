@@ -19,7 +19,7 @@ export default function String() {
             // Normalize input (minimized movement effect)
             const t = offsetX / 1000;
             
-            const maxOffsetX = 5; // Extremely small controlled movement
+            const maxOffsetX = 3; // Extremely small controlled movement
             const maxOffsetY = 5;
 
             // Tiny nudges to control points

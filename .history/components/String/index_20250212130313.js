@@ -19,8 +19,8 @@ export default function String() {
             // Normalize input (minimized movement effect)
             const t = offsetX / 1000;
             
-            const maxOffsetX = 5; // Extremely small controlled movement
-            const maxOffsetY = 5;
+            const maxOffsetX = 50; // Extremely small controlled movement
+            const maxOffsetY = 40;
 
             // Tiny nudges to control points
             const controlX1 = 250 + ((offsetX - 500) * t * 0.04); 
@@ -33,7 +33,7 @@ export default function String() {
 
             gsap.to(pathElement, {
                 attr: { d: newPath },
-                duration: 0.08, // Super fast response
+                duration: 0.2, // Super fast response
                 ease: "power1.out"
             });
         };

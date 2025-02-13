@@ -10,6 +10,7 @@
 
 .svg {
     pointer-events: none;
+    width: 100vw;
 }
 
 .svg path {

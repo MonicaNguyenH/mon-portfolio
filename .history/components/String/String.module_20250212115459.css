@@ -1,0 +1,27 @@
+/* .string {
+    height: 200px;
+    width: 100%;
+    /* background-color: red;
+    z-index: -1;
+    margin: -50px;
+    bottom: 10px;
+} */
+
+.string {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1; /* Behind menu image */
+}
+
+
+.svg {
+    pointer-events: none;
+}
+
+.svg path {
+    pointer-events: none;
+}
+

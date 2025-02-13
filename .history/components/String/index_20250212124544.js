@@ -16,33 +16,33 @@ export default function String() {
         const handleMouseMove = (event) => {
             const { offsetX, offsetY } = event;
 
-            // Normalize input (minimized movement effect)
+            // Normalize input (smaller movement effect)
             const t = offsetX / 1000;
             
-            const maxOffsetX = 5; // Extremely small controlled movement
-            const maxOffsetY = 5;
+            const maxOffsetX = 15; // Small controlled movement
+            const maxOffsetY = 10;
 
-            // Tiny nudges to control points
-            const controlX1 = 250 + ((offsetX - 500) * t * 0.04); 
+            // Slightly nudge control points instead of large movements
+            const controlX1 = 250 + ((offsetX - 500) * t * 0.1); 
             const controlY1 = 100 + ((offsetY - 100) * t * maxOffsetY * 0.3); 
 
-            const controlX2 = 750 + ((offsetX - 500) * (1 - t) * 0.04);
+            const controlX2 = 750 + ((offsetX - 500) * (1 - t) * 0.1);
             const controlY2 = 100 + ((offsetY - 100) * (1 - t) * maxOffsetY * 0.3);
 
             const newPath = `M 10 100 C ${controlX1} ${controlY1}, ${controlX2} ${controlY2}, 990 100`;
 
             gsap.to(pathElement, {
                 attr: { d: newPath },
-                duration: 0.08, // Super fast response
-                ease: "power1.out"
+                duration: 0.1, // Fast response
+                ease: "power2.out"
             });
         };
 
         const handleMouseLeave = () => {
             gsap.to(pathElement, {
                 attr: { d: finalPath }, 
-                duration: 0.4, // Instant snap-back
-                ease: "elastic.out(1.1, 0.5)" // Tighter bounce
+                duration: 0.6, // Quick snap-back
+                ease: "elastic.out(1.2, 0.6)"
             });
         };
 

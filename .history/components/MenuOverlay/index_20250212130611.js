@@ -68,22 +68,9 @@ export default function MenuOverlay() {
                                         onMouseEnter={() => {
                                             if (activeImage !== project.image) {
                                                 gsap.fromTo(
-                                                    // previewRef.current,
-                                                    // { filter: "blur(10px)", opacity: 0 },
-                                                    // { filter: "blur(0px)", opacity: 1, duration: 0.4, ease: "power2.out" },
                                                     previewRef.current,
-                                                    {
-                                                        scale: 0.8,          // Start smaller
-                                                        opacity: 0,         // Start faded out
-                                                        filter: "blur(10px)" // Start blurry
-                                                    },
-                                                    {
-                                                        scale: 1,            // Expand to normal size
-                                                        opacity: 1,         // Fully visible
-                                                        filter: "blur(0px)", // Clear focus
-                                                        duration: 0.4,      // Smooth transition speed
-                                                        ease: "power2.out"  // Natural easing
-                                                    }
+                                                    { filter: "blur(10px)", opacity: 0 },
+                                                    { filter: "blur(0px)", opacity: 1, duration: 0.4, ease: "power2.out" }
                                                 );
                                                 setActiveImage(project.image);
                                             }

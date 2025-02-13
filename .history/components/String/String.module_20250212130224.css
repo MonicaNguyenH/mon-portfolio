@@ -14,5 +14,6 @@
 
 .svg path {
     pointer-events: none;
+    width: 100vw;
 }
 

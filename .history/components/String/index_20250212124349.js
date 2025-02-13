@@ -15,34 +15,34 @@ export default function String() {
 
         const handleMouseMove = (event) => {
             const { offsetX, offsetY } = event;
-
-            // Normalize input (minimized movement effect)
-            const t = offsetX / 1000;
             
-            const maxOffsetX = 5; // Extremely small controlled movement
-            const maxOffsetY = 5;
+            // Normalize the offset values
+            const t = offsetX / 1000; 
 
-            // Tiny nudges to control points
-            const controlX1 = 250 + ((offsetX - 500) * t * 0.04); 
-            const controlY1 = 100 + ((offsetY - 100) * t * maxOffsetY * 0.3); 
+            // Reduce the range of movement to prevent excessive stretching
+            const maxOffsetX = 40; 
+            const maxOffsetY = 30;
 
-            const controlX2 = 750 + ((offsetX - 500) * (1 - t) * 0.04);
-            const controlY2 = 100 + ((offsetY - 100) * (1 - t) * maxOffsetY * 0.3);
+            const controlX1 = 250 + ((offsetX - 500) * t * 0.4);
+            const controlY1 = 100 + ((offsetY - 100) * t * maxOffsetY * 0.6); 
+
+            const controlX2 = 750 + ((offsetX - 500) * (1 - t) * 0.4);
+            const controlY2 = 100 + ((offsetY - 100) * (1 - t) * maxOffsetY * 0.6);
 
             const newPath = `M 10 100 C ${controlX1} ${controlY1}, ${controlX2} ${controlY2}, 990 100`;
 
             gsap.to(pathElement, {
                 attr: { d: newPath },
-                duration: 0.08, // Super fast response
-                ease: "power1.out"
+                duration: 0.15, // Faster response
+                ease: "power2.out"
             });
         };
 
         const handleMouseLeave = () => {
             gsap.to(pathElement, {
                 attr: { d: finalPath }, 
-                duration: 0.4, // Instant snap-back
-                ease: "elastic.out(1.1, 0.5)" // Tighter bounce
+                duration: 1, // Shorter duration for a quicker snap-back
+                ease: "elastic.out(1.4, 0.6)" // Sharper bounce
             });
         };
 

@@ -19,8 +19,8 @@ export default function String() {
             // Normalize input (minimized movement effect)
             const t = offsetX / 1000;
             
-            const maxOffsetX = 5; // Extremely small controlled movement
-            const maxOffsetY = 5;
+            const maxOffsetX = 2; // Extremely small controlled movement
+            const maxOffsetY = 1;
 
             // Tiny nudges to control points
             const controlX1 = 250 + ((offsetX - 500) * t * 0.04); 
@@ -61,7 +61,7 @@ export default function String() {
 
     return (
         <div className={styles.string} ref={containerRef}>        
-            <svg width="1000" height="200" className={styles.svg}>
+            <svg width="2000" height="200" className={styles.svg}>
                 <path ref={pathRef} d="M 10 100 C 250 100, 750 100, 990 100" stroke="var(--white)" fill="transparent"/>
             </svg>
         </div>
