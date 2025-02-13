@@ -10,9 +10,14 @@
   mix-blend-mode: difference;
 }
 
+.logo {
+  
+}
+
+
 .nav a {
   text-decoration: none;
-  color: var(--mid-grey);
+  color: var(--white);
   /* padding: 0 1em; */
   font: var(--reg-16);
 }

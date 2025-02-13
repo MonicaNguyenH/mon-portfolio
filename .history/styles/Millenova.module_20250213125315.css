@@ -2,11 +2,16 @@
     background-color: var(--white);
 }
 
+
 .img {
     width: 100%;
     height: auto;
     margin: 0;
     padding: 0;
+    display: block;
+}
+
+.slider__img {
     display: block;
 }
 

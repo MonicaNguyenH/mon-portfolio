@@ -6,9 +6,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
-  z-index: 1099;
+  z-index: 999;
+  
+}
+
+.logo svg {
   mix-blend-mode: difference;
 }
+
 
 .nav a {
   text-decoration: none;

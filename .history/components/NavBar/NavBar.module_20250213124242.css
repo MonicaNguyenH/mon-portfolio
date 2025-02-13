@@ -10,6 +10,11 @@
   mix-blend-mode: difference;
 }
 
+.logo {
+  
+}
+
+
 .nav a {
   text-decoration: none;
   color: var(--mid-grey);

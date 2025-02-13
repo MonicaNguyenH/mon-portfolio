@@ -46,24 +46,22 @@ export default function Work() {
 
     return(
         <>
-        <div className={styles.blendingMode}>
             <HeaderArea title="Monica Nguyen" description="Monica Nguyen's Work"/>
-                <NavBar />
+            <NavBar />
 
-                <div className={styles.mainContainer}>
-                    <div className={styles.header}>
-                        <div className={styles.header__caption}>
-                            <img className={styles.caption__img} src="/img/work/work-header.svg" alt="work caption" />
-                        </div>
-                        <div className={styles.header__filter}>
-                            <WorkFilter onSelect={setSelectedFilter}/>
-                        </div>
+            <div className={styles.mainContainer}>
+                <div className={styles.header}>
+                    <div className={styles.header__caption}>
+                        <img className={styles.caption__img} src="/img/work/work-header.svg" alt="work caption" />
                     </div>
-                    <div className="content-box">{content[selectedFilter]}</div>
+                    <div className={styles.header__filter}>
+                        <WorkFilter onSelect={setSelectedFilter}/>
+                    </div>
                 </div>
+                <div className="content-box">{content[selectedFilter]}</div>
+            </div>
 
-                <Footer />
-        </div>
+            <Footer />
         </>
     )
 }

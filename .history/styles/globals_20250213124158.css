@@ -31,10 +31,6 @@
   box-sizing: border-box;
 }
 
-.blendingMode {
-  background-color: var(--white);
-}
-
 html {
   /* padding: 0 30px; */
 }

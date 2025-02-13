@@ -8,11 +8,17 @@
   padding: 0 30px;
   z-index: 1099;
   mix-blend-mode: difference;
+  color: var(--white);
 }
+
+.logo {
+  
+}
+
 
 .nav a {
   text-decoration: none;
-  color: var(--mid-grey);
+  /* color: var(--mid-grey); */
   /* padding: 0 1em; */
   font: var(--reg-16);
 }

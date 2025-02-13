@@ -6,9 +6,15 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
-  z-index: 1099;
+  z-index: 999;
+  
+}
+
+.logo svg {
+  filter: invert(1); /* ✅ Inverts black ↔ white */
   mix-blend-mode: difference;
 }
+
 
 .nav a {
   text-decoration: none;

@@ -6,8 +6,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
-  z-index: 1099;
-  mix-blend-mode: difference;
+  z-index: 999;
+  /* mix-blend-mode: difference; */
+  filter: invert(1);
 }
 
 .nav a {

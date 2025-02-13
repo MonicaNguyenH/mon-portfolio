@@ -8,7 +8,13 @@
   padding: 0 30px;
   z-index: 1099;
   mix-blend-mode: difference;
+  color: var(--white);
 }
+
+.logo {
+  
+}
+
 
 .nav a {
   text-decoration: none;
