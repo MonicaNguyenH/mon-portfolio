@@ -35,7 +35,7 @@ export default function NavBar() {
                 </div>
             </div>
 
-            <audio ref={audioRef} src="/audio/duck-soundeffect.mov" preload="auto"></audio>
+            <audio ref={audioRef} src="/audio/duck-soundeffect.mp3" preload="auto"></audio>
         </>
     )
 };

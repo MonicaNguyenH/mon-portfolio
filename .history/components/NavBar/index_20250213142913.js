@@ -20,22 +20,13 @@ export default function NavBar() {
                     <a href="#">Gallery</a>
                 </div>
                 <div className="logo">
-                    <img 
-                        className="logo" 
-                        src="/img/mon-logo-white.svg" 
-                        alt="mon logo" 
-                        onMouseEnter={playSound}
-                        width={80} 
-                        height={34}
-                    />
+                    <img className="logo" src="/img/mon-logo-white.svg" alt="mon logo" width={80} height={34}/>
                 </div>
                 <div className={styles.items_right}>
                     <a href="#">About</a>
                     <a href="#">Contact</a>
                 </div>
             </div>
-
-            <audio ref={audioRef} src="/audio/duck-soundeffect.mov" preload="auto"></audio>
         </>
     )
 };
