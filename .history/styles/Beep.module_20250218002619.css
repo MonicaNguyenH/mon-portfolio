@@ -1,0 +1,41 @@
+.blendingMode {
+    background-color: var(--white);
+}
+
+/*** PROBLEM ***/
+.problem {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 100px 30px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 100px;
+}
+
+.problem__state,
+.problem__gap {
+    width: 60%;
+}
+
+.problem__state h1,
+.problem__gap h1 {
+    font: var(--reg-40);
+    color: var(--beep-pink);
+    text-transform: uppercase;
+}
+
+.problem__state p,
+.problem__gap p {
+    font: var(--reg-40);
+}
+
+/*** SOLUTION ***/
+
+
+
+

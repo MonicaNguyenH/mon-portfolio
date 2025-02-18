@@ -1,0 +1,12 @@
+.blendingMode {
+    background-color: var(--white);
+}
+
+/*** PROBLEM ***/
+.problem {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+    color: var(--white);
+}
+
