@@ -4,7 +4,6 @@ import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import ProjectHeaderSC from '@/components/ProjectHeaderSC';
 import BeepOverview from '@/components/BeepOverview';
-import VerticalSlider from '@/components/VerticalSlider';
 import { useState, useRef, useEffect } from 'react';
 
 export default function Beep() {
@@ -121,17 +120,9 @@ export default function Beep() {
                             <p>Beep empowers with Assurance, Action, and Trust. Proactively preventing danger, streamlining emergency help, and delivering reliable, real-time safety data.</p>
                         </div>
                         
-                        {/* <div className={styles.overview}>
-                            <BeepOverview />
-                        </div> */}
+                        <div className={styles.overview}>
 
-                        <div className={styles.userFlow}>
-                            <img src="/img/graphic/beep/user-flow.png" alt="Beep user flow" />
                         </div>
-                        
-                        {/* <div>
-                            <VerticalSlider />
-                        </div> */}
 
 
                     </div>

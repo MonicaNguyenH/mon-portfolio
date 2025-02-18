@@ -4,7 +4,6 @@ import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import ProjectHeaderSC from '@/components/ProjectHeaderSC';
 import BeepOverview from '@/components/BeepOverview';
-import VerticalSlider from '@/components/VerticalSlider';
 import { useState, useRef, useEffect } from 'react';
 
 export default function Beep() {
@@ -129,9 +128,6 @@ export default function Beep() {
                             <img src="/img/graphic/beep/user-flow.png" alt="Beep user flow" />
                         </div>
                         
-                        {/* <div>
-                            <VerticalSlider />
-                        </div> */}
 
 
                     </div>

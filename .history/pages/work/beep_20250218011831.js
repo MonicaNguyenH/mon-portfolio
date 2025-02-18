@@ -129,9 +129,9 @@ export default function Beep() {
                             <img src="/img/graphic/beep/user-flow.png" alt="Beep user flow" />
                         </div>
                         
-                        {/* <div>
+                        <div>
                             <VerticalSlider />
-                        </div> */}
+                        </div>
 
 
                     </div>
