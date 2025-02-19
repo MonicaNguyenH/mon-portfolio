@@ -3,8 +3,8 @@ import HeaderArea from '@/components/HeadArea';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import ProjectHeaderSC from '@/components/ProjectHeaderSC';
-import BeepOverview from '@/components/BeepOverview';
 import VerticalSlider from '@/components/VerticalSlider';
+import HiddenContent from '@/components/HiddenContent';
 import { useState, useRef, useEffect } from 'react';
 
 export default function Beep() {
@@ -120,19 +120,26 @@ export default function Beep() {
                             <img src="/img/graphic/beep/TN.webp" alt="Beep core values" />
                             <p>Beep empowers with Assurance, Action, and Trust. Proactively preventing danger, streamlining emergency help, and delivering reliable, real-time safety data.</p>
                         </div>
-                        
-                        {/* <div className={styles.overview}>
-                            <BeepOverview />
+
+                        {/* <div>
+                            <HiddenContent />
                         </div> */}
 
                         <div className={styles.userFlow}>
                             <img src="/img/graphic/beep/user-flow.png" alt="Beep user flow" />
                         </div>
                         
-                        {/* <div>
+                        <div className={styles.persona}>
                             <VerticalSlider />
-                        </div> */}
+                        </div>
 
+                        <div className={styles.styleguide}>
+                            <img src="/img/graphic/beep/styleguide-1.png" alt="Beep styleguide 1" />
+                        </div>
+
+                        <div className={styles.styleguide__font}>
+
+                        </div>
 
                     </div>
                 </div>

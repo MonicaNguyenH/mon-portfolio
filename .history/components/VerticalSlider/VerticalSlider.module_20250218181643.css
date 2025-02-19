@@ -1,0 +1,66 @@
+.sliderContainer {
+  position: relative; /* Fix merging issue */
+  width: 1100px;
+  height: 700px;
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.sliderWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+  width: 100%;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🔹 Fix: Vertical Pagination Dots on the Right */
+.dotsContainer {
+  position: absolute;
+  top: 50%;
+  right: 20px; /* Move to the right side */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column; /* Make it vertical */
+  gap: 10px;
+  z-index: 10; /* Keep it above images */
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(217, 217, 217, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activeDot {
+  background-color: var(--white);
+}

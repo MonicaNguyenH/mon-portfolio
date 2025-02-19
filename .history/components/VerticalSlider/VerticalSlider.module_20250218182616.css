@@ -1,0 +1,63 @@
+.sliderContainer {
+  width: 1100px;
+  height: 700px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sliderWrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+  width: 100%;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🔹 Fix: Vertical Pagination Dots on the Right */
+.dotsContainer {
+  display: flex;
+  flex-direction: column; /* Make it vertical */
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(217, 217, 217, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activeDot {
+  background-color: var(--white);
+}

@@ -1,0 +1,51 @@
+/* styles/Home.module.css */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #121212;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+}
+
+.content,
+.hiddenContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  pointer-events: none;
+}
+
+.content {
+  z-index: 1;
+}
+
+.hiddenContent {
+  --maskX: 50%;
+  --maskY: 50%;
+  z-index: 2;
+  background: linear-gradient(180deg, #fb9c84 0%, #f06680 50%, #812470 100%);
+  -webkit-mask-image: radial-gradient(circle 75px at var(--maskX) var(--maskY), black 75px, transparent 80px);
+  mask-image: radial-gradient(circle 75px at var(--maskX) var(--maskY), black 75px, transparent 80px);
+}
+
+.mask {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  pointer-events: none;
+  /* mix-blend-mode: difference; */
+  z-index: 3;
+}

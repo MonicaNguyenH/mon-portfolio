@@ -1,0 +1,114 @@
+.blendingMode {
+    background-color: var(--white);
+}
+
+/*** PROBLEM ***/
+.problem {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 100px 30px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 100px;
+}
+
+.problem__state,
+.problem__gap {
+    width: 60%;
+}
+
+.problem__state h1,
+.problem__gap h1 {
+    font: var(--reg-40);
+    color: var(--beep-pink);
+    text-transform: uppercase;
+}
+
+.problem__state p,
+.problem__gap p {
+    font: var(--reg-40);
+}
+
+/*** SOLUTION ***/
+    /*** SLIDER ***/
+.content {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+
+    background-color: var(--black);
+    font: var(--reg-40);
+    color: var(--white);
+}
+
+.content__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content__img img {
+    width: 550px;
+    height: auto;
+}
+
+.horizontal {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/*** VALUE ***/
+.value {
+    width: 100vw;
+    height: auto;
+    padding: 30px 30px 100px 30px;
+    color: var(--black);
+    font: var(--reg-40);
+}
+
+.value img {
+    width: 100%;
+    height: auto;
+}
+
+.value p {
+    width: 70%;
+}
+
+/*** OVERVIEW ***/
+
+
+/*** USE FLOW ***/
+.userFlow {
+    width: 100vw;
+    height: auto;
+}
+
+.userFlow img{
+    width: 100%;
+    height: auto;
+}
+
+/*** PERSONAS ***/
+.persona {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--beep-purple);
+    color: var(--white);
+    font: var(--reg-16);
+    text-transform: uppercase;
+}
+
+
+
+
+

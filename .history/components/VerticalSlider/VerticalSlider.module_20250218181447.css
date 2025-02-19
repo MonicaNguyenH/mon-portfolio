@@ -1,0 +1,70 @@
+.sliderContainer {
+    position: relative; /* Keeps everything inside */
+    width: 1100px;
+    height: 700px;
+    overflow: hidden;
+    margin: 0 auto; /* Ensures it's centered */
+    z-index: 1; /* Prevents overlapping */
+    display: flex; /* Helps align elements properly */
+  }
+  
+  .sliderWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slider {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 100%;
+    position: relative; /* Ensures it stays inside */
+    z-index: 2; /* Keeps it above background */
+  }
+  
+  .slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* 🔹 Move Dots NEXT TO the slider */
+  .dotsContainer {
+    position: absolute;
+    top: 50%;
+    right: -50px; /* Move dots further out */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 3; /* Ensure it's above */
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(217, 217, 217, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .activeDot {
+    background-color: var(--white);
+  }
+  
