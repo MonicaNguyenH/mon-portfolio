@@ -1,0 +1,49 @@
+/* .text > p > div {
+  background: linear-gradient(
+    to right,
+    var(--white) 50%,
+    var(--beep-purple) 50%
+  );
+  background-size: 200% 100%;
+  background-position-x: 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-left: 50px;
+  line-height: 1.2;
+} */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 150vh; /* Ensures the section is large enough */
+}
+
+.text {
+    overflow: hidden;
+}
+
+.text > p {
+    background: linear-gradient(
+        to right,
+        var(--white) 50%,
+        var(--beep-purple) 50%
+    );
+    background-size: 200% 100%;
+    background-position-x: 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin-left: 50px;
+    line-height: 1.2;
+    font: var(--beep-bod-320);
+    text-transform: uppercase;
+    opacity: 1; /* Ensures visibility */
+}
+
+.spacer {
+    height: 300px; /* Larger height ensures the animation starts at the right time */
+    width: 100vw;
+}

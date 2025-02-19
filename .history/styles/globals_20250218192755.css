@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/public/fonts/Satoshi-Black.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-BlackItalic.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-Bold.tff') format('ttf'),
+       url('/public/fonts/Satoshi-BoldItalic.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-Italic.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-Light.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-LightItalic.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-Medium.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-MediumItalic.ttf') format('ttf'),
+       url('/public/fonts/Satoshi-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('fonts/Switzer-Regular.ttf') format('ttf'),
+       url('fonts/Switzer-Italic.ttf') format('ttf'),
+       url('fonts/Switzer-Bold.ttf') format('ttf'),
+}
+
+:root {
+  --white: #FFFEFF;
+  --black: #11030D;
+  --pink: #F42272;
+  --light-pink: #FDBBCB;
+  --mid-grey: #7D7B7D;
+
+  --beep-purple: #651FD7;
+  --beep-pink: #F7185B;
+  --beep-black: #141216;
+  --beep-white: #F4F0F1;
+
+  --reg-16: 16px 'Satoshi', sans-serif;
+  --reg-20: 20px 'Satoshi', sans-serif;
+  --reg-40: 40px 'Satoshi', sans-serif;
+  --reg-85: 85px 'Satoshi', sans-serif;
+  --bod-200: 200px 'Satoshi-Bold', sans-serif;
+
+  --beep-bod-320: 200px 'Switzer-Bold', sans-serif;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.blendingMode {
+  background-color: var(--white);
+}
+
+html {
+  /* padding: 0 30px; */
+}

@@ -1,0 +1,6 @@
+.blendingMode {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--beep-purple);
+    padding: 100px 30px;
+}

@@ -1,0 +1,31 @@
+/* .text > p > div {
+  background: linear-gradient(
+    to right,
+    var(--white) 50%,
+    var(--beep-purple) 50%
+  );
+  background-size: 200% 100%;
+  background-position-x: 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-left: 50px;
+  line-height: 1.2;
+} */
+
+.text > p > span {
+    background: linear-gradient(
+      to right,
+      var(--white) 50%,
+      var(--beep-purple) 50%
+    );
+    background-size: 200% 100%;
+    background-position-x: 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin-left: 50px;
+    line-height: 1.2;
+    font: var(--beep-bod-320);
+    text-transform: uppercase;
+  }
