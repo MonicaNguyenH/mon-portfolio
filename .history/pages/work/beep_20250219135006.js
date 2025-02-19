@@ -111,6 +111,7 @@ export default function Beep() {
                                 <div className={styles.content}>
                                     <p>It shouldn’t be like this.</p>
                                 </div>
+
                                 <div className={`${styles.content} ${styles.content__img}`}>
                                     <img src="/img/graphic/beep/solution-elements.png" alt="Beep solution" className={styles.solution__img} />
                                 </div>
