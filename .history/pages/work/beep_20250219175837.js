@@ -132,12 +132,18 @@ export default function Beep() {
                         defaults: { ease: "power2.out", duration: 1.5 },
                     });
 
-                    // ✅ Reveal first image
+                    // // ✅ Reveal first image
+                    // tl.fromTo(
+                    //     section.querySelector(`.${styles.afterImage}`),
+                    //     { clipPath: "inset(0 0 0 100%)" },
+                    //     { clipPath: "inset(0 0 0 0%)" },
+                    //     index * 0.75 // ✅ Progressive delay between sections
+                    // );
+
                     tl.fromTo(
                         section.querySelector(`.${styles.afterImage}`),
-                        { clipPath: "inset(0 0 0 100%)" },
-                        { clipPath: "inset(0 0 0 0%)" },
-                        index * 0.75 // ✅ Progressive delay between sections
+                        { clipPath: "inset(0 0 0 100%)" }, // Might be hiding it
+                        { clipPath: "inset(0 0 0 0%)" }
                     );
 
                     // ✅ Reveal second image (with slight delay)

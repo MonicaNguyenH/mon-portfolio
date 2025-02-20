@@ -9,7 +9,6 @@ import MenuOverlay from '@/components/MenuOverlay';
 // import HiddenContent from '@/components/HiddenContent';
 // import BeepText from '@/components/BeepText';
 import { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
 
 export default function Beep() {
     const projectTools = ["Product Designer", "Project Manager", "Front-end Developer"];
@@ -252,11 +251,13 @@ export default function Beep() {
                                 <div className={`${styles.comparisonImageVer2} ${styles.beforeImage}`}>
                                     <img src="/img/graphic/beep/brochure-front.webp" alt="Brochure Front" />
                                 </div>
-                                <div className={`${styles.comparisonImageVer2} ${styles.afterImage}`}>
-                                    <img src="/img/graphic/beep/brochure-back.webp" alt="Brochure Back" />
-                                </div>
+                                
                             </section>
                         </div>
+
+
+
+
                 </div>
 
                 <MenuOverlay />

@@ -186,11 +186,9 @@
   clip-path: inset(0 0 0 100%); /* ✅ Hides image from left */
 }
 
-.beforeImage img {
+/* .beforeImage {
     display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
+} */
 
 /*** BISCARD ***/
 

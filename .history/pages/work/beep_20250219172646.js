@@ -9,7 +9,6 @@ import MenuOverlay from '@/components/MenuOverlay';
 // import HiddenContent from '@/components/HiddenContent';
 // import BeepText from '@/components/BeepText';
 import { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
 
 export default function Beep() {
     const projectTools = ["Product Designer", "Project Manager", "Front-end Developer"];
@@ -257,6 +256,10 @@ export default function Beep() {
                                 </div>
                             </section>
                         </div>
+
+
+
+
                 </div>
 
                 <MenuOverlay />

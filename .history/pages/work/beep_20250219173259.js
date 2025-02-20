@@ -9,7 +9,6 @@ import MenuOverlay from '@/components/MenuOverlay';
 // import HiddenContent from '@/components/HiddenContent';
 // import BeepText from '@/components/BeepText';
 import { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
 
 export default function Beep() {
     const projectTools = ["Product Designer", "Project Manager", "Front-end Developer"];
@@ -110,19 +109,20 @@ export default function Beep() {
     }, []);
 
     useEffect(() => {
-        if (!isComparisonReady) return;
+    if (!isComparisonReady) return;
 
-        import("gsap").then(({ default: gsap }) => {
-            import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-                gsap.registerPlugin(ScrollTrigger);
+    import("gsap").then(({ default: gsap }) => {
+        import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+            gsap.registerPlugin(ScrollTrigger);
 
+            setTimeout(() => {  // ✅ Delay ensures images are ready before animation runs
                 comparisonSections.current.forEach((section, index) => {
-                    if (!section) return; // Ensure the section exists before running animation
+                    if (!section) return;
 
                     let tl = gsap.timeline({
                         scrollTrigger: {
                             trigger: section,
-                            start: "center center",
+                            start: "top 70%", // ✅ Adjusted to trigger earlier
                             end: "+=100%",
                             scrub: true,
                             pin: true,
@@ -132,33 +132,25 @@ export default function Beep() {
                         defaults: { ease: "power2.out", duration: 1.5 },
                     });
 
-                    // ✅ Reveal first image
                     tl.fromTo(
                         section.querySelector(`.${styles.afterImage}`),
-                        { clipPath: "inset(0 0 0 100%)" },
-                        { clipPath: "inset(0 0 0 0%)" },
-                        index * 0.75 // ✅ Progressive delay between sections
-                    );
-
-                    // ✅ Reveal second image (with slight delay)
-                    tl.fromTo(
-                        section.querySelector(`.${styles.thirdImage}`),
-                        { clipPath: "inset(0 0 0 100%)" },
-                        { clipPath: "inset(0 0 0 0%)" },
-                        index * 1.5
+                        { clipPath: "inset(0 100% 0 0%)" }, // ✅ Starts hidden from the right
+                        { clipPath: "inset(0 0% 0 0%)" },
+                        index * 0.75
                     );
 
                     ScrollTrigger.refresh();
                 });
-            });
+            }, 500); // ✅ Small delay to ensure images are loaded
         });
+    });
 
-        return () => {
-            import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-                ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-            });
-        };
-    }, [isComparisonReady]);
+    return () => {
+        import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        });
+    };
+}, [isComparisonReady]);
     
  
 
@@ -257,6 +249,10 @@ export default function Beep() {
                                 </div>
                             </section>
                         </div>
+
+
+
+
                 </div>
 
                 <MenuOverlay />
