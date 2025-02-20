@@ -104,11 +104,10 @@
 
 /*** OVERVIEW ***/
 .overview {
-    display: block;
-    /* justify-content: center;
-    align-items: center; */
-    height: auto;
-    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 

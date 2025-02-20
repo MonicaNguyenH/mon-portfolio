@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import styles from "./HiddenContent.module.css";
+import styles from "@/styles/HiddenContent.module.css";
 
 export default function HiddenContent({ imgFront, imgBack }) {
     const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -17,7 +17,7 @@ export default function HiddenContent({ imgFront, imgBack }) {
             setPosition({ x, y });
 
             if (maskRef.current) {
-                maskRef.current.style.clipPath = `circle(180px at ${x}px ${y}px)`;
+                maskRef.current.style.clipPath = `circle(80px at ${x}px ${y}px)`;
             }
         };
 

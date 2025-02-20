@@ -6,7 +6,7 @@ export default function Artflow() {
     return (
         <>
         <div className={styles.blendingMode}>
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+            {/* <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}> */}
                 <HiddenContent 
                     imgFront="/img/graphic/beep/overview-2.png" 
                     imgBack="/img/graphic/beep/overview-1.png" 

@@ -207,11 +207,8 @@ export default function Beep() {
                             <p>Beep empowers with Assurance, Action, and Trust. Proactively preventing danger, streamlining emergency help, and delivering reliable, real-time safety data.</p>
                         </div>
                     </div>
-                        <div className={styles.overview}>
-                            <HiddenContent 
-                                imgFront="/img/graphic/beep/overview-2.png" 
-                                imgBack="/img/graphic/beep/overview-1.png" 
-                            />
+                        <div className={styles.Overview}>
+                            <HiddenContent />
                         </div>
 
                         <div className={styles.userFlow}>

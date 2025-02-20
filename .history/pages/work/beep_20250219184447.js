@@ -208,10 +208,7 @@ export default function Beep() {
                         </div>
                     </div>
                         <div className={styles.overview}>
-                            <HiddenContent 
-                                imgFront="/img/graphic/beep/overview-2.png" 
-                                imgBack="/img/graphic/beep/overview-1.png" 
-                            />
+                            <HiddenContent />
                         </div>
 
                         <div className={styles.userFlow}>

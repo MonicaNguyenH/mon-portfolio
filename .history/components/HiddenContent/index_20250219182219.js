@@ -5,29 +5,19 @@ export default function HiddenContent({ imgFront, imgBack }) {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
     const containerRef = useRef(null);
-    const maskRef = useRef(null);
 
     useEffect(() => {
         const handleMouseMove = (e) => {
             if (!containerRef.current) return;
             const rect = containerRef.current.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            setPosition({ x, y });
-
-            if (maskRef.current) {
-                maskRef.current.style.clipPath = `circle(180px at ${x}px ${y}px)`;
-            }
+            setPosition({
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top,
+            });
         };
 
         const handleMouseEnter = () => setIsHovering(true);
-        const handleMouseLeave = () => {
-            setIsHovering(false);
-            if (maskRef.current) {
-                maskRef.current.style.clipPath = "circle(0px at 50% 50%)";
-            }
-        };
+        const handleMouseLeave = () => setIsHovering(false);
 
         const element = containerRef.current;
         if (element) {
@@ -47,13 +37,19 @@ export default function HiddenContent({ imgFront, imgBack }) {
 
     return (
         <div className={styles.hiddenContent} ref={containerRef}>
-            {/* Background Image (Hidden Image) */}
+            {/* Background Image */}
             <img src={imgBack} alt="Hidden Image" className={styles.hiddenImg} />
 
-            {/* Foreground Image (Mask Controlled) */}
-            <div className={styles.mask} ref={maskRef}>
-                <img src={imgFront} alt="Front Image" className={styles.frontImg} />
-            </div>
+            {/* Foreground Image */}
+            <img src={imgFront} alt="Front Image" className={styles.frontImg} />
+
+            {/* Custom Circular Cursor Mask */}
+            {isHovering && (
+                <div
+                    className={styles.cursor}
+                    style={{ left: `${position.x}px`, top: `${position.y}px` }}
+                ></div>
+            )}
         </div>
     );
 }

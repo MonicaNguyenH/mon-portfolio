@@ -17,7 +17,7 @@ export default function HiddenContent({ imgFront, imgBack }) {
             setPosition({ x, y });
 
             if (maskRef.current) {
-                maskRef.current.style.clipPath = `circle(180px at ${x}px ${y}px)`;
+                maskRef.current.style.clipPath = `circle(80px at ${x}px ${y}px)`;
             }
         };
 

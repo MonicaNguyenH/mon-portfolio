@@ -1,7 +1,7 @@
 .hiddenContent {
   position: relative;
-  width: 100vw; /* Adjust size as needed */
-  height: auto;
+  width: 100%; /* Adjust size as needed */
+  height: 100%;
   /* overflow: hidden; */
   display: flex;
   align-items: center;
@@ -9,11 +9,11 @@
 }
 
 .hiddenImg {
-  /* position: absolute; */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -30,6 +30,6 @@
 
 .frontImg {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
