@@ -53,9 +53,6 @@
     background-color: var(--black);
     font: var(--reg-40);
     color: var(--white);
-
-    margin: 0 !important;
-    padding: 0 !important;
 }
 
 .content__img {
@@ -80,8 +77,7 @@
 .userFlow img,
 .styleguide img,
 .styleguide__font img,
-.mockup img,
-.bisCard img
+.mockup img
 {
     width: 100%;
     height: auto;
@@ -144,49 +140,6 @@
 
 /*** MOCKUP ***/
 
-/*** COMPARISON ***/
-.comparisonSection {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-
-  background-color: var(--beep-white);
-}
-
-.comparisonImage {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.comparisonImage img {
-  width: 90%;
-  height: auto;
-  object-fit: fill;
-}
-
-.comparisonImageVer2 img {
-    width: 100%;
-    height: auto;
-    object-fit: fill;
-}
-
-/* ✅ Ensure images are already stacked, but hidden */
-.afterImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  clip-path: inset(0 0 0 100%); /* ✅ Hides image from left */
-}
-
-/*** BISCARD ***/
 
 
 

@@ -79,86 +79,60 @@ export default function Beep() {
 
 
 
-    
-
-    /** COMPARISON SLIDER */
-    const comparisonSections = useRef([]);
-    const [isComparisonReady, setIsComparisonReady] = useState(false);
+     /*** COMPARISON SLIDER ***/
+    const sectionRef = useRef(null);
 
     useEffect(() => {
-        if (typeof window === "undefined") return;
+       let gsap, ScrollTrigger;
+   
+       import("gsap").then((gsapModule) => {
+         gsap = gsapModule.default;
+         import("gsap/ScrollTrigger").then((scrollTriggerModule) => {
+           ScrollTrigger = scrollTriggerModule.ScrollTrigger;
+           gsap.registerPlugin(ScrollTrigger);
+   
+           if (sectionRef.current) {
+             let section = sectionRef.current;
+             let tl = gsap.timeline({
+               scrollTrigger: {
+                 trigger: section,
+                 start: "center center",
+                 end: () => "+=" + section.offsetWidth,
+                 scrub: true,
+                 pin: true,
+                 anticipatePin: 1,
+               },
+               defaults: { ease: "none" },
+             });
+   
+             tl.fromTo(
+               section.querySelector(`.${styles.afterImage}`),
+               { xPercent: 100, x: 0 },
+               { xPercent: 0 }
+             )
+               .fromTo(
+                 section.querySelector(`.${styles.afterImage} img`),
+                 { xPercent: -100, x: 0 },
+                 { xPercent: 0 },
+                 0
+               )
+               .fromTo(
+                 section.querySelector(`.${styles.thirdImage}`),
+                 { xPercent: 100, x: 0 },
+                 { xPercent: 0 },
+                 1
+               )
+               .fromTo(
+                 section.querySelector(`.${styles.thirdImage} img`),
+                 { xPercent: -100, x: 0 },
+                 { xPercent: 0 },
+                 1
+               );
+           }
+         });
+       });
+     }, []);
 
-        const images = document.querySelectorAll("img");
-        let loadedCount = 0;
-
-        images.forEach((img) => {
-            if (img.complete) {
-                loadedCount++;
-            } else {
-                img.addEventListener("load", () => {
-                    loadedCount++;
-                    if (loadedCount === images.length) {
-                        setIsComparisonReady(true);
-                    }
-                });
-            }
-        });
-
-        if (loadedCount === images.length) setIsComparisonReady(true);
-    }, []);
-
-    useEffect(() => {
-        if (!isComparisonReady) return;
-
-        import("gsap").then(({ default: gsap }) => {
-            import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-                gsap.registerPlugin(ScrollTrigger);
-
-                comparisonSections.current.forEach((section, index) => {
-                    if (!section) return; // Ensure the section exists before running animation
-
-                    let tl = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: section,
-                            start: "center center",
-                            end: "+=100%",
-                            scrub: true,
-                            pin: true,
-                            anticipatePin: 1,
-                            pinSpacing: true,
-                        },
-                        defaults: { ease: "power2.out", duration: 1.5 },
-                    });
-
-                    // ✅ Reveal first image
-                    tl.fromTo(
-                        section.querySelector(`.${styles.afterImage}`),
-                        { clipPath: "inset(0 0 0 100%)" },
-                        { clipPath: "inset(0 0 0 0%)" },
-                        index * 0.75 // ✅ Progressive delay between sections
-                    );
-
-                    // ✅ Reveal second image (with slight delay)
-                    tl.fromTo(
-                        section.querySelector(`.${styles.thirdImage}`),
-                        { clipPath: "inset(0 0 0 100%)" },
-                        { clipPath: "inset(0 0 0 0%)" },
-                        index * 1.5
-                    );
-
-                    ScrollTrigger.refresh();
-                });
-            });
-        });
-
-        return () => {
-            import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-                ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-            });
-        };
-    }, [isComparisonReady]);
-    
- 
 
     return (
         <>
@@ -230,33 +204,9 @@ export default function Beep() {
                             <img src="/img/graphic/beep/Mockup.png" alt="Beep mockups" />
                         </div>
 
-                        {/* FIRST COMPARISON SECTION */}
-                        <section ref={(el) => (comparisonSections.current[0] = el)} className={styles.comparisonSection}>
-                            <div className={`${styles.comparisonImage} ${styles.beforeImage}`}>
-                                <img src="/img/graphic/beep/Lo-fi.png" alt="Beep Lo-fi Wireframes" />
-                            </div>
-                            <div className={`${styles.comparisonImage} ${styles.afterImage}`}>
-                                <img src="/img/graphic/beep/Hi-fi.webp" alt="Beep Hi-fi Wireframes" />
-                            </div>
-                        </section>
-
-                        <div className={styles.bisCard}>
-                            <img src="/img/graphic/beep/bis-card.webp" alt="Beep business cards" />
-                        </div>
-
-                        {/* SECOND COMPARISON SECTION */}
                         <div className={styles.comparison}>
-                            <section ref={(el) => (comparisonSections.current[1] = el)} className={styles.comparisonSection}>
-                                <div className={`${styles.comparisonImageVer2} ${styles.beforeImage}`}>
-                                    <img src="/img/graphic/beep/brochure-front.webp" alt="Brochure Front" />
-                                </div>
-                                <div className={`${styles.comparisonImageVer2} ${styles.afterImage}`}>
-                                    <img src="/img/graphic/beep/brochure-back.webp" alt="Brochure Back" />
-                                </div>
-                            </section>
+                            
                         </div>
-
-
                 </div>
 
                 

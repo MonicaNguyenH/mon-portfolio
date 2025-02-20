@@ -77,88 +77,75 @@ export default function Beep() {
         };
     }, [isReady]); // ✅ Runs GSAP only when images are loaded
 
-
-
-    
-
     /** COMPARISON SLIDER */
-    const comparisonSections = useRef([]);
-    const [isComparisonReady, setIsComparisonReady] = useState(false);
+    const sectionRef = useRef(null);
 
     useEffect(() => {
-        if (typeof window === "undefined") return;
-
-        const images = document.querySelectorAll("img");
-        let loadedCount = 0;
-
-        images.forEach((img) => {
-            if (img.complete) {
-                loadedCount++;
-            } else {
-                img.addEventListener("load", () => {
-                    loadedCount++;
-                    if (loadedCount === images.length) {
-                        setIsComparisonReady(true);
-                    }
-                });
-            }
-        });
-
-        if (loadedCount === images.length) setIsComparisonReady(true);
-    }, []);
-
-    useEffect(() => {
-        if (!isComparisonReady) return;
-
-        import("gsap").then(({ default: gsap }) => {
-            import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+        let gsap, ScrollTrigger;
+    
+        import("gsap").then((gsapModule) => {
+            gsap = gsapModule.default;
+            import("gsap/ScrollTrigger").then((scrollTriggerModule) => {
+                ScrollTrigger = scrollTriggerModule.ScrollTrigger;
                 gsap.registerPlugin(ScrollTrigger);
-
-                comparisonSections.current.forEach((section, index) => {
-                    if (!section) return; // Ensure the section exists before running animation
-
+    
+                if (sectionRef.current) {
+                    let section = sectionRef.current;
+    
                     let tl = gsap.timeline({
                         scrollTrigger: {
                             trigger: section,
-                            start: "center center",
-                            end: "+=100%",
+                            start: "center center", // ✅ Fix: Starts when section is almost in view
+                            end: "+=" + section.offsetWidth,
                             scrub: true,
                             pin: true,
                             anticipatePin: 1,
                             pinSpacing: true,
+                            immediateRender: false, // ✅ Prevents animation from pre-rendering
+                            invalidateOnRefresh: true, // ✅ Ensures proper recalculation on resize
                         },
-                        defaults: { ease: "power2.out", duration: 1.5 },
+                        defaults: { ease: "none" },
                     });
-
-                    // ✅ Reveal first image
+    
                     tl.fromTo(
                         section.querySelector(`.${styles.afterImage}`),
-                        { clipPath: "inset(0 0 0 100%)" },
-                        { clipPath: "inset(0 0 0 0%)" },
-                        index * 0.75 // ✅ Progressive delay between sections
-                    );
-
-                    // ✅ Reveal second image (with slight delay)
-                    tl.fromTo(
-                        section.querySelector(`.${styles.thirdImage}`),
-                        { clipPath: "inset(0 0 0 100%)" },
-                        { clipPath: "inset(0 0 0 0%)" },
-                        index * 1.5
-                    );
-
-                    ScrollTrigger.refresh();
-                });
+                        { xPercent: 100, x: 0 },
+                        { xPercent: 0 }
+                    )
+                        .fromTo(
+                            section.querySelector(`.${styles.afterImage} img`),
+                            { xPercent: -100, x: 0 },
+                            { xPercent: 0 },
+                            0
+                        )
+                        .fromTo(
+                            section.querySelector(`.${styles.thirdImage}`),
+                            { xPercent: 100, x: 0 },
+                            { xPercent: 0 },
+                            1
+                        )
+                        .fromTo(
+                            section.querySelector(`.${styles.thirdImage} img`),
+                            { xPercent: -100, x: 0 },
+                            { xPercent: 0 },
+                            1
+                        );
+    
+                    // ✅ Instead of onEnter, refresh once after a slight delay
+                    setTimeout(() => {
+                        ScrollTrigger.refresh();
+                    }, 100);
+                }
             });
         });
-
+    
         return () => {
             import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
                 ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
             });
         };
-    }, [isComparisonReady]);
+    }, []);
     
- 
 
     return (
         <>
@@ -230,33 +217,32 @@ export default function Beep() {
                             <img src="/img/graphic/beep/Mockup.png" alt="Beep mockups" />
                         </div>
 
-                        {/* FIRST COMPARISON SECTION */}
-                        <section ref={(el) => (comparisonSections.current[0] = el)} className={styles.comparisonSection}>
-                            <div className={`${styles.comparisonImage} ${styles.beforeImage}`}>
-                                <img src="/img/graphic/beep/Lo-fi.png" alt="Beep Lo-fi Wireframes" />
-                            </div>
-                            <div className={`${styles.comparisonImage} ${styles.afterImage}`}>
-                                <img src="/img/graphic/beep/Hi-fi.webp" alt="Beep Hi-fi Wireframes" />
-                            </div>
-                        </section>
-
-                        <div className={styles.bisCard}>
-                            <img src="/img/graphic/beep/bis-card.webp" alt="Beep business cards" />
-                        </div>
-
-                        {/* SECOND COMPARISON SECTION */}
                         <div className={styles.comparison}>
-                            <section ref={(el) => (comparisonSections.current[1] = el)} className={styles.comparisonSection}>
-                                <div className={`${styles.comparisonImageVer2} ${styles.beforeImage}`}>
-                                    <img src="/img/graphic/beep/brochure-front.webp" alt="Brochure Front" />
+                        <div className={styles.wrapper}>
+                            <h1 className={styles.headerSection}>Scroll to see the before/after</h1>
+                            <section className={styles.comparisonSection} ref={sectionRef}>
+                                <div className={`${styles.comparisonImage} ${styles.beforeImage}`}>
+                                <img
+                                    src="https://assets.codepen.io/16327/before.jpg"
+                                    alt="before"
+                                />
                                 </div>
-                                <div className={`${styles.comparisonImageVer2} ${styles.afterImage}`}>
-                                    <img src="/img/graphic/beep/brochure-back.webp" alt="Brochure Back" />
+                                <div className={`${styles.comparisonImage} ${styles.afterImage}`}>
+                                <img
+                                    src="https://assets.codepen.io/16327/after.jpg"
+                                    alt="after"
+                                />
+                                </div>
+                                <div className={`${styles.comparisonImage} ${styles.thirdImage}`}>
+                                <img
+                                    src="https://cdn.pixabay.com/photo/2018/10/24/05/14/kittycat-3769569_960_720.jpg"
+                                    alt="third"
+                                />
                                 </div>
                             </section>
+                            <h1 className={styles.headerSection}>What did you think?</h1>
+                            </div>
                         </div>
-
-
                 </div>
 
                 

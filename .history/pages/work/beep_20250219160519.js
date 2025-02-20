@@ -82,12 +82,15 @@ export default function Beep() {
     
 
     /** COMPARISON SLIDER */
-    const comparisonSections = useRef([]);
+    const comparisonSectionRef = useRef(null);
+    const firstComparisonImageRef = useRef(null);
+    const secondComparisonImageRef = useRef(null);
     const [isComparisonReady, setIsComparisonReady] = useState(false);
 
     useEffect(() => {
         if (typeof window === "undefined") return;
 
+        // ✅ Ensure images are loaded before GSAP runs
         const images = document.querySelectorAll("img");
         let loadedCount = 0;
 
@@ -108,52 +111,58 @@ export default function Beep() {
     }, []);
 
     useEffect(() => {
-        if (!isComparisonReady) return;
-
-        import("gsap").then(({ default: gsap }) => {
-            import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+        let gsap, ScrollTrigger;
+    
+        import("gsap").then((gsapModule) => {
+            gsap = gsapModule.default;
+            import("gsap/ScrollTrigger").then(({ ScrollTrigger: ST }) => {
+                ScrollTrigger = ST;
                 gsap.registerPlugin(ScrollTrigger);
-
-                comparisonSections.current.forEach((section, index) => {
-                    if (!section) return; // Ensure the section exists before running animation
-
-                    let tl = gsap.timeline({
+    
+                if (comparisonSectionRef.current) {
+                    let section = comparisonSectionRef.current;
+                    let firstImage = firstComparisonImageRef.current;
+                    let secondImage = secondComparisonImageRef.current;
+    
+                    let comparisonTl = gsap.timeline({
                         scrollTrigger: {
                             trigger: section,
                             start: "center center",
-                            end: "+=100%",
+                            end: "bottom top",
                             scrub: true,
                             pin: true,
                             anticipatePin: 1,
                             pinSpacing: true,
+                            immediateRender: false,
+                            invalidateOnRefresh: true,
                         },
-                        defaults: { ease: "power2.out", duration: 1.5 },
                     });
-
-                    // ✅ Reveal first image
-                    tl.fromTo(
-                        section.querySelector(`.${styles.afterImage}`),
-                        { clipPath: "inset(0 0 0 100%)" },
-                        { clipPath: "inset(0 0 0 0%)" },
-                        index * 0.75 // ✅ Progressive delay between sections
+    
+                    // ✅ Animation: Slide second image ON TOP of the first image
+                    comparisonTl.fromTo(
+                        secondImage,
+                        { yPercent: 100, opacity: 0 },
+                        { yPercent: 0, opacity: 1, duration: 1 }
                     );
-
-                    // ✅ Reveal second image (with slight delay)
-                    tl.fromTo(
-                        section.querySelector(`.${styles.thirdImage}`),
-                        { clipPath: "inset(0 0 0 100%)" },
-                        { clipPath: "inset(0 0 0 0%)" },
-                        index * 1.5
+    
+                    // ✅ When scrolling up, the second image moves back out
+                    comparisonTl.fromTo(
+                        secondImage,
+                        { yPercent: 0, opacity: 1 },
+                        { yPercent: -100, opacity: 0, duration: 1 },
+                        "<"
                     );
-
-                    ScrollTrigger.refresh();
-                });
+    
+                    setTimeout(() => {
+                        ScrollTrigger.refresh();
+                    }, 100);
+                }
             });
         });
-
+    
         return () => {
-            import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-                ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+            import("gsap/ScrollTrigger").then(({ ScrollTrigger: ST }) => {
+                ST.getAll().forEach((trigger) => trigger.kill());
             });
         };
     }, [isComparisonReady]);
@@ -230,33 +239,22 @@ export default function Beep() {
                             <img src="/img/graphic/beep/Mockup.png" alt="Beep mockups" />
                         </div>
 
-                        {/* FIRST COMPARISON SECTION */}
-                        <section ref={(el) => (comparisonSections.current[0] = el)} className={styles.comparisonSection}>
-                            <div className={`${styles.comparisonImage} ${styles.beforeImage}`}>
-                                <img src="/img/graphic/beep/Lo-fi.png" alt="Beep Lo-fi Wireframes" />
-                            </div>
-                            <div className={`${styles.comparisonImage} ${styles.afterImage}`}>
-                                <img src="/img/graphic/beep/Hi-fi.webp" alt="Beep Hi-fi Wireframes" />
-                            </div>
-                        </section>
-
-                        <div className={styles.bisCard}>
-                            <img src="/img/graphic/beep/bis-card.webp" alt="Beep business cards" />
-                        </div>
-
-                        {/* SECOND COMPARISON SECTION */}
                         <div className={styles.comparison}>
-                            <section ref={(el) => (comparisonSections.current[1] = el)} className={styles.comparisonSection}>
-                                <div className={`${styles.comparisonImageVer2} ${styles.beforeImage}`}>
-                                    <img src="/img/graphic/beep/brochure-front.webp" alt="Brochure Front" />
+                            <section ref={comparisonSectionRef} className={styles.comparisonSlideshow}>
+                                <div ref={firstComparisonImageRef} className={styles.comparisonImageContainer}>
+                                    <img
+                                        src="https://assets.codepen.io/16327/before.jpg"
+                                        alt="First Comparison Image"
+                                    />
                                 </div>
-                                <div className={`${styles.comparisonImageVer2} ${styles.afterImage}`}>
-                                    <img src="/img/graphic/beep/brochure-back.webp" alt="Brochure Back" />
+                                <div ref={secondComparisonImageRef} className={styles.comparisonImageContainer}>
+                                    <img
+                                        src="https://assets.codepen.io/16327/after.jpg"
+                                        alt="Second Comparison Image"
+                                    />
                                 </div>
                             </section>
                         </div>
-
-
                 </div>
 
                 

@@ -1,0 +1,39 @@
+
+
+.headerSection {
+  font-weight: 400;
+  max-width: none;
+  text-align: center;
+}
+
+.comparisonSection {
+  position: relative;
+  padding-bottom: 56.25%; /* Maintain aspect ratio */
+}
+
+.comparisonImage {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.comparisonImage img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.afterImage,
+.thirdImage {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  transform: translate(100%, 0px);
+}
+
+.afterImage img,
+.thirdImage img {
+  transform: translate(-100%, 0px);
+}

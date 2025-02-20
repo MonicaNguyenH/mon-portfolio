@@ -247,10 +247,10 @@ export default function Beep() {
                         {/* SECOND COMPARISON SECTION */}
                         <div className={styles.comparison}>
                             <section ref={(el) => (comparisonSections.current[1] = el)} className={styles.comparisonSection}>
-                                <div className={`${styles.comparisonImageVer2} ${styles.beforeImage}`}>
+                                <div className={`${styles.comparisonImage} ${styles.beforeImage}`}>
                                     <img src="/img/graphic/beep/brochure-front.webp" alt="Brochure Front" />
                                 </div>
-                                <div className={`${styles.comparisonImageVer2} ${styles.afterImage}`}>
+                                <div className={`${styles.comparisonImage} ${styles.afterImage}`}>
                                     <img src="/img/graphic/beep/brochure-back.webp" alt="Brochure Back" />
                                 </div>
                             </section>

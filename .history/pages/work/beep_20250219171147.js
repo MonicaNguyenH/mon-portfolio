@@ -82,7 +82,6 @@ export default function Beep() {
     
 
     /** COMPARISON SLIDER */
-    const comparisonSections = useRef([]);
     const [isComparisonReady, setIsComparisonReady] = useState(false);
 
     useEffect(() => {
@@ -244,14 +243,20 @@ export default function Beep() {
                             <img src="/img/graphic/beep/bis-card.webp" alt="Beep business cards" />
                         </div>
 
-                        {/* SECOND COMPARISON SECTION */}
+                        {/* Brochure */}
                         <div className={styles.comparison}>
-                            <section ref={(el) => (comparisonSections.current[1] = el)} className={styles.comparisonSection}>
-                                <div className={`${styles.comparisonImageVer2} ${styles.beforeImage}`}>
-                                    <img src="/img/graphic/beep/brochure-front.webp" alt="Brochure Front" />
+                            <section ref={comparisonSectionRef} className={styles.comparisonSection}>
+                                <div className={`${styles.comparisonImage} ${styles.beforeImage}`}>
+                                    <img
+                                        src="/img/graphic/beep/brochure-front.webp"
+                                        alt="Beep Lo-fi Wireframes"
+                                    />
                                 </div>
-                                <div className={`${styles.comparisonImageVer2} ${styles.afterImage}`}>
-                                    <img src="/img/graphic/beep/brochure-back.webp" alt="Brochure Back" />
+                                <div className={`${styles.comparisonImage} ${styles.afterImage}`}>
+                                    <img
+                                        src="/img/graphic/beep/brochure-back.webp"
+                                        alt="Beep Hi-fi Wireframes"
+                                    />
                                 </div>
                             </section>
                         </div>
