@@ -5,7 +5,7 @@ import gsap from "gsap";
 import styles from "./ProjectHeaderSC.module.css";
 import ButtonFilledBlack from "../ButtonFilledBlack";
 
-export default function ProjectHeader({ name, description, img, introduction, tools, date, buttonLink, buttonText }) {
+export default function ProjectHeader({ name, description, img, introduction, tools, date, buttonContent }) {
 
   return (
     <div className={styles.main}>
@@ -15,9 +15,7 @@ export default function ProjectHeader({ name, description, img, introduction, to
       <div className={styles.intro}>
         <div>
             <p>{introduction}</p>
-            <ButtonFilledBlack href={buttonLink}>
-                {buttonText}
-            </ButtonFilledBlack>
+            <ButtonFilledBlack buttonContent={buttonContent} />
         </div>
         <div className={styles.intro__detail}>
           <div className={styles.detail__toolsContainer}>

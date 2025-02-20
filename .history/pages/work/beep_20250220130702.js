@@ -177,8 +177,6 @@ export default function Beep() {
                         introduction={`Beep is an AI-powered safety app designed to enhance personal security by providing real-time crime heat maps based on data from the Vancouver Police Department. The app features AI-guided safe route navigation, emergency alerts, loud alarms, and safe zone recommendations, ensuring users feel secure navigating urban environments. With seamless location sharing and instant emergency contact features, Beep sets a new standard in personal safety through innovative technology and local collaboration.`}
                         tools={projectTools}
                         date="Sept–Dec 2024"
-                        buttonText="Beep Blog" 
-                        buttonLink="https://beep-vlog.vercel.app"
                     />
 
                     <div className={styles.problem}>

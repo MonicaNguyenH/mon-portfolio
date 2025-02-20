@@ -25,18 +25,6 @@ export default function Artflow() {
                         buttonText="Artflow app" 
                         buttonLink="https://artflow-d3.vercel.app/"
                     />
-
-                    <div className={styles.logo}>
-                        <img src="/img/graphic/artflow/logo.png" alt="Artflow logo" />
-                    </div>
-
-                    <div className={styles.color}>
-                        <img src="/img/graphic/artflow/color.webp" alt="Artflow color palette" />
-                    </div>
-
-                    <div className={styles.typography}>
-                        <img src="/img/graphic/artflow/typo.png" alt="Artflow typography" />
-                    </div>
                 </div>
             </div>
         </>

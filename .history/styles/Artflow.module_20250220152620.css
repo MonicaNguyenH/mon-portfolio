@@ -9,12 +9,3 @@
     width: 100vw;
     height: auto;
 }
-
-.logo img, 
-.color img,
-.typography img {
-    width: 100vw;
-    height: auto;
-    object-fit: cover;
-    display: block;
-}
