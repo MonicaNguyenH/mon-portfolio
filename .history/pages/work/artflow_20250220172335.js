@@ -4,7 +4,6 @@ import NavBar from '@/components/NavBar';
 import ProjectHeaderSC from '@/components/ProjectHeaderSC';
 import MenuOverlay from "@/components/MenuOverlay";
 import { useState, useRef, useEffect } from 'react';
-import Footer from '@/components/Footer';
 
 export default function Artflow() {
     const projectTools = ["Figma", "Next.js", "Adobe Photoshop", "Adobe Illustrator"];
@@ -15,7 +14,7 @@ export default function Artflow() {
 
     useEffect(() => {
         let gsap, ScrollTrigger;
-        
+    
         import("gsap").then(({ default: loadedGsap }) => {
             gsap = loadedGsap;
             import("gsap/ScrollTrigger").then(({ ScrollTrigger: loadedScrollTrigger }) => {
@@ -43,26 +42,34 @@ export default function Artflow() {
                     });
                 }
     
-                // ✅ Fade in the entire text smoothly on scroll
+                // ✅ Split text into words for individual animation
+                const words = scrollTextRef.current.innerHTML
+                    .split(" ")
+                    .map(word => `<span class="${styles.word}">${word}</span>`)
+                    .join(" ");
+    
+                scrollTextRef.current.innerHTML = words;
+    
+                // ✅ Animate each word as it enters the viewport
                 gsap.fromTo(
-                    scrollTextRef.current,
+                    `.${styles.word}`,
                     { opacity: 0, y: 50 },
                     {
                         opacity: 1,
                         y: 0,
-                        duration: 1.5,
+                        stagger: 0.1,
+                        duration: 1,
                         ease: "power2.out",
                         scrollTrigger: {
                             trigger: scrollTextRef.current,
-                            start: "top 85%",
-                            end: "top 50%",
+                            start: "top 90%",
+                            end: "top 30%",
                             scrub: true,
                         },
                     }
                 );
     
-                // ✅ Fade in images properly
-                gsap.utils.toArray(`.${styles.img} img`).forEach((img) => {
+                gsap.utils.toArray(`.${styles.img}`).forEach((img) => {
                     gsap.fromTo(
                         img,
                         { opacity: 0, y: 50 },
@@ -73,9 +80,8 @@ export default function Artflow() {
                             ease: "power2.out",
                             scrollTrigger: {
                                 trigger: img,
-                                start: "top 90%",
-                                end: "top 60%",
-                                scrub: true,
+                                start: "top 85%",
+                                toggleActions: "play none none none",
                             },
                         }
                     );
@@ -89,7 +95,6 @@ export default function Artflow() {
             }
         };
     }, []);
-    
 
     return (
         <>
@@ -158,10 +163,6 @@ export default function Artflow() {
                         </div>
                     </div>
                 </div>
-
-                <MenuOverlay />
-
-                <Footer />
             </div>
         </>
     )

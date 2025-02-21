@@ -55,8 +55,6 @@
   align-items: center;
 
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 .pinkText {
@@ -68,6 +66,8 @@
   width: 400px;
   height: 500px;
   /* background: linear-gradient(#e66465, #9198e5); */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(50px);
 
   display: flex;
   align-items: center;
@@ -78,9 +78,4 @@
 .img img{
     width: 100%;
     height: auto;
-
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
 }
-

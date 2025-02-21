@@ -34,11 +34,6 @@
   margin: 0 auto;
   max-width: 1560px;
   padding: 1px 74px;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 .scrollableText {
@@ -51,12 +46,6 @@
   line-height: 174px;
   white-space: nowrap;
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 .pinkText {
@@ -64,23 +53,9 @@
 }
 
 .img {
-  /* display: inline-block; */
-  width: 400px;
-  height: 500px;
+  display: inline-block;
+  width: 50px;
+  height: auto;
   /* background: linear-gradient(#e66465, #9198e5); */
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 2rem;
+  margin-left: 20px;
 }
-
-.img img{
-    width: 100%;
-    height: auto;
-
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-

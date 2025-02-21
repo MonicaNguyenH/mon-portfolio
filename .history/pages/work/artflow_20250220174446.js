@@ -4,7 +4,6 @@ import NavBar from '@/components/NavBar';
 import ProjectHeaderSC from '@/components/ProjectHeaderSC';
 import MenuOverlay from "@/components/MenuOverlay";
 import { useState, useRef, useEffect } from 'react';
-import Footer from '@/components/Footer';
 
 export default function Artflow() {
     const projectTools = ["Figma", "Next.js", "Adobe Photoshop", "Adobe Illustrator"];
@@ -15,7 +14,7 @@ export default function Artflow() {
 
     useEffect(() => {
         let gsap, ScrollTrigger;
-        
+    
         import("gsap").then(({ default: loadedGsap }) => {
             gsap = loadedGsap;
             import("gsap/ScrollTrigger").then(({ ScrollTrigger: loadedScrollTrigger }) => {
@@ -43,7 +42,7 @@ export default function Artflow() {
                     });
                 }
     
-                // ✅ Fade in the entire text smoothly on scroll
+                // ✅ Fade-in textWrapper (Both Quote & Small Text)
                 gsap.fromTo(
                     scrollTextRef.current,
                     { opacity: 0, y: 50 },
@@ -61,7 +60,7 @@ export default function Artflow() {
                     }
                 );
     
-                // ✅ Fade in images properly
+                // ✅ Keep images scrolling properly
                 gsap.utils.toArray(`.${styles.img} img`).forEach((img) => {
                     gsap.fromTo(
                         img,
@@ -89,6 +88,7 @@ export default function Artflow() {
             }
         };
     }, []);
+    
     
 
     return (
@@ -122,46 +122,46 @@ export default function Artflow() {
                         <img src="/img/graphic/artflow/typo.png" alt="Artflow typography" />
                     </div>
 
-                    <div className={styles.fullscreen} ref={mainSectionRef}>
-                        <div className={styles.container}>
-                            <h1 ref={scrollTextRef} className={styles.scrollableText}>
-                                <span className={styles.pinkText}>Art</span>&nbsp;is the only way to run away without leaving home
-                                <span className={styles.img}>
-                                    <img src="/img/graphic/artflow/1.webp" alt="Artflow screen 1" />
-                                    {/* <img src="/img/graphic/artflow/2.webp" alt="Artflow screen 2" /> */}
-                                </span>
-                                <span className={styles.img}>
-                                    <img src="/img/graphic/artflow/2.webp" alt="Artflow screen 2" />
-                                </span>
-                                <span className={styles.img}>
-                                    <img src="/img/graphic/artflow/3.webp" alt="Artflow screen 3" />
-                                </span>
-                                <span className={styles.img}>
-                                    <img src="/img/graphic/artflow/4.webp" alt="Artflow screen 4" />
-                                </span>
-                                <span className={styles.img}>
-                                    <img src="/img/graphic/artflow/5.webp" alt="Artflow screen 5" />
-                                </span>
-                                <span className={styles.img}>
-                                    <img src="/img/graphic/artflow/6.webp" alt="Artflow screen 6" />
-                                </span>
-                                <span className={styles.img}>
-                                    <img src="/img/graphic/artflow/7.webp" alt="Artflow screen 7" />
-                                </span>
-                                <span className={styles.img}>
-                                    <img src="/img/graphic/artflow/8.webp" alt="Artflow screen 8" />
-                                </span>
-                                <span className={styles.img}>
-                                    <img src="/img/graphic/artflow/9.webp" alt="Artflow screen 9" />
-                                </span>
-                            </h1>
-                        </div>
-                    </div>
+                    <div className={styles.container}>
+    {/* Wrapping both the quote and small text to ensure they move together */}
+    <div className={styles.textWrapper} ref={scrollTextRef}>
+        <h1 className={styles.scrollableText}>
+            <span className={styles.pinkText}>Art</span>&nbsp;is the only way to run away without leaving home
+        </h1>
+        {/* Small Text Below */}
+        <p className={styles.smallText}>Twyla Tharp</p>
+    </div>
+
+    {/* Images stay unchanged for scrolling */}
+    <span className={styles.img}>
+        <img src="/img/graphic/artflow/1.webp" alt="Artflow screen 1" />
+    </span>
+    <span className={styles.img}>
+        <img src="/img/graphic/artflow/2.webp" alt="Artflow screen 2" />
+    </span>
+    <span className={styles.img}>
+        <img src="/img/graphic/artflow/3.webp" alt="Artflow screen 3" />
+    </span>
+    <span className={styles.img}>
+        <img src="/img/graphic/artflow/4.webp" alt="Artflow screen 4" />
+    </span>
+    <span className={styles.img}>
+        <img src="/img/graphic/artflow/5.webp" alt="Artflow screen 5" />
+    </span>
+    <span className={styles.img}>
+        <img src="/img/graphic/artflow/6.webp" alt="Artflow screen 6" />
+    </span>
+    <span className={styles.img}>
+        <img src="/img/graphic/artflow/7.webp" alt="Artflow screen 7" />
+    </span>
+    <span className={styles.img}>
+        <img src="/img/graphic/artflow/8.webp" alt="Artflow screen 8" />
+    </span>
+    <span className={styles.img}>
+        <img src="/img/graphic/artflow/9.webp" alt="Artflow screen 9" />
+    </span>
+</div>
                 </div>
-
-                <MenuOverlay />
-
-                <Footer />
             </div>
         </>
     )

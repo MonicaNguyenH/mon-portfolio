@@ -53,10 +53,6 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 .pinkText {
@@ -78,9 +74,4 @@
 .img img{
     width: 100%;
     height: auto;
-
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
 }
-

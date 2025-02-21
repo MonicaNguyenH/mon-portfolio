@@ -21,13 +21,15 @@
 
 /*** SCREENS ***/
 .fullscreen {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   width: 100vw;
   height: 100vh;
   background-color: #141414;
   overflow: hidden;
+
+  display: block;
 }
 
 .container {

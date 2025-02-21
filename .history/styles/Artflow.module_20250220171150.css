@@ -33,12 +33,7 @@
 .container {
   margin: 0 auto;
   max-width: 1560px;
-  padding: 1px 74px;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  /* padding: 1px 74px; */
 }
 
 .scrollableText {
@@ -51,12 +46,6 @@
   line-height: 174px;
   white-space: nowrap;
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 .pinkText {
@@ -64,23 +53,13 @@
 }
 
 .img {
-  /* display: inline-block; */
-  width: 400px;
+  display: inline-block;
+  width: 200px;
   height: 500px;
-  /* background: linear-gradient(#e66465, #9198e5); */
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 2rem;
+  background: linear-gradient(#e66465, #9198e5);
 }
 
 .img img{
-    width: 100%;
+    width: 200px;
     height: auto;
-
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
+  }

@@ -4,7 +4,6 @@ import NavBar from '@/components/NavBar';
 import ProjectHeaderSC from '@/components/ProjectHeaderSC';
 import MenuOverlay from "@/components/MenuOverlay";
 import { useState, useRef, useEffect } from 'react';
-import Footer from '@/components/Footer';
 
 export default function Artflow() {
     const projectTools = ["Figma", "Next.js", "Adobe Photoshop", "Adobe Illustrator"];
@@ -43,25 +42,34 @@ export default function Artflow() {
                     });
                 }
     
-                // ✅ Fade in the entire text smoothly on scroll
+                // ✅ Preserve existing HTML, only wrapping words separately
+                const textElement = scrollTextRef.current;
+                let htmlString = textElement.innerHTML;
+                
+                // Wrap each word inside <span class="word"> to keep original styling
+                htmlString = htmlString.replace(/\S+/g, '<span class="'+styles.word+'">$&</span>');
+                textElement.innerHTML = htmlString;
+    
+                // ✅ Animate each word separately on scroll
                 gsap.fromTo(
-                    scrollTextRef.current,
+                    `.${styles.word}`,
                     { opacity: 0, y: 50 },
                     {
                         opacity: 1,
                         y: 0,
-                        duration: 1.5,
+                        stagger: 0.15,
+                        duration: 0.8,
                         ease: "power2.out",
                         scrollTrigger: {
-                            trigger: scrollTextRef.current,
+                            trigger: textElement,
                             start: "top 85%",
-                            end: "top 50%",
+                            end: "top 40%",
                             scrub: true,
                         },
                     }
                 );
     
-                // ✅ Fade in images properly
+                // ✅ Restore images & animate their reveal
                 gsap.utils.toArray(`.${styles.img} img`).forEach((img) => {
                     gsap.fromTo(
                         img,
@@ -158,10 +166,6 @@ export default function Artflow() {
                         </div>
                     </div>
                 </div>
-
-                <MenuOverlay />
-
-                <Footer />
             </div>
         </>
     )

@@ -111,19 +111,19 @@ export default function Beep() {
 
     useEffect(() => {
         if (!isComparisonReady) return;
-
+    
         import("gsap").then(({ default: gsap }) => {
             import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
                 gsap.registerPlugin(ScrollTrigger);
-
+    
                 comparisonSections.current.forEach((section, index) => {
                     if (!section) return; // Ensure the section exists before running animation
-
+    
                     let tl = gsap.timeline({
                         scrollTrigger: {
                             trigger: section,
                             start: "center center",
-                            end: "+=100%",
+                            end: "+=150%", // Slow down the entire section
                             scrub: true,
                             pin: true,
                             anticipatePin: 1,
@@ -131,34 +131,35 @@ export default function Beep() {
                         },
                         defaults: { ease: "power2.out", duration: 2.0 },
                     });
-
-                    // ✅ Reveal first image
+    
+                    // ✅ First Image Scrolls Normally
                     tl.fromTo(
                         section.querySelector(`.${styles.afterImage}`),
                         { clipPath: "inset(0 0 0 100%)" },
                         { clipPath: "inset(0 0 0 0%)" },
-                        index * 10 // ✅ Progressive delay between sections
+                        index * 3 // ✅ Progressive delay
                     );
-
-                    // // ✅ Reveal second image (with slight delay)
-                    // tl.fromTo(
-                    //     section.querySelector(`.${styles.thirdImage}`),
-                    //     { clipPath: "inset(0 0 0 100%)" },
-                    //     { clipPath: "inset(0 0 0 0%)" },
-                    //     index * 1.5
-                    // );
-
+    
+                    // ✅ Second Image Scrolls Slower
+                    tl.fromTo(
+                        section.querySelector(`.${styles.secondImage}`),
+                        { y: "0%" },
+                        { y: "-30%", ease: "power2.out" }, // Moves up 30% more slowly
+                        index * 3.5 // ✅ Adds more delay for staggered effect
+                    );
+    
                     ScrollTrigger.refresh();
                 });
             });
         });
-
+    
         return () => {
             import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
                 ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
             });
         };
     }, [isComparisonReady]);
+    
     
  
 

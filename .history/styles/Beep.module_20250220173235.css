@@ -178,6 +178,7 @@
   height: auto;
   object-fit: fill;
 
+  transform: translateY(50px);
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
@@ -185,8 +186,6 @@
     width: 100%;
     height: auto;
     object-fit: fill;
-
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 /* ✅ Ensure images are already stacked, but hidden */

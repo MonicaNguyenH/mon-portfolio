@@ -137,7 +137,7 @@ export default function Beep() {
                         section.querySelector(`.${styles.afterImage}`),
                         { clipPath: "inset(0 0 0 100%)" },
                         { clipPath: "inset(0 0 0 0%)" },
-                        index * 10 // ✅ Progressive delay between sections
+                        index * 3 // ✅ Progressive delay between sections
                     );
 
                     // // ✅ Reveal second image (with slight delay)

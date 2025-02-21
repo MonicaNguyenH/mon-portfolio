@@ -203,6 +203,10 @@
     visibility: visible !important;
 }
 
+.comparisonSection[data-scroll="true"] .comparisonImageVer2 img {
+    transform: translateY(-30%); /* Moves up slower */
+}
+
 /*** BISCARD ***/
 
 

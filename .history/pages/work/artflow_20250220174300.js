@@ -4,7 +4,6 @@ import NavBar from '@/components/NavBar';
 import ProjectHeaderSC from '@/components/ProjectHeaderSC';
 import MenuOverlay from "@/components/MenuOverlay";
 import { useState, useRef, useEffect } from 'react';
-import Footer from '@/components/Footer';
 
 export default function Artflow() {
     const projectTools = ["Figma", "Next.js", "Adobe Photoshop", "Adobe Illustrator"];
@@ -158,10 +157,6 @@ export default function Artflow() {
                         </div>
                     </div>
                 </div>
-
-                <MenuOverlay />
-
-                <Footer />
             </div>
         </>
     )

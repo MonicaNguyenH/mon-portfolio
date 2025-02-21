@@ -28,6 +28,8 @@
   height: 100vh;
   background-color: #141414;
   overflow: hidden;
+
+  display: block;
 }
 
 .container {

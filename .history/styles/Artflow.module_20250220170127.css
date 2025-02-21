@@ -1,0 +1,54 @@
+.blendingMode {
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.logo, 
+.color,
+.typography {
+    width: 100vw;
+    height: auto;
+}
+
+.logo img, 
+.color img,
+.typography img {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/*** SCREENS ***/
+.fullscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #141414;
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1560px;
+  padding: 1px 74px;
+}
+
+.scrollableText {
+  margin: 0;
+  color: white;
+  font-size: 145px;
+  line-height: 174px;
+  white-space: nowrap;
+  display: inline-flex;
+}
+
+.img {
+  display: inline-block;
+  width: 600px;
+  height: 300px;
+  background: linear-gradient(#e66465, #9198e5);
+  margin-left: 20px;
+}

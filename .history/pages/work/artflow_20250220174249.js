@@ -4,7 +4,6 @@ import NavBar from '@/components/NavBar';
 import ProjectHeaderSC from '@/components/ProjectHeaderSC';
 import MenuOverlay from "@/components/MenuOverlay";
 import { useState, useRef, useEffect } from 'react';
-import Footer from '@/components/Footer';
 
 export default function Artflow() {
     const projectTools = ["Figma", "Next.js", "Adobe Photoshop", "Adobe Illustrator"];
@@ -124,7 +123,7 @@ export default function Artflow() {
 
                     <div className={styles.fullscreen} ref={mainSectionRef}>
                         <div className={styles.container}>
-                            <h1 ref={scrollTextRef} className={styles.scrollableText}>
+                            < ref={scrollTextRef} className={styles.scrollableText}>
                                 <span className={styles.pinkText}>Art</span>&nbsp;is the only way to run away without leaving home
                                 <span className={styles.img}>
                                     <img src="/img/graphic/artflow/1.webp" alt="Artflow screen 1" />
@@ -158,10 +157,6 @@ export default function Artflow() {
                         </div>
                     </div>
                 </div>
-
-                <MenuOverlay />
-
-                <Footer />
             </div>
         </>
     )

@@ -129,7 +129,7 @@ export default function Beep() {
                             anticipatePin: 1,
                             pinSpacing: true,
                         },
-                        defaults: { ease: "power2.out", duration: 2.0 },
+                        defaults: { ease: "power2.out", duration: 1.5 },
                     });
 
                     // ✅ Reveal first image
@@ -137,7 +137,7 @@ export default function Beep() {
                         section.querySelector(`.${styles.afterImage}`),
                         { clipPath: "inset(0 0 0 100%)" },
                         { clipPath: "inset(0 0 0 0%)" },
-                        index * 10 // ✅ Progressive delay between sections
+                        index * 3 // ✅ Progressive delay between sections
                     );
 
                     // // ✅ Reveal second image (with slight delay)
