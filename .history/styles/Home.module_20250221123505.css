@@ -18,7 +18,8 @@
 
 .nav a {
   text-decoration: none;
-  color: var(--mid-grey);
+  /* color: var(--mid-grey); */
+  color: red;
   /* padding: 0 1em; */
   font: var(--reg-16);
 }

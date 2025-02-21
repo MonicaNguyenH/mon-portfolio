@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 import HeaderArea from "@/components/HeadArea";
@@ -9,15 +9,6 @@ import ButtonFilledBlack from "@/components/ButtonFilledBlack";
 import ToolTipButton from "@/components/ToolTipButton";
 
 export default function Home() {
-  const audioRef = useRef(null);
-  
-  const playSound = () => {
-      if (audioRef.current) {
-          audioRef.current.currentTime = 0; 
-          audioRef.current.play().catch(error => console.log("Audio playback error:", error));
-      }
-  };
-
   useEffect(() => {
     async function loadGSAP() {
       const gsapModule = await import("gsap");
@@ -63,14 +54,9 @@ export default function Home() {
           </div>
 
           <div className={styles.logo_container}>
-            <a href="/">
-              <img 
-                className={`${styles.logo} logo`}  
-                src="/img/mon-logo-white.svg" 
-                alt="mon. logo" 
-                onMouseEnter={playSound}
-              />
-            </a>
+            <Link href="/">
+              <img className={`${styles.logo} logo`}  src="/img/mon-logo-white.svg" alt="mon. logo" />
+            </Link>
           </div>
 
           <div className={styles.container}></div>
@@ -114,8 +100,6 @@ export default function Home() {
           
         </footer>
       </div>
-
-      <audio ref={audioRef} src="/audio/duck-soundeffect.mov" preload="auto"></audio>
     </>
   );
 }

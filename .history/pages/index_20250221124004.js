@@ -63,14 +63,14 @@ export default function Home() {
           </div>
 
           <div className={styles.logo_container}>
-            <a href="/">
+            <Link href="/">
               <img 
                 className={`${styles.logo} logo`}  
                 src="/img/mon-logo-white.svg" 
                 alt="mon. logo" 
                 onMouseEnter={playSound}
               />
-            </a>
+            </Link>
           </div>
 
           <div className={styles.container}></div>

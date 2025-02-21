@@ -16,7 +16,7 @@
   mix-blend-mode: difference;
 }
 
-.nav a {
+.nav link {
   text-decoration: none;
   color: var(--mid-grey);
   /* padding: 0 1em; */

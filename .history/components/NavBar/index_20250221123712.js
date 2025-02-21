@@ -21,16 +21,14 @@ export default function NavBar() {
                     <Link href="#">Gallery</Link>
                 </div>
                 <div className="logo">
-                    <Link href="/">
-                        <img 
-                            className="logo" 
-                            src="/img/mon-logo-white.svg" 
-                            alt="mon logo" 
-                            onMouseEnter={playSound}
-                            width={80} 
-                            height={34}
-                        />
-                    </Link>
+                    <img 
+                        className="logo" 
+                        src="/img/mon-logo-white.svg" 
+                        alt="mon logo" 
+                        onMouseEnter={playSound}
+                        width={80} 
+                        height={34}
+                    />
                 </div>
                 <div className={styles.items_right}>
                     <Link href="#">About</Link>

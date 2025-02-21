@@ -63,14 +63,9 @@ export default function Home() {
           </div>
 
           <div className={styles.logo_container}>
-            <a href="/">
-              <img 
-                className={`${styles.logo} logo`}  
-                src="/img/mon-logo-white.svg" 
-                alt="mon. logo" 
-                onMouseEnter={playSound}
-              />
-            </a>
+            <Link href="/">
+              <img className={`${styles.logo} logo`}  src="/img/mon-logo-white.svg" alt="mon. logo" />
+            </Link>
           </div>
 
           <div className={styles.container}></div>
@@ -114,8 +109,6 @@ export default function Home() {
           
         </footer>
       </div>
-
-      <audio ref={audioRef} src="/audio/duck-soundeffect.mov" preload="auto"></audio>
     </>
   );
 }

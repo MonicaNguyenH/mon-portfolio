@@ -62,6 +62,8 @@
   display: flex;
   flex-direction: row;
   padding: 0 30px;
+
+  background: var(--white);
 }
 
 .sec1__hello h1 {
