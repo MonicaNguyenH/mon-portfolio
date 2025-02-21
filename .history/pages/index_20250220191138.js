@@ -1,0 +1,99 @@
+import dynamic from "next/dynamic";
+import Head from "next/head";
+import { useEffect } from "react";
+import styles from "@/styles/Home.module.css";
+import HeaderArea from "@/components/HeadArea";
+import TypingText from "@/components/TypingText";
+import ButtonFilledBlack from "@/components/ButtonFilledBlack";
+
+export default function Home() {
+  useEffect(() => {
+    async function loadGSAP() {
+      const gsapModule = await import("gsap");
+      const ScrollTriggerModule = await import("gsap/ScrollTrigger");
+
+      const { default: gsap } = gsapModule;
+      const { ScrollTrigger } = ScrollTriggerModule;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      ScrollTrigger.create({
+        animation: gsap.from(".logo", {
+          y: "50vh",
+          scale: 8,
+          yPercent: -50,
+        }), 
+          scrub: true,
+          trigger: ".content",
+          start: "top bottom",
+          endTrigger: ".content",
+          end: "top center",
+      });
+    }
+
+    loadGSAP();
+  }, []);
+
+  return (
+    <>
+      <HeaderArea title="Monica Nguyen" description="Monica Nguyen"/>
+      <div className={styles.blendingMode}>
+        <main className={styles.main}>
+
+          <div className={styles.nav}>
+            <div className={styles.items_left}>
+              <a href="/work">Work</a>
+              <a href="#">Gallery</a>
+            </div>
+            <div className={styles.items_right}>
+              <a href="#">About</a>
+              <a href="#">Contact</a>
+            </div>
+          </div>
+
+          <div className={styles.logo_container}>
+            <img className={`${styles.logo} logo`}  src="/img/mon-logo.svg" alt="mon. logo" />
+          </div>
+
+          <div className={styles.container}></div>
+
+          <div className={`${styles.content} content`}>
+            <div className={styles.landing__sec1}>
+              <div className={styles.sec1__hello}>
+                <h1>Xin chao 👋, I'm</h1>
+                <img src="/img/landing/landing-monica-nguyen.svg" alt="monica nguyen" />
+              </div>
+              <div className={styles.sec2__button}>
+                <TypingText />
+                <div className={styles.button}>
+                  <ButtonFilledBlack href="/#">
+                    Featured work
+                  </ButtonFilledBlack> 
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.landing__sec2}>
+              <p className={styles.text}>
+                Digital Designer & Frontend Developer, <TextButton text="bcit" tooltipText="British Columbia Institute of Technology" /> graduate.
+              </p>
+              <p className={styles.text}>
+                Experienced in <TextButton text="Digital Design" tooltipText="UI/UX, Web, Branding" />,
+                <TextButton text="Product Design" tooltipText="User Experience & Research" />, and
+                <TextButton text="Frontend Development" tooltipText="React, Next.js, JavaScript" />.
+              </p>
+              <p className={styles.text}>
+                I bring ideas to life with bold, creative designs that don’t just look good—they feel good.
+              </p>
+            </div>
+          </div>
+
+        </main>
+
+        <footer className={styles.footer}>
+          
+        </footer>
+      </div>
+    </>
+  );
+}

@@ -1,0 +1,35 @@
+.textButton {
+  position: relative;
+  display: inline-block;
+  font: var(--reg-85);
+  padding: 4px 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-style: italic;
+  font-weight: bold;
+  border: 2px solid white;
+  color: white;
+  margin: 0 4px;
+}
+
+.textButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: pink;
+  color: black;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: normal;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
