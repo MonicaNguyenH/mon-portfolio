@@ -1,0 +1,42 @@
+.main {
+    background-color: var(--white);
+}
+
+.page1,
+.page2,
+.page3 {
+    height: 100vh;
+    width: 100%;
+    padding: 5vw 0;
+}
+
+.move {
+    background-color: var(--pink);
+    display: flex;
+    padding: 3vw 0;
+    overflow: hidden;
+}
+
+.marquee {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    padding: 0 2vw;
+    /* background-color: red; */
+
+    transform: translateX(-100%);
+}
+
+.marquee h1 {
+    font: var(--reg-40);
+    color: var(--black);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.marquee img {
+    width: 4vw;
+    height: auto;
+}
+

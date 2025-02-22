@@ -1,0 +1,25 @@
+.main {
+    background-color: var(--white);
+}
+
+.page1,
+.page2,
+.page3 {
+    height: 100vh;
+    width: 100%;
+}
+
+.move {
+    background-color: var(--pink);
+}
+
+.marquee h1 {
+    font: var(--reg-80);
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.marquee img {
+    width: 45px;
+    height: auto;
+}
