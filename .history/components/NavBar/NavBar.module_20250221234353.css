@@ -10,6 +10,12 @@
   mix-blend-mode: difference;
 }
 
+.items_left, 
+.logoContainer,
+.items_right {
+  mix-blend-mode: difference;
+}
+
 .nav a {
   text-decoration: none;
   color: var(--mid-grey);
@@ -18,12 +24,12 @@
 }
 
 .nav:hover :not(.logoContainer) {
-  mix-blend-mode: normal !important;
+  mix-blend-mode: normal;
 }
 
 .nav a:hover {
   color: var(--pink);
-  /* mix-blend-mode: normal; */
+  mix-blend-mode: normal;
 }
 
 .nav .items_right, .items_left {

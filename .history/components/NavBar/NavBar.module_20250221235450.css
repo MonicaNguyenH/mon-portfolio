@@ -7,7 +7,7 @@
   justify-content: space-between;
   padding: 0 30px;
   z-index: 1099;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
 }
 
 .nav a {
@@ -17,8 +17,9 @@
   font: var(--reg-16);
 }
 
-.nav:hover :not(.logoContainer) {
-  mix-blend-mode: normal !important;
+.nav:hover .items_left,
+.nav:hover .items_right {
+    mix-blend-mode: normal;
 }
 
 .nav a:hover {

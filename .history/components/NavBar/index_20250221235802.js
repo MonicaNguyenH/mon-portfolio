@@ -20,17 +20,19 @@ export default function NavBar() {
                     <Link href="/work">Work</Link>
                     <Link href="#">Gallery</Link>
                 </div>
-                <div className={styles.logoContainer}>
-                    <Link href="/">
-                        <img 
-                            className="logo" 
-                            src="/img/mon-logo-white.svg" 
-                            alt="mon logo" 
-                            onMouseEnter={playSound}
-                            width={80} 
-                            height={34}
-                        />
-                    </Link>
+                <div className={styles.idk}>
+                    <div className={styles.logoContainer}>
+                        <Link href="/">
+                            <img 
+                                className="logo" 
+                                src="/img/mon-logo-white.svg" 
+                                alt="mon logo" 
+                                onMouseEnter={playSound}
+                                width={80} 
+                                height={34}
+                            />
+                        </Link>
+                    </div>
                 </div>
                 <div className={styles.items_right}>
                     <Link href="#">About</Link>

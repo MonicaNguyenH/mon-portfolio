@@ -20,10 +20,9 @@
 .nav:hover :not(.logoContainer) {
   mix-blend-mode: normal !important;
 }
-
 .nav a:hover {
   color: var(--pink);
-  /* mix-blend-mode: normal; */
+  mix-blend-mode: normal;
 }
 
 .nav .items_right, .items_left {

@@ -21,9 +21,13 @@
   mix-blend-mode: normal !important;
 }
 
+.nav:hover {
+  background-color: red; /* Just to check if hover works */
+}
+
 .nav a:hover {
   color: var(--pink);
-  /* mix-blend-mode: normal; */
+  mix-blend-mode: normal;
 }
 
 .nav .items_right, .items_left {

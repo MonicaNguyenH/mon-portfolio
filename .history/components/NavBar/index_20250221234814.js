@@ -20,7 +20,7 @@ export default function NavBar() {
                     <Link href="/work">Work</Link>
                     <Link href="#">Gallery</Link>
                 </div>
-                <div className={styles.logoContainer}>
+                <div lassName={styles.logoContainer}>
                     <Link href="/">
                         <img 
                             className="logo" 

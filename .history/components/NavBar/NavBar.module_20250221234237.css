@@ -7,6 +7,12 @@
   justify-content: space-between;
   padding: 0 30px;
   z-index: 1099;
+  /* mix-blend-mode: difference; */
+}
+
+.items_left, 
+.logoContainer,
+.items_right {
   mix-blend-mode: difference;
 }
 
@@ -18,12 +24,12 @@
 }
 
 .nav:hover :not(.logoContainer) {
-  mix-blend-mode: normal !important;
+  mix-blend-mode: normal;
 }
 
 .nav a:hover {
   color: var(--pink);
-  /* mix-blend-mode: normal; */
+  mix-blend-mode: normal;
 }
 
 .nav .items_right, .items_left {
