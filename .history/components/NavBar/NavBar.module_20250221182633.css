@@ -17,7 +17,8 @@
   font: var(--reg-16);
 }
 
-.nav :global(:not(.logoContainer)) {
+.items_right, 
+.items_left {
   mix-blend-mode: normal;
 }
 

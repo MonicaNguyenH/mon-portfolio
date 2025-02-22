@@ -23,10 +23,6 @@
   font: var(--reg-16);
 }
 
-.nav:hover{
-  mix-blend-mode: normal;
-}
-
 .nav a:hover {
   color: var(--pink);
   mix-blend-mode: normal;

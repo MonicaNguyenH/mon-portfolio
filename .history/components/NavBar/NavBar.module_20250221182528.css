@@ -17,7 +17,7 @@
   font: var(--reg-16);
 }
 
-.nav :global(:not(.logoContainer)) {
+.nav:hover{
   mix-blend-mode: normal;
 }
 
@@ -25,6 +25,7 @@
   color: var(--pink);
   mix-blend-mode: normal;
 }
+
 
 .nav .items_right, .items_left {
   display: flex;
