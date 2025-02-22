@@ -1,18 +1,22 @@
-.footer {
+.blendingMode {
+    background-color: var(--black);
+    overflow: hidden;
+}
+
+.main {
     height: 100vh; /* Make footer take up the entire viewport */
     width: 100%;
     padding: 0 30px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    background-color: var(--white); 
 }
 
 .contact__links a {
     font: var(--reg-85);
     font-size: clamp(85px, 5vw, 150px);
     text-decoration: none;
-    color: var(--black);
+    color: var(--white);
     transition: color 0.3s ease-in-out;
     max-width: fit-content;
 }
@@ -23,7 +27,7 @@
 }
 
 .contact__links a:active {
-    color: var(--black); /* Immediately resets to black after click */
+    color: var(--white); /* Immediately resets to black after click */
 }
 
 .closer {
@@ -54,7 +58,7 @@
 
 .footer__info {
     margin-bottom: 30px;
-    color: var(--black);
+    color: var(--white);
 }
 
 

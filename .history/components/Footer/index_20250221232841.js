@@ -32,13 +32,13 @@ export default function Footer() {
                                 INSTAGRAM
                         </a>
                         <a 
-                            href="https://www.behance.net/monicanguyen18" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            onClick={(e) => e.target.blur()}
-                            className={styles.closer}>
-                                BEHANCE
-                        </a>
+                                href="https://www.behance.net/monicanguyen18" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                onClick={(e) => e.target.blur()}
+                                className={styles.closer}>
+                                    BEHANCE
+                            </a>
                         <a 
                             href="/Monica_Nguyen_Resume.pdf" 
                             target="_blank" 
