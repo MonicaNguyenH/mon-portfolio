@@ -1,0 +1,45 @@
+.blendingMode {
+    background-color: var(--black);
+    overflow: hidden;
+}
+
+.sec1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sec1__desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.sec1__img, 
+.sec1__desc {
+    width: 50vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sec1__img img {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+
+.sec1__desc {
+    padding: 100px 30px 0;
+    color: var(--white);
+    font: var(--reg-16);
+    text-transform: uppercase;
+    height: 100%;
+}
+
+.desc__top {
+    align-self: flex-start;
+}
+
+.desc__bot {
+    align-self: flex-end;
+}

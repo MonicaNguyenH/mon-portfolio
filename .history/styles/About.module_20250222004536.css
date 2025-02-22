@@ -1,0 +1,10 @@
+.blendingMode {
+    background-color: var(--black);
+    overflow: hidden;
+}
+
+.sec1__img {
+    width: 50vw;
+    height: 100vh;
+    overflow: hidden;
+}
