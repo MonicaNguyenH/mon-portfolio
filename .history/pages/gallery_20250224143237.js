@@ -3,7 +3,7 @@ import HeaderArea from "@/components/HeadArea";
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import LightBox from '@/components/LightBox';
-import MarqueeGallery from '@/components/MarqueeGallery';
+import Marquee from '@/components/Marquee';
 
 
 export default function Gallery () {
@@ -14,14 +14,10 @@ export default function Gallery () {
                 <NavBar />
 
                 <div className={styles.main}>
-                    <div className={styles.lightBox}>
-                        <LightBox />
-                    </div>
-                    <div className={styles.marquee}>
-                        <MarqueeGallery />
-                    </div>
+                    <LightBox />
+
+                    <Marquee />
                 </div>
-                
 
                 <Footer />
             </div>
