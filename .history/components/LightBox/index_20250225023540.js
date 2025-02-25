@@ -81,7 +81,7 @@ export default function LightBox() {
 
         items.forEach((item, index) => {
             const img = document.createElement('img');
-            img.src = `/img/gallery/img${index + 1}.webp`;
+            img.src = `/img/gallery/img${index + 1}.png`;
             console.log(`Image path: /img/gallery/img${index + 1}.webp`);
             item.appendChild(img);
 
