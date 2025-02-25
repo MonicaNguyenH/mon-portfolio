@@ -15,7 +15,7 @@ export default function Work() {
         DEVELOPMENT: (
             <div className={styles.gridContainer}>
                     <Card link="/work/beep" image="/img/graphic/beep/TN.webp" title="BEEP" year="2024" gridSize="wide" />
-                    <Card link="/work/artflow" image="/img/graphic/artflow/TN.webp" title="ARTFLOW" year="2024" gridSize="wide" />
+                    <Card link="/work/artflow" image="/img/graphic/artflow/TN.webp" title="Artflow" year="2024" gridSize="wide" />
             </div>
         ),
         "GRAPHIC DESIGN": (
