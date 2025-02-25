@@ -52,10 +52,6 @@ export default function About () {
                             Monica
                         </p>
                     </div>
-
-                    <div className={styles.canvasContainer}>
-                        <Canvas />
-                    </div>
                 </div>
                 
                 <Footer />
