@@ -7,7 +7,7 @@ import VideoPlayer from '@/components/VideoPlayer';
 
 
 export default function Addiction() {
-    const projectTools = ["After Effects", "Adobe Illustrator"];
+    const projectTools = ["Adobe Photoshop", "Adobe Illustrator"];
 
     return (
         <> 

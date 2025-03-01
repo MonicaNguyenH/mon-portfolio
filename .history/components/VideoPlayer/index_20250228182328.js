@@ -10,7 +10,7 @@ export default function VideoPlayer() {
 
     const [isPlaying, setIsPlaying] = useState(true);
     const [isTimelineVisible, setIsTimelineVisible] = useState(false); // State for timeline visibility
-    const [isMuted, setIsMuted] = useState(false); // State for mute/unmute
+    const [isMuted, setIsMuted] = useState(true); // State for mute/unmute
 
     // Toggle mute/unmute
     const toggleMute = (e) => {
@@ -90,7 +90,7 @@ export default function VideoPlayer() {
                 </video>
             </div>
             {/* Mute/Unmute Button */}
-            <button className={`${styles.muteButton} ${isTimelineVisible ? styles.timelineVisible : ''}`} onClick={toggleMute}>
+            <button className={styles.muteButton} onClick={toggleMute}>
                 {isMuted ? 'Unmute' : 'Mute'}
             </button>
             <div ref={cursorRef} className={styles.cursor}>

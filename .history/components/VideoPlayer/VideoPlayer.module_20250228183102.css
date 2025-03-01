@@ -4,14 +4,10 @@
     object-fit: cover;
 }
 
-.video__timestamp p {
-    color: var(--white);
-    font: var(--reg-12);
-}
-
+.video__timestamp p,
 .cursor p {
     color: var(--white);
-    font: var(--reg-16);
+    font: var(--reg-13);
 }
 
 .overlay {
@@ -162,6 +158,11 @@
     }
 }
 
+.muteButton p {
+    color: var(--white);
+    mix-blend-mode: difference;
+}
+
 .muteButton {
     position: absolute;
     bottom: 20px;
@@ -170,16 +171,15 @@
     background-color: rgba(17, 3, 13, 0.5);
     color: var(--white);
     border: none;
-    border-radius: 100px;
+    border-radius: 5px;
     cursor: pointer;
-    font: var(--reg-16);
+    font: var(--reg-13);
     z-index: 10;
     transition: background-color 0.3s ease, transform 0.3s ease, bottom 0.5s ease-in-out;
-    backdrop-filter: blur(5px);
 }
 
 .muteButton:hover {
-    background-color: rgba(17, 3, 13, 0.9);
+    /* background-color: rgba(0, 0, 0, 0.9); */
     transform: scale(1.05); /* Slightly scale up on hover */
 }
 

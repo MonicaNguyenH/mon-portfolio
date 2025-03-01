@@ -179,10 +179,10 @@
 }
 
 .muteButton:hover {
-    background-color: rgba(17, 3, 13, 0.9);
+    background-color: rgba(17, 3, 13, 0.5);
     transform: scale(1.05); /* Slightly scale up on hover */
 }
 
 .muteButton.timelineVisible {
-    bottom: 180px; /* Adjust according to the timeline height */
+    bottom: 200px; /* Adjust according to the timeline height */
 }

@@ -4,11 +4,7 @@
     object-fit: cover;
 }
 
-.video__timestamp p {
-    color: var(--white);
-    font: var(--reg-12);
-}
-
+.video__timestamp p,
 .cursor p {
     color: var(--white);
     font: var(--reg-16);
@@ -18,8 +14,7 @@
     width: 100%; /* Use 100% instead of 100vw */
     height: 100vh; /* Adjust height as needed */
     position: relative; /* Relative positioning for the container */
-    background-color: rgba(0); /* Optional: Add a background overlay */
-    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8); /* Optional: Add a background overlay */
 }
 
 .video__container {
@@ -37,6 +32,8 @@
     object-fit: cover;
 }
 
+
+Copy
 .video__timeline {
     position: absolute;
     bottom: -160px; /* Hide the timeline by default */
@@ -48,7 +45,7 @@
     padding: 1em;
     gap: 0.5em;
     cursor: pointer;
-    background-color: rgba(17, 3, 13, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
     opacity: 0; /* Start fully transparent */
     transform: translateY(20px); /* Start slightly shifted down */
@@ -75,6 +72,7 @@
     justify-content: space-between;
     gap: 1em;
     border-top: 1px dashed var(--white);
+    border-bottom: 1px dashed var(--white);
     padding: 0.75em 0;
 }
 
@@ -160,29 +158,4 @@
     .cursor {
         display: none;
     }
-}
-
-.muteButton {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    background-color: rgba(17, 3, 13, 0.5);
-    color: var(--white);
-    border: none;
-    border-radius: 100px;
-    cursor: pointer;
-    font: var(--reg-16);
-    z-index: 10;
-    transition: background-color 0.3s ease, transform 0.3s ease, bottom 0.5s ease-in-out;
-    backdrop-filter: blur(5px);
-}
-
-.muteButton:hover {
-    background-color: rgba(17, 3, 13, 0.9);
-    transform: scale(1.05); /* Slightly scale up on hover */
-}
-
-.muteButton.timelineVisible {
-    bottom: 180px; /* Adjust according to the timeline height */
 }

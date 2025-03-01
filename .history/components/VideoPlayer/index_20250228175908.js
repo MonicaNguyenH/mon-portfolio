@@ -10,16 +10,6 @@ export default function VideoPlayer() {
 
     const [isPlaying, setIsPlaying] = useState(true);
     const [isTimelineVisible, setIsTimelineVisible] = useState(false); // State for timeline visibility
-    const [isMuted, setIsMuted] = useState(false); // State for mute/unmute
-
-    // Toggle mute/unmute
-    const toggleMute = (e) => {
-        e.stopPropagation(); // Prevent the mute button click from triggering play/pause
-        if (videoRef.current) {
-            videoRef.current.muted = !videoRef.current.muted;
-            setIsMuted(videoRef.current.muted);
-        }
-    };
 
     useEffect(() => {
         const video = videoRef.current;
@@ -82,17 +72,13 @@ export default function VideoPlayer() {
                 <video
                     ref={videoRef}
                     autoPlay
-                    muted={isMuted} // Controlled by isMuted state
+                    muted
                     loop
                     className={styles.mainVideo}
                 >
                     <source src="/img/video/addiction.mp4" type="video/mp4" />
                 </video>
             </div>
-            {/* Mute/Unmute Button */}
-            <button className={`${styles.muteButton} ${isTimelineVisible ? styles.timelineVisible : ''}`} onClick={toggleMute}>
-                {isMuted ? 'Unmute' : 'Mute'}
-            </button>
             <div ref={cursorRef} className={styles.cursor}>
                 <p ref={cursorTextRef}>Pause</p>
             </div>

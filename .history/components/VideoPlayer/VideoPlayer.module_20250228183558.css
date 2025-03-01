@@ -12,6 +12,7 @@
 .cursor p {
     color: var(--white);
     font: var(--reg-16);
+    mix-blend-mode: difference;
 }
 
 .overlay {
@@ -179,7 +180,7 @@
 }
 
 .muteButton:hover {
-    background-color: rgba(17, 3, 13, 0.9);
+    background-color: rgba(17, 3, 13, 0.5);
     transform: scale(1.05); /* Slightly scale up on hover */
 }
 

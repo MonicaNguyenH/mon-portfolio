@@ -10,16 +10,6 @@ export default function VideoPlayer() {
 
     const [isPlaying, setIsPlaying] = useState(true);
     const [isTimelineVisible, setIsTimelineVisible] = useState(false); // State for timeline visibility
-    const [isMuted, setIsMuted] = useState(false); // State for mute/unmute
-
-    // Toggle mute/unmute
-    const toggleMute = (e) => {
-        e.stopPropagation(); // Prevent the mute button click from triggering play/pause
-        if (videoRef.current) {
-            videoRef.current.muted = !videoRef.current.muted;
-            setIsMuted(videoRef.current.muted);
-        }
-    };
 
     useEffect(() => {
         const video = videoRef.current;
@@ -49,11 +39,9 @@ export default function VideoPlayer() {
                 if (isPlaying) {
                     video.pause();
                     cursorText.textContent = "Play";
-                    setIsTimelineVisible(true); // Show timeline on pause
                 } else {
                     video.play();
                     cursorText.textContent = "Pause";
-                    setIsTimelineVisible(false); // Hide timeline on play
                 }
                 setIsPlaying(!isPlaying);
             }
@@ -63,16 +51,27 @@ export default function VideoPlayer() {
             cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
         };
 
+        const handleScroll = () => {
+            const rect = video.getBoundingClientRect();
+            if (rect.bottom <= window.innerHeight + 100) { // Show timeline when near the bottom
+                setIsTimelineVisible(true);
+            } else {
+                setIsTimelineVisible(false);
+            }
+        };
+
         video.addEventListener("timeupdate", handleTimeUpdate);
         timeline.addEventListener("click", handleTimelineClick);
         document.addEventListener("click", handleDocumentClick);
         document.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("scroll", handleScroll);
 
         return () => {
             video.removeEventListener("timeupdate", handleTimeUpdate);
             timeline.removeEventListener("click", handleTimelineClick);
             document.removeEventListener("click", handleDocumentClick);
             document.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, [isPlaying]);
 
@@ -82,33 +81,26 @@ export default function VideoPlayer() {
                 <video
                     ref={videoRef}
                     autoPlay
-                    muted={isMuted} // Controlled by isMuted state
+                    muted
                     loop
                     className={styles.mainVideo}
                 >
                     <source src="/img/video/addiction.mp4" type="video/mp4" />
                 </video>
             </div>
-            {/* Mute/Unmute Button */}
-            <button className={`${styles.muteButton} ${isTimelineVisible ? styles.timelineVisible : ''}`} onClick={toggleMute}>
-                {isMuted ? 'Unmute' : 'Mute'}
-            </button>
             <div ref={cursorRef} className={styles.cursor}>
                 <p ref={cursorTextRef}>Pause</p>
             </div>
             <div
                 ref={timelineRef}
-                className={`${styles.video__timeline} ${isTimelineVisible ? styles.visible : ''}`} // Add 'visible' class conditionally
+                className={styles.video__timeline}
+                style={{ bottom: isTimelineVisible ? 0 : '-160px' }} // Control visibility with state
             >
                 <div ref={markerRef} className={styles.video__marker}></div>
                 <div className={styles.video__timestamp}>
-                    {Array.from({ length: 15 }, (_, i) => {
-                        const minutes = Math.floor((i * 10) / 60);
-                        const seconds = (i * 10) % 60;
-                        return (
-                            <p key={i}>{`${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`}</p>
-                        );
-                    })}
+                    {Array.from({ length: 15 }, (_, i) => (
+                        <p key={i}>{`00:${i < 10 ? `0${i}` : i}0`}</p>
+                    ))}
                 </div>
                 <div className={styles.video__frames}>
                     {Array.from({ length: 15 }, (_, i) => (

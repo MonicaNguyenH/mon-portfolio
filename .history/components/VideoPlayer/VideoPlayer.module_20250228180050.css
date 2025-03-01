@@ -4,11 +4,7 @@
     object-fit: cover;
 }
 
-.video__timestamp p {
-    color: var(--white);
-    font: var(--reg-12);
-}
-
+.video__timestamp p,
 .cursor p {
     color: var(--white);
     font: var(--reg-16);
@@ -48,17 +44,25 @@
     padding: 1em;
     gap: 0.5em;
     cursor: pointer;
-    background-color: rgba(17, 3, 13, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
     opacity: 0; /* Start fully transparent */
-    transform: translateY(20px); /* Start slightly shifted down */
-    transition: all 0.5s ease-in-out; /* Smooth transition */
+    transform: translateY(20px) scale(0.9) rotate(-2deg); /* Start slightly shifted, scaled down, and rotated */
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bounce effect */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0); /* Start with no glow */
 }
 
 .video__timeline.visible {
     bottom: 0; /* Slide up */
     opacity: 1; /* Fade in */
-    transform: translateY(0); /* Reset position */
+    transform: translateY(0) scale(1) rotate(0deg); /* Reset scale, position, and rotation */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Add a subtle glow */
+}
+
+/* Add a hover effect for extra interactivity */
+.video__timeline.visible:hover {
+    transform: scale(1.02) rotate(1deg); /* Slightly scale and rotate on hover */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8); /* Intensify the glow on hover */
 }
 
 .video__timestamp {
@@ -75,6 +79,7 @@
     justify-content: space-between;
     gap: 1em;
     border-top: 1px dashed var(--white);
+    border-bottom: 1px dashed var(--white);
     padding: 0.75em 0;
 }
 
@@ -160,29 +165,4 @@
     .cursor {
         display: none;
     }
-}
-
-.muteButton {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    background-color: rgba(17, 3, 13, 0.5);
-    color: var(--white);
-    border: none;
-    border-radius: 100px;
-    cursor: pointer;
-    font: var(--reg-16);
-    z-index: 10;
-    transition: background-color 0.3s ease, transform 0.3s ease, bottom 0.5s ease-in-out;
-    backdrop-filter: blur(5px);
-}
-
-.muteButton:hover {
-    background-color: rgba(17, 3, 13, 0.9);
-    transform: scale(1.05); /* Slightly scale up on hover */
-}
-
-.muteButton.timelineVisible {
-    bottom: 180px; /* Adjust according to the timeline height */
 }

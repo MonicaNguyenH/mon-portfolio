@@ -10,7 +10,7 @@ export default function VideoPlayer() {
 
     const [isPlaying, setIsPlaying] = useState(true);
     const [isTimelineVisible, setIsTimelineVisible] = useState(false); // State for timeline visibility
-    const [isMuted, setIsMuted] = useState(false); // State for mute/unmute
+    const [isMuted, setIsMuted] = useState(true); // State for mute/unmute
 
     // Toggle mute/unmute
     const toggleMute = (e) => {

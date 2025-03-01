@@ -7,7 +7,7 @@ import VideoPlayer from '@/components/VideoPlayer';
 
 
 export default function Addiction() {
-    const projectTools = ["After Effects", "Adobe Illustrator"];
+    const projectTools = ["Adobe Photoshop", "Adobe Illustrator"];
 
     return (
         <> 
@@ -20,7 +20,7 @@ export default function Addiction() {
                         name="Addiction" 
                         description="MOTION GRAPHIC" 
                         img="/img/graphic/addict/TN.webp" 
-                        introduction={`Addicted is a motion graphic exploring the cycle of prescription drug addiction through minimalist visuals and smooth transitions. It follows a character's journey from a bike accident to opioid dependence, using metaphorical storytelling and fluid animation to simplify complex medical concepts into an engaging visual narrative.`}
+                        introduction={`This La La Land poster captures the heart of the film through thoughtful symbolism. The gradient draws from the iconic "A Lovely Night" dance scene, blending dusk and dreams. The vinyl record represents Sebastian's passion for jazz, with the etched dancing shoes hinting at the delicate balance between their love and ambitions. Glass letters give it a modern, layered feel, reflecting the film's interplay of nostalgia and aspiration.`}
                         tools={projectTools}
                         date="Oct 2024"
                     />
