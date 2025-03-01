@@ -17,15 +17,24 @@ export default function Vietname() {
                 <NavBar />
 
                 <div className={styles.main}>
-                <ProjectHeaderSC
+                <ProjectHeader
                     name="Vietname" 
                     description="GRAPHIC DESIGN" 
                     img="/img/graphic/vietname/cover-big.webp" 
                     introduction={`Vietname is a digital and print magazine celebrating Vietnam’s enduring architectural and cultural heritage. Through a refined blend of traditional aesthetics and modern minimalism, the magazine showcases iconic landmarks like the One Pillar Pagoda, Hoi An Japanese Bridge, and Hue Imperial City. The digital edition enhances the experience with interactive elements, offering readers a deeper exploration of Vietnam’s rich architectural legacy.`}
                     tools={projectTools}
-                    date="Oct 2024"
-                    buttonText="Read Vietname" 
-                    buttonLink="https://indd.adobe.com/view/19d8db63-f0f1-4e54-afff-fe361cc00186"
+                    date="Jan 2024"
+                />
+
+                 <ProjectHeaderSC
+                    name="Beep" 
+                    description="DEVELOPMENT / UX/UI DESIGN / GRAPHIC DESIGN / BRANDING" 
+                    img="/img/graphic/beep/beep-cover.png" 
+                    introduction={`Beep is an AI-powered safety app designed to enhance personal security by providing real-time crime heat maps based on data from the Vancouver Police Department. The app features AI-guided safe route navigation, emergency alerts, loud alarms, and safe zone recommendations, ensuring users feel secure navigating urban environments. With seamless location sharing and instant emergency contact features, Beep sets a new standard in personal safety through innovative technology and local collaboration.`}
+                    tools={projectTools}
+                    date="Sept–Dec 2024"
+                    buttonText="Beep Blog" 
+                    buttonLink="https://beep-vlog.vercel.app"
                 />
 
                 </div>

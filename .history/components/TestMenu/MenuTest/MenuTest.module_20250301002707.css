@@ -1,0 +1,107 @@
+.main {
+    color: var(--white);
+    background-color: var(--black);
+    padding: 120px 30px 180px 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    font: var(--reg-85);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.preview {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    pointer-events: none;
+    transform-origin: center;
+    z-index: 999;
+    transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+    top: 0%; 
+    left: 0%; 
+}
+
+.previewImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.category p {
+    color: var(--mid-grey) !important;
+}
+
+.menuContainer {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    /* border-bottom: 1px solid var(--white); */
+    cursor: pointer;
+    text-decoration: none; 
+    color: inherit; 
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.projectContainer:not(:last-child) {
+    border-bottom: 1px solid var(--white);
+}
+
+
+.project p {
+    font: var(--reg-40);
+    color: var(--black);
+    text-transform: uppercase;
+    line-height: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.05s ease-in-out;
+}
+
+.projects a {
+    all: unset;
+    text-decoration: none !important;
+    color: inherit; 
+    display: block; 
+}
+
+
+.project > div {
+    flex: 3;
+}
+
+.project div:last-child {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+@media (max-width: 900px) {
+    .location,
+    .service {
+        display: none;
+    }
+}
+

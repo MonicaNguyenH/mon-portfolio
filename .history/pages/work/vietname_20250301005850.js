@@ -25,7 +25,7 @@ export default function Vietname() {
                     tools={projectTools}
                     date="Oct 2024"
                     buttonText="Read Vietname" 
-                    buttonLink="https://indd.adobe.com/view/19d8db63-f0f1-4e54-afff-fe361cc00186"
+                    buttonLink="https://beep-vlog.vercel.app"
                 />
 
                 </div>

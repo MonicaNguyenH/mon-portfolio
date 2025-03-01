@@ -24,8 +24,8 @@ export default function Vietname() {
                     introduction={`Vietname is a digital and print magazine celebrating Vietnam’s enduring architectural and cultural heritage. Through a refined blend of traditional aesthetics and modern minimalism, the magazine showcases iconic landmarks like the One Pillar Pagoda, Hoi An Japanese Bridge, and Hue Imperial City. The digital edition enhances the experience with interactive elements, offering readers a deeper exploration of Vietnam’s rich architectural legacy.`}
                     tools={projectTools}
                     date="Oct 2024"
-                    buttonText="Read Vietname" 
-                    buttonLink="https://indd.adobe.com/view/19d8db63-f0f1-4e54-afff-fe361cc00186"
+                    buttonText="Beep Blog" 
+                    buttonLink="https://beep-vlog.vercel.app"
                 />
 
                 </div>
