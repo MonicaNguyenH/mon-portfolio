@@ -1,0 +1,27 @@
+/* Custom Cursor */
+.customCursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Show cursor text when hovering */
+.customCursor.visible {
+    opacity: 1;
+}
+
+/* Hide default cursor on hover */
+.img:hover {
+    cursor: none;
+}

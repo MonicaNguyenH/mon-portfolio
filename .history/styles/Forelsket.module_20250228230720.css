@@ -1,0 +1,8 @@
+.blendingMode {
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.menu {
+    background-image: url("/img/graphic/menu/menu-bg.webp");
+}

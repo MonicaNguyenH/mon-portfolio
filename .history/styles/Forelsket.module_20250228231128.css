@@ -1,0 +1,22 @@
+.blendingMode {
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.menu {
+    background-image: url("/img/graphic/menu/menu-bg.webp");
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: cen;
+}
+
+.img img{
+    width: 25vw;
+}

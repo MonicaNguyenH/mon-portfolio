@@ -1,0 +1,20 @@
+.blendingMode {
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.menu {
+    background-image: url("/img/graphic/menu/menu-bg.webp");
+    background-size: cover; /* Ensures the image covers the div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.img img{
+    width: 5vw;
+}

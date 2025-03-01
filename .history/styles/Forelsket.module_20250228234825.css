@@ -1,0 +1,84 @@
+.blendingMode {
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.menu {
+    background-image: url("/img/graphic/menu/menu-bg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+.img img {
+    width: 25vw;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover effect */
+}
+
+.img:hover img {
+    transform: scale(0.5); 
+    opacity: 0.9; 
+}
+
+/* Lightbox Styles */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: zoom-out; /* Change cursor to indicate closing */
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain; 
+    animation: fadeIn 0.3s ease; /* fade-in animation */
+}
+
+/* Fade-in animation for lightbox */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.customCursor {
+    color: var(--white);
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none; 
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s linear;
+    z-index: 100; /* Ensure it's above other elements */
+}
+
+.customCursor p {
+    font: var(--reg-16);
+    text-transform: uppercase;
+}
+
+.visible {
+    opacity: 1;
+}

@@ -1,0 +1,17 @@
+.blendingMode {
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.menu {
+    background-image: url("/img/graphic/menu/menu-bg.webp");
+    width: 100vh;
+    height: 100vw;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.img img{
+    width: 5vw;
+}

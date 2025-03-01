@@ -1,0 +1,56 @@
+.blendingMode {
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.menu {
+    background-image: url("/img/graphic/menu/menu-bg.webp");
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+.img img {
+    width: 25vw;
+    cursor: url('/img/view-cursor.svg'), auto; /* Custom cursor on hover */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+}
+
+.img img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    opacity: 0.9; /* Slight opacity change on hover */
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox img {
+    width: 50vw;
+    max-height: 80vh;
+}
+
+.lightbox.show {
+    opacity: 1;
+    visibility: visible;
+}
