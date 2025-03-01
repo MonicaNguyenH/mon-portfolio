@@ -23,10 +23,10 @@ export default function Canvas() {
 
         addBoundaries();
 
-        for (let i = 0; i < 12; i++) {
+        for (let i = 0; i < 13; i++) {
             let x = random(100, window.innerWidth - 100);
             let y = random(100, window.innerHeight - 100);
-            items.push(new Item(x, y, `/img/canvas/img${i + 1}.jpg`));
+            items.push(new Item(x, y, `/img/canvas/img${i + 1}.png`));
         }
         itemsRef.current = items;
 
