@@ -1,0 +1,62 @@
+.contact__links {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__links a {
+    font: var(--reg-85);
+    font-size: clamp(85px, 5vw, 150px);
+    text-decoration: none;
+    color: var(--black);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    opacity: 1; /* Default opacity */
+    transform: scale(1); /* Default scale */
+    position: relative;
+    display: inline-block;
+}
+
+.contact__links:hover a:not(:hover) {
+    opacity: 0.3; 
+    transform: scale(0.95); 
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+}
+
+.contact__links a:hover {
+    color: var(--pink); /* Change color to pink on hover */
+    opacity: 1; /* Ensure the hovered link is fully visible */
+    transform: scale(1.05); /* Slightly enlarge the hovered link */
+    background: rgba(255, 192, 203, 0.1); /* Subtle pink background highlight */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Faster transition for hover */
+}
+
+.contact__links a:active {
+    color: var(--black); /* Immediately resets to black after click */
+    transform: scale(1); /* Reset scale on click */
+    background: transparent; /* Remove background on click */
+}
+
+.closer {
+    margin-top: -30px;
+}
+
+.footer__caption {
+    width: calc(100vw - 60px);
+    display: flex;
+    flex-direction: row;
+    font: var(--reg-16);
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.contact__caption img {
+    width: 1010px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.footer__info {
+    margin-bottom: 30px;
+    color: var(--black);
+}

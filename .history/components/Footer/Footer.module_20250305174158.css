@@ -8,47 +8,33 @@
     background-color: var(--white); 
 }
 
-.link {
+.contact__links a {
     font: var(--reg-85);
     font-size: clamp(85px, 5vw, 150px);
     text-decoration: none;
     color: var(--black);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-    opacity: 1; 
-    transform: scale(1);
-    position: relative;
-    display: inline-block;
+    transition: color 0.3s ease-in-out;
     max-width: fit-content;
 }
 
-.link:hover,
-.link:focus {
+.contact__links a:hover,
+.contact__links a:focus {
   color: var(--pink); 
 }
 
-.link:hover {
-    color: var(--pink); 
-    opacity: 1; /* Ensure the hovered link is fully visible */
-    transform: scale(1.02); 
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+.contact__links a:active {
+    color: var(--black); /* Immediately resets to black after click */
 }
 
-/* .link:hover .link:not(:hover) {
-    opacity: 0.3; 
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
-} */
-
-
-.contact__links:hover .link:not(:hover) {
-    opacity: 0.3;
-    transform: translateX(30px);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+/* When hovering over a link, fade out the rest */
+.contact__links:hover a {
+    opacity: 0.3; /* Reduce opacity for all links */
 }
 
-.link:active {
-    color: var(--black); 
-    transform: scale(1); 
-    background: transparent; /* Remove background on click */
+.contact__links a:hover,
+.contact__links a:focus {
+    color: var(--pink);
+    opacity: 1; /* Ensure hovered link remains fully visible */
 }
 
 .closer {
@@ -58,7 +44,6 @@
 .contact__links {
     display: flex;
     flex-direction: column;
-    width: fit-content;
 }
 
 .footer__caption {

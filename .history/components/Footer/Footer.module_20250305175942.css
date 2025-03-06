@@ -1,0 +1,55 @@
+.contact__links {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__links a {
+    font: var(--reg-85);
+    font-size: clamp(85px, 5vw, 150px);
+    text-decoration: none;
+    color: var(--black);
+    transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-width: fit-content;
+    opacity: 1; /* Default opacity */
+}
+
+.contact__links:hover a:not(:hover) {
+    opacity: 0.3; /* Fade out non-hovered links */
+    transition: opacity 0.3s ease-in-out 0.1s; /* Slight delay for smoother effect */
+}
+
+.contact__links a:hover {
+    color: var(--pink); /* Change color to pink on hover */
+    opacity: 1; /* Ensure the hovered link is fully visible */
+    transition: color 0.3s ease-in-out, opacity 0.2s ease-in-out; /* Faster transition for hover */
+}
+
+.contact__links a:active {
+    color: var(--black); /* Immediately resets to black after click */
+}
+
+.closer {
+    margin-top: -30px;
+}
+
+.footer__caption {
+    width: calc(100vw - 60px);
+    display: flex;
+    flex-direction: row;
+    font: var(--reg-16);
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.contact__caption img {
+    width: 1010px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.footer__info {
+    margin-bottom: 30px;
+    color: var(--black);
+}

@@ -58,7 +58,6 @@
 .contact__links {
     display: flex;
     flex-direction: column;
-    width: fit-content;
 }
 
 .footer__caption {

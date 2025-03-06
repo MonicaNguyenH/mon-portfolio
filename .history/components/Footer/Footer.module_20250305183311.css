@@ -33,19 +33,13 @@
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
 }
 
-/* .link:hover .link:not(:hover) {
+.link:hover a:not(:hover) {
     opacity: 0.3; 
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
-} */
-
-
-.contact__links:hover .link:not(:hover) {
-    opacity: 0.3;
-    transform: translateX(30px);
+    /* transform: scale(0.95);  */
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
 }
 
-.link:active {
+.contact__links a:active {
     color: var(--black); 
     transform: scale(1); 
     background: transparent; /* Remove background on click */
@@ -58,7 +52,6 @@
 .contact__links {
     display: flex;
     flex-direction: column;
-    width: fit-content;
 }
 
 .footer__caption {

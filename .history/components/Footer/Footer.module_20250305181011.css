@@ -1,14 +1,10 @@
-.footer {
-    height: 100vh; /* Make footer take up the entire viewport */
-    width: 100%;
-    padding: 0 30px;
+.contact__links {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    background-color: var(--white); 
+    flex-direction: column;
+    padding: 30px;
 }
 
-.link {
+.contact__links a {
     font: var(--reg-85);
     font-size: clamp(85px, 5vw, 150px);
     text-decoration: none;
@@ -18,34 +14,22 @@
     transform: scale(1);
     position: relative;
     display: inline-block;
-    max-width: fit-content;
 }
 
-.link:hover,
-.link:focus {
-  color: var(--pink); 
+.contact__links:hover a:not(:hover) {
+    opacity: 0.3; 
+    transform: scale(0.95); 
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
 }
 
-.link:hover {
+.contact__links a:hover {
     color: var(--pink); 
     opacity: 1; /* Ensure the hovered link is fully visible */
-    transform: scale(1.02); 
+    /* transform: scale(1.05);  */
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
 }
 
-/* .link:hover .link:not(:hover) {
-    opacity: 0.3; 
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
-} */
-
-
-.contact__links:hover .link:not(:hover) {
-    opacity: 0.3;
-    transform: translateX(30px);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
-}
-
-.link:active {
+.contact__links a:active {
     color: var(--black); 
     transform: scale(1); 
     background: transparent; /* Remove background on click */
@@ -53,12 +37,6 @@
 
 .closer {
     margin-top: -30px;
-}
-
-.contact__links {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
 }
 
 .footer__caption {
@@ -82,6 +60,3 @@
     margin-bottom: 30px;
     color: var(--black);
 }
-
-
-

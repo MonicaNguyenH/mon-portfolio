@@ -8,7 +8,16 @@
     background-color: var(--white); 
 }
 
-.link {
+.contact__links a {
+    font: var(--reg-85);
+    font-size: clamp(85px, 5vw, 150px);
+    text-decoration: none;
+    color: var(--black);
+    transition: color 0.3s ease-in-out;
+    max-width: fit-content;
+}
+
+.contact__links a {
     font: var(--reg-85);
     font-size: clamp(85px, 5vw, 150px);
     text-decoration: none;
@@ -18,36 +27,30 @@
     transform: scale(1);
     position: relative;
     display: inline-block;
-    max-width: fit-content;
 }
 
-.link:hover,
-.link:focus {
-  color: var(--pink); 
+.contact__links a {
+    color: var(--black); /* Normal black color */
+    opacity: 1; /* Ensure the links are fully visible by default */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transition */
 }
 
-.link:hover {
-    color: var(--pink); 
+.contact__links a:hover,
+.contact__links a:focus {
+    color: var(--pink); /* Hover and focus color */
     opacity: 1; /* Ensure the hovered link is fully visible */
-    transform: scale(1.02); 
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    transform: scale(1.02); /* Slightly increase the size on hover */
 }
 
-/* .link:hover .link:not(:hover) {
-    opacity: 0.3; 
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
-} */
-
-
-.contact__links:hover .link:not(:hover) {
-    opacity: 0.3;
-    transform: translateX(30px);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+.contact__links a:not(:hover):not(:focus) {
+    opacity: 0.3; /* Fade out non-hovered and non-focused links */
+    /* transform: scale(0.95); */ /* Optional scaling effect */
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s; /* Smooth transition */
 }
 
-.link:active {
-    color: var(--black); 
-    transform: scale(1); 
+.contact__links a:active {
+    color: var(--black); /* Active color */
+    transform: scale(1); /* Reset scaling on active */
     background: transparent; /* Remove background on click */
 }
 
@@ -58,7 +61,6 @@
 .contact__links {
     display: flex;
     flex-direction: column;
-    width: fit-content;
 }
 
 .footer__caption {
