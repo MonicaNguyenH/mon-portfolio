@@ -24,7 +24,7 @@ export default function Addicted() {
                         date="Apr 2024"
                     />
 
-                    <div className={styles.img}>
+                    <div className={styles.video}>
                         <img src="/img/graphic/addict/TN.webp" />
                     </div>
                 </div>

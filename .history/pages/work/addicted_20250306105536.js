@@ -19,13 +19,14 @@ export default function Addicted() {
                     <ProjectHeaderVideo
                         name="Addicted" 
                         description="MOTION GRAPHIC" 
+                        img="/img/graphic/addict/TN.webp" 
                         introduction={`Addicted is a motion graphic exploring the cycle of prescription drug addiction through minimalist visuals and smooth transitions. It follows a character's journey from a bike accident to opioid dependence, using metaphorical storytelling and fluid animation to simplify complex medical concepts into an engaging visual narrative.`}
                         tools={projectTools}
                         date="Apr 2024"
                     />
 
-                    <div className={styles.img}>
-                        <img src="/img/graphic/addict/TN.webp" />
+                    <div className={styles.video}>
+                        <VideoPlayer />
                     </div>
                 </div>
 
