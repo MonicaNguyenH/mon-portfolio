@@ -81,6 +81,9 @@ export default function Beep() {
     
 
 
+
+    
+
     /** COMPARISON SLIDER */
     const comparisonSections = useRef([]);
     const [isComparisonReady, setIsComparisonReady] = useState(false);

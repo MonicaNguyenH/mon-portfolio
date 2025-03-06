@@ -41,43 +41,44 @@ export default function Beep() {
     }, []);
 
     useEffect(() => {
-        if (!isReady) return; // ✅ Ensure GSAP only runs when images are fully loaded
-
+        if (!isReady) return; // ✅ Ensure GSAP runs only when images are fully loaded
+    
+        let horizontalAnimation; // ✅ Store GSAP animation reference
+    
         import("gsap").then(({ default: gsap }) => {
             import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
                 gsap.registerPlugin(ScrollTrigger);
-
+    
                 const horizontal = horizontalRef.current;
                 if (!horizontal) return;
-
+    
                 const scrollWidth = horizontal.scrollWidth - window.innerWidth;
                 if (scrollWidth <= 0) return;
-
-                gsap.to(horizontal, {
+    
+                // ✅ Only initialize when section enters viewport
+                horizontalAnimation = gsap.to(horizontal, {
                     x: -scrollWidth,
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: horizontal,
-                        start: "top top",
-                        end: `+=${scrollWidth}`,
-                        pin: true,
-                        scrub: 1.2,
-                        anticipatePin: 0.3,
-                        invalidateOnRefresh: true,
+                        start: "top bottom", // ✅ Ensures smooth entry
+                        once: true, // ✅ Only runs once, preventing interference
+                        onEnter: () => {
+                            console.log("GSAP: Horizontal scroll initialized.");
+                        },
+                        onLeaveBack: () => {
+                            console.log("GSAP: Reset horizontal scroll.");
+                        }
                     }
                 });
-
-                console.log("GSAP: Running animation after images load...");
-                ScrollTrigger.refresh(); // 🔥 Ensures animation recalculates
             });
         });
-
+    
         return () => {
-            import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-                ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-            });
+            if (horizontalAnimation) horizontalAnimation.kill(); // ✅ Kills only this animation
         };
-    }, [isReady]); // ✅ Runs GSAP only when images are loaded
+    }, [isReady]);
+    
     
 
 

@@ -41,43 +41,44 @@ export default function Beep() {
     }, []);
 
     useEffect(() => {
-        if (!isReady) return; // ✅ Ensure GSAP only runs when images are fully loaded
-
+        if (!isReady) return; // ✅ Ensure GSAP runs only when images are fully loaded
+    
+        let horizontalAnimation; // ✅ Store GSAP animation reference
+    
         import("gsap").then(({ default: gsap }) => {
             import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
                 gsap.registerPlugin(ScrollTrigger);
-
+    
                 const horizontal = horizontalRef.current;
                 if (!horizontal) return;
-
+    
                 const scrollWidth = horizontal.scrollWidth - window.innerWidth;
                 if (scrollWidth <= 0) return;
-
-                gsap.to(horizontal, {
+    
+                // ✅ Only initialize when section enters viewport
+                horizontalAnimation = gsap.to(horizontal, {
                     x: -scrollWidth,
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: horizontal,
-                        start: "top top",
-                        end: `+=${scrollWidth}`,
-                        pin: true,
-                        scrub: 1.2,
-                        anticipatePin: 0.3,
-                        invalidateOnRefresh: true,
+                        start: "top bottom", // ✅ Ensures smooth entry
+                        once: true, // ✅ Only runs once, preventing interference
+                        onEnter: () => {
+                            console.log("GSAP: Horizontal scroll initialized.");
+                        },
+                        onLeaveBack: () => {
+                            console.log("GSAP: Reset horizontal scroll.");
+                        }
                     }
                 });
-
-                console.log("GSAP: Running animation after images load...");
-                ScrollTrigger.refresh(); // 🔥 Ensures animation recalculates
             });
         });
-
+    
         return () => {
-            import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-                ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-            });
+            if (horizontalAnimation) horizontalAnimation.kill(); // ✅ Kills only this animation
         };
-    }, [isReady]); // ✅ Runs GSAP only when images are loaded
+    }, [isReady]);
+    
     
 
 
@@ -109,46 +110,47 @@ export default function Beep() {
 
     useEffect(() => {
         if (!isComparisonReady) return;
+        
+        let comparisonAnimations = [];
     
         import("gsap").then(({ default: gsap }) => {
             import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
                 gsap.registerPlugin(ScrollTrigger);
-    
+        
                 comparisonSections.current.forEach((section, index) => {
-                    if (!section) return; // Ensure the section exists before running animation
+                    if (!section) return; // Ensure the section exists
     
                     let tl = gsap.timeline({
                         scrollTrigger: {
                             trigger: section,
                             start: "center center",
                             end: "+=100%",
-                            scrub: index === 1 ? 3 : 2, // ✅ Slower scrub for the second section
+                            scrub: index === 1 ? 3 : 2,
                             pin: true,
                             anticipatePin: 1,
                             pinSpacing: true,
-                        },
-                        defaults: { ease: "power2.out", duration: index === 1 ? 5.0 : 3.0 }, // ✅ Longer duration for the second section
+                            once: false, // ✅ Keep this false so it works independently
+                        }
                     });
     
-                    // ✅ Reveal first image
+                    // ✅ Reveal first image smoothly
                     tl.fromTo(
                         section.querySelector(`.${styles.afterImage}`),
                         { clipPath: "inset(0 0 0 100%)" },
                         { clipPath: "inset(0 0 0 0%)" },
-                        index * 10 // ✅ Progressive delay between sections
+                        index * 10
                     );
     
-                    ScrollTrigger.refresh();
+                    comparisonAnimations.push(tl);
                 });
             });
         });
     
         return () => {
-            import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-                ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-            });
+            comparisonAnimations.forEach(animation => animation.kill()); // ✅ Cleanup only comparison animations
         };
     }, [isComparisonReady]);
+    
  
 
     return (
