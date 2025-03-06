@@ -54,10 +54,6 @@ export default function HiddenContent({ imgFront, imgBack }) {
             <div className={styles.mask} ref={maskRef}>
                 <img src={imgFront} alt="Front Image" className={styles.frontImg} />
             </div>
-
-            <div className={`${styles.hoverHint} ${isHovering ? styles.hidden : ""}`}>
-                [Hover to Reveal]
-            </div>
         </div>
     );
 }

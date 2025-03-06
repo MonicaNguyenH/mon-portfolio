@@ -3,7 +3,7 @@ import styles from "./HiddenContent.module.css";
 
 export default function HiddenContent({ imgFront, imgBack }) {
     const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [isHovering, setIsHovering] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
     const containerRef = useRef(null);
     const maskRef = useRef(null);
 
@@ -21,9 +21,11 @@ export default function HiddenContent({ imgFront, imgBack }) {
             }
         };
 
-        const handleMouseEnter = () => setIsHovering(true);
+        const handleMouseEnter = () => {
+            setIsHovered(true); // ✅ Stop pulse on first hover
+        };
+
         const handleMouseLeave = () => {
-            setIsHovering(false);
             if (maskRef.current) {
                 maskRef.current.style.clipPath = "circle(0px at 50% 50%)";
             }
@@ -51,12 +53,8 @@ export default function HiddenContent({ imgFront, imgBack }) {
             <img src={imgBack} alt="Hidden Image" className={styles.hiddenImg} />
 
             {/* Foreground Image (Mask Controlled) */}
-            <div className={styles.mask} ref={maskRef}>
+            <div className={`${styles.mask} ${isHovered ? "hovered" : ""}`} ref={maskRef}>
                 <img src={imgFront} alt="Front Image" className={styles.frontImg} />
-            </div>
-
-            <div className={`${styles.hoverHint} ${isHovering ? styles.hidden : ""}`}>
-                [Hover to Reveal]
             </div>
         </div>
     );

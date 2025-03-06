@@ -56,7 +56,7 @@ export default function HiddenContent({ imgFront, imgBack }) {
             </div>
 
             <div className={`${styles.hoverHint} ${isHovering ? styles.hidden : ""}`}>
-                [Hover to Reveal]
+                [Hover]
             </div>
         </div>
     );
