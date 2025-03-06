@@ -124,12 +124,12 @@ export default function Beep() {
                             trigger: section,
                             start: "center center",
                             end: "+=100%",
-                            scrub: index === 1 ? 3 : 2, // ✅ Slower scrub for the second section
+                            scrub: 2, // ✅ Increased scrub value for slower animation
                             pin: true,
                             anticipatePin: 1,
                             pinSpacing: true,
                         },
-                        defaults: { ease: "power2.out", duration: index === 1 ? 5.0 : 3.0 }, // ✅ Longer duration for the second section
+                        defaults: { ease: "power2.out", duration: 3.0 }, // ✅ Increased duration for slower animation
                     });
     
                     // ✅ Reveal first image

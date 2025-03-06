@@ -124,12 +124,12 @@ export default function Beep() {
                             trigger: section,
                             start: "center center",
                             end: "+=100%",
-                            scrub: index === 1 ? 3 : 2, // ✅ Slower scrub for the second section
+                            scrub: 2, // ✅ Increased scrub value for slower animation
                             pin: true,
                             anticipatePin: 1,
                             pinSpacing: true,
                         },
-                        defaults: { ease: "power2.out", duration: index === 1 ? 5.0 : 3.0 }, // ✅ Longer duration for the second section
+                        defaults: { ease: "power2.out", duration: 3.0 }, // ✅ Increased duration for slower animation
                     });
     
                     // ✅ Reveal first image
@@ -139,6 +139,16 @@ export default function Beep() {
                         { clipPath: "inset(0 0 0 0%)" },
                         index * 10 // ✅ Progressive delay between sections
                     );
+    
+                    // ✅ Add a delay for the second comparison section
+                    if (index === 1) { // Second comparison section
+                        tl.fromTo(
+                            section.querySelector(`.${styles.afterImage}`),
+                            { clipPath: "inset(0 0 0 100%)" },
+                            { clipPath: "inset(0 0 0 0%)", duration: 4.0 }, // ✅ Slower duration for the second section
+                            index * 10
+                        );
+                    }
     
                     ScrollTrigger.refresh();
                 });
