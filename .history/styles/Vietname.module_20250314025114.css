@@ -1,0 +1,42 @@
+.blendingMode {
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.print, 
+.digital {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('/img/graphic/vietname/water.webp'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.print__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.descText {
+    color: var(--white);
+    font: var(--reg-16);
+    text-transform: uppercase;
+    align-self: flex-start;
+    background-color: var(--black);
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.indesign__print {
+    width: 65vw;
+    height: 82vh;
+}
+

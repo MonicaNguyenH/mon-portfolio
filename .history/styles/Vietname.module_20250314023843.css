@@ -1,0 +1,21 @@
+.blendingMode {
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.print {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/img/graphic/vietname/water.webp'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.descText {
+    
+}
