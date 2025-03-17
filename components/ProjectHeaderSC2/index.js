@@ -2,10 +2,10 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import styles from "./ProjectHeaderSC.module.css";
+import styles from "./ProjectHeaderSC2.module.css";
 import ButtonFilledBlack from "../ButtonFilledBlack";
 
-export default function ProjectHeaderSC({ name, description, img, introduction, tools, date, buttonLink, buttonText }) {
+export default function ProjectHeaderSC2({ name, description, img, introduction, tools, date, buttonLink1, buttonLink2, buttonText1, buttonText2 }) {
 
   return (
     <div className={styles.main}>
@@ -16,8 +16,11 @@ export default function ProjectHeaderSC({ name, description, img, introduction, 
         <div>
             <p>{introduction}</p>
             <div className={styles.button}>
-              <ButtonFilledBlack href={buttonLink}>
-                  {buttonText}
+              <ButtonFilledBlack href={buttonLink1}>
+                  {buttonText1}
+              </ButtonFilledBlack>
+              <ButtonFilledBlack href={buttonLink2}>
+                  {buttonText2}
               </ButtonFilledBlack>
             </div>
         </div>
