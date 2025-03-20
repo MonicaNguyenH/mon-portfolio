@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    padding: 10px;
+  }
+  
+  .tab {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 10px;
+    border-left: 3px solid transparent;
+  }
+  
+  .tab.active {
+    border-left: 3px solid #000;
+  }
+  
+  .tabTitle {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .contentInner {
+    max-width: 800px;
+    margin: 0 auto;
+  }

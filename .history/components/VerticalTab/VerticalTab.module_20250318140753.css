@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font: var(--reg-40);
+  font-weight: bold;
+  transition: width 0.4s ease-in-out;
+  background-color: white;
+  border-right: 2px solid black;
+  height: 100vh; /* Make sure the column never resizes */
+  overflow: hidden; /* Prevent extra content from spilling */
+}
+
+/* Expanded column */
+.expanded {
+  width: 100%;
+}
+
+/* Collapsed column */
+.collapsed {
+  width: 8%;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Scrollable Content */
+.content {
+  width: 100%;
+  height: 100%; /* Make sure content fills the column */
+  overflow-y: auto; /* Enable scrolling inside */
+}
+
+/* Embedding */
+.print, 
+.digital {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.print {
+    background-image: url('/img/graphic/vietname/water.webp'); 
+}
+
+.digital {
+    background-image: url('/img/graphic/vietname/mesh.webp'); 
+}
+
+.print__content,
+.digital__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.descText {
+    color: var(--white);
+    font: var(--reg-16);
+    text-transform: uppercase;
+    align-self: flex-start;
+    background-color: var(--black);
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.indesign__print {
+    width: 65vw;
+    height: 82vh;
+}

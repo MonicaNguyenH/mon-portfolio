@@ -1,0 +1,107 @@
+"use client";
+import { useState, useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import styles from "./VerticalTab.module.css";
+
+export default function VerticalTab() {
+  const [activeTab, setActiveTab] = useState("print");
+  const printContentRef = useRef(null);
+  const digitalContentRef = useRef(null);
+
+  // Set initial states immediately on mount
+  useEffect(() => {
+    gsap.set(printContentRef.current, { width: activeTab === "print" ? "92%" : "0%", opacity: activeTab === "print" ? 1 : 0 });
+    gsap.set(digitalContentRef.current, { width: activeTab === "digital" ? "92%" : "0%", opacity: activeTab === "digital" ? 1 : 0 });
+  }, [activeTab]);
+
+  // Animate on tab change
+  useEffect(() => {
+    if (activeTab === "print") {
+      gsap.to(printContentRef.current, { width: "92%", opacity: 1, duration: 0.4, ease: "power2.inOut", delay: 0.1 });
+      gsap.to(digitalContentRef.current, { width: "0%", opacity: 0, duration: 0.4, ease: "power2.inOut" });
+    } else {
+      gsap.to(digitalContentRef.current, { width: "92%", opacity: 1, duration: 0.4, ease: "power2.inOut", delay: 0.1 });
+      gsap.to(printContentRef.current, { width: "0%", opacity: 0, duration: 0.4, ease: "power2.inOut" });
+    }
+  }, [activeTab]);
+
+  useEffect(() => {
+    if (activeTab === "print") {
+      gsap.to(printContentRef.current, { width: "92%", opacity: 1, duration: 0.4, ease: "power2.inOut", delay: 0.1 });
+      gsap.to(digitalContentRef.current, { width: "0%", opacity: 0, duration: 0.4, ease: "power2.inOut" });
+  
+      // Staggered child animations
+      gsap.fromTo(
+        printContentRef.current.querySelectorAll(".indesign__print, .descText"),
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.3, stagger: 0.1, delay: 0.2 }
+      );
+    } else {
+      gsap.to(digitalContentRef.current, { width: "92%", opacity: 1, duration: 0.4, ease: "power2.inOut", delay: 0.1 });
+      gsap.to(printContentRef.current, { width: "0%", opacity: 0, duration: 0.4, ease: "power2.inOut" });
+  
+      // Staggered child animations
+      gsap.fromTo(
+        digitalContentRef.current.querySelectorAll(".indesign__print, .descText"),
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.3, stagger: 0.1, delay: 0.2 }
+      );
+    }
+  }, [activeTab]);
+
+  return (
+    <div className={styles.container}>
+      {/* Print Column (Always visible) */}
+      <div
+        className={`${styles.column} ${activeTab === "print" ? styles.collapsed + " " + styles.active : styles.collapsed}`}
+        onClick={() => setActiveTab("print")}
+      >
+        Print
+      </div>
+
+      {/* Print Content (Expands) */}
+      <div ref={printContentRef} className={styles.hidden}>
+        <div className={styles.content}>
+          <div className={styles.print}>
+            <div className={styles.print__content}>
+              <iframe
+                className={styles.indesign__print}
+                src="https://indd.adobe.com/embed/cab41585-505e-4441-9fb6-541fd30ed968?startpage=1&allowFullscreen=true"
+                frameBorder="0"
+                allowFullScreen=""
+              ></iframe>
+              <p className={styles.descText}>Print Version</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Digital Column (Always visible) */}
+      <div
+        className={`${styles.column} ${activeTab === "digital" ? styles.collapsed + " " + styles.active : styles.collapsed}`}
+        onClick={() => setActiveTab("digital")}
+      >
+        Digital
+      </div>
+
+      {/* Digital Content (Expands) */}
+      <div ref={digitalContentRef} className={styles.hidden}>
+        <div className={styles.content}>
+          <div className={styles.digital}>
+            <div className={styles.digital__content}>
+              <iframe
+                className={styles.indesign__print}
+                src="https://indd.adobe.com/embed/082cc578-f77b-40c5-bf38-014d56fe7e8e?startpage=1&allowFullscreen=true"
+                width={525}
+                height={371}
+                frameBorder="0"
+                allowFullScreen=""
+              ></iframe>
+              <p className={styles.descText}>Digital Version</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #f9f9f9;
+  }
+  
+  /* Sidebar that holds the tabs */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    height: 100%;
+    border-right: 2px solid black;
+    background-color: white;
+  }
+  
+  /* Individual tab (when closed, looks like a book spine) */
+  .tab {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Tab expands fully when active */
+  .expandedCol {
+    flex: 1;
+    overflow: hidden;
+    background-color: white;
+    transition: flex 0.3s ease-in-out;
+  }
+  
+  /* Hidden tab (width collapses to zero when inactive) */
+  .hiddenCol {
+    flex: 0;
+    overflow: hidden;
+    transition: flex 0.3s ease-in-out;
+  }
+  
+  /* Content inside the expanded column */
+  .content {
+    height: 100%;
+    padding: 40px;
+    overflow-y: auto;
+  }
+  

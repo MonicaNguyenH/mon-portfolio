@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    align-items: flex-end;
+    height: 100vh;
+    padding: 20px;
+    perspective: 1000px; /* For 3D effect */
+  }
+  
+  .tab {
+    position: relative;
+    width: 50px; /* Width of the spine */
+    height: 300px; /* Height of the book */
+    margin-right: -20px; /* Overlap the books */
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease, margin-right 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .tab.active {
+    width: 300px; /* Expanded width */
+    margin-right: 10px; /* Space between opened book and others */
+    transform: translateX(0) rotateY(0deg);
+  }
+  
+  .tab:not(.active) {
+    transform: translateX(-50%) rotateY(45deg); /* Tilt the books */
+  }
+  
+  .tabSpine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .tabContent {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: calc(100% - 50px);
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .tab.active .tabContent {
+    opacity: 1;
+  }
