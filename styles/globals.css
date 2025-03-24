@@ -1,15 +1,52 @@
+/* @font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Black.ttf') format('truetype'),
+       url('/fonts/Satoshi-BlackItalic.ttf') format('truetype'),
+       url('/fonts/Satoshi-Bold.ttf') format('truetype'),
+       url('/fonts/Satoshi-BoldItalic.ttf') format('truetype'),
+       url('/fonts/Satoshi-Italic.ttf') format('truetype'),
+       url('/fonts/Satoshi-Light.ttf') format('truetype'),
+       url('/fonts/Satoshi-LightItalic.ttf') format('truetype'),
+       url('/fonts/Satoshi-Medium.ttf') format('truetype'),
+       url('/fonts/Satoshi-MediumItalic.ttf') format('truetype'),
+       url('/fonts/Satoshi-Regular.ttf') format('truetype');
+} */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Satoshi Regular */
 @font-face {
   font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Black.ttf') format('ttf'),
-       url('/fonts/Satoshi-BlackItalic.ttf') format('ttf'),
-       url('/fonts/Satoshi-Bold.tff') format('ttf'),
-       url('/fonts/Satoshi-BoldItalic.ttf') format('ttf'),
-       url('/fonts/Satoshi-Italic.ttf') format('ttf'),
-       url('/fonts/Satoshi-Light.ttf') format('ttf'),
-       url('/fonts/Satoshi-LightItalic.ttf') format('ttf'),
-       url('/fonts/Satoshi-Medium.ttf') format('ttf'),
-       url('/fonts/Satoshi-MediumItalic.ttf') format('ttf'),
-       url('/fonts/Satoshi-Regular.ttf') format('ttf');
+  src: url('/fonts/Satoshi-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Satoshi Bold */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Satoshi Light */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Satoshi Italic */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
@@ -19,9 +56,9 @@
 
 @font-face {
   font-family: 'Switzer';
-  src: url('/fonts/Switzer-Regular.ttf') format('ttf'),
-       url('/fonts/Switzer-Italic.ttf') format('ttf'),
-       url('/fonts/Switzer-Bold.ttf') format('ttf'),
+  src: url('/fonts/Switzer-Regular.ttf') format('truetype'),
+       url('/fonts/Switzer-Italic.ttf') format('truetype'),
+       url('/fonts/Switzer-Bold.ttf') format('truetype'),
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
