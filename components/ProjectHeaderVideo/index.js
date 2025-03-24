@@ -11,7 +11,9 @@ export default function ProjectHeaderVideo( { name, description, img, introducti
                 <h1>{name}</h1>
                 <p>{description}</p>
                 <div className={styles.video}>
-                    <VideoPlayer />
+                    <div className={styles.video__theVideo}>
+                        <VideoPlayer />
+                    </div>
                 </div>
                 <div className={styles.intro}>
                     <p>{introduction}</p>

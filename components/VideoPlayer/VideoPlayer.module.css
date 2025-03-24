@@ -16,7 +16,7 @@
 
 .overlay {
     width: 100%; /* Use 100% instead of 100vw */
-    height: 100vh; /* Adjust height as needed */
+    height: 90vh; /* Adjust height as needed */
     position: relative; /* Relative positioning for the container */
     background-color: rgba(0); /* Optional: Add a background overlay */
     overflow: hidden;
