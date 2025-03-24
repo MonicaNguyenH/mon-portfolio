@@ -1,0 +1,149 @@
+@counter-style pad-it {
+  system: extends decimal;
+  pad: 2 '0';
+  suffix: '. ';
+}
+
+.wrapper {
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  z-index: 9999;
+  transition: all 0.4s ease-in-out;
+}
+
+.trigger {
+  width: 190px;
+  height: 44px;
+  border-radius: 22px;
+  color: white;
+  background: hsl(0 0% 8%);
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem;
+  font-family: inherit;
+}
+
+/* Expanded state */
+.open .trigger {
+  width: 220px;
+  height: 330px;
+  border-radius: 22px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1rem;
+  background: hsl(0 0% 10%);
+}
+
+/* Initial icon + label row */
+.trigger__details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.size6 {
+  width: 18px;
+}
+
+/* Scroll % pill */
+.progress {
+  margin-left: auto;
+  font-size: 0.75rem;
+  background: hsl(0 0% 35%);
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.open .progress {
+  display: none;
+}
+
+/* List slides in */
+.popoverList {
+  margin-top: 1rem;
+  list-style: pad-it;
+  padding-inline: 0.5rem;
+  padding-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+  counter-reset: section;
+  width: 100%;
+  filter: blur(4px);
+}
+
+.open .popoverList {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+  filter: blur(0);
+}
+
+.listItem {
+  margin-bottom: 0.5rem;
+}
+
+.listLink {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  padding-block: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.listLink:hover,
+.listLink:focus-visible {
+  color: #fff;
+}
+
+.listItem:has(.listLink:hover)::marker {
+  color: white;
+}
+
+/* Line animation for SVG */
+.lines {
+  stroke-dasharray: 1.025;
+  stroke-dashoffset: 1.025;
+  animation: draw linear forwards;
+  animation-timeline: --content;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .trigger {
+    width: 160px;
+  }
+
+  .open .trigger {
+    width: 90vw;
+    height: 60vh;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .trigger,
+  .open .trigger {
+    background: hsl(0 0% 14%);
+  }
+
+  .progress {
+    background: hsl(0 0% 0%);
+  }
+}

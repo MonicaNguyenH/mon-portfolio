@@ -6,8 +6,7 @@ import ProjectHeaderSC from '@/components/ProjectHeaderSC';
 import VerticalSlider from '@/components/VerticalSlider';
 import MenuOverlay from '@/components/MenuOverlay';
 import HiddenContent from '@/components/HiddenContent';
-// import HiddenContent from '@/components/HiddenContent';
-// import BeepText from '@/components/BeepText';
+import ScrollIndex from '@/components/ScrollIndex';
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 
@@ -17,10 +16,11 @@ export default function Beep() {
     const horizontalRef = useRef(null);
     const [isReady, setIsReady] = useState(false);
 
-    useEffect(() => {
-        if (typeof window === "undefined") return; // Prevents SSR issues
+    const mainRef = useRef(null);
 
-        // ✅ Ensure all images are fully loaded before running GSAP
+    useEffect(() => {
+        if (typeof window === "undefined") return;
+
         const images = document.querySelectorAll("img");
         let imagesLoaded = 0;
 
@@ -37,11 +37,11 @@ export default function Beep() {
             }
         });
 
-        if (imagesLoaded === images.length) setIsReady(true); // Run if already loaded
+        if (imagesLoaded === images.length) setIsReady(true);
     }, []);
 
     useEffect(() => {
-        if (!isReady) return; // ✅ Ensure GSAP only runs when images are fully loaded
+        if (!isReady) return;
 
         import("gsap").then(({ default: gsap }) => {
             import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
@@ -68,7 +68,7 @@ export default function Beep() {
                 });
 
                 console.log("GSAP: Running animation after images load...");
-                ScrollTrigger.refresh(); // 🔥 Ensures animation recalculates
+                ScrollTrigger.refresh();
             });
         });
 
@@ -77,11 +77,8 @@ export default function Beep() {
                 ScrollTrigger.getAll().forEach(trigger => trigger.kill());
             });
         };
-    }, [isReady]); // ✅ Runs GSAP only when images are loaded
-    
+    }, [isReady]);
 
-
-    /** COMPARISON SLIDER */
     const comparisonSections = useRef([]);
     const [isComparisonReady, setIsComparisonReady] = useState(false);
 
@@ -115,27 +112,26 @@ export default function Beep() {
                 gsap.registerPlugin(ScrollTrigger);
     
                 comparisonSections.current.forEach((section, index) => {
-                    if (!section) return; // Ensure the section exists before running animation
+                    if (!section) return;
     
                     let tl = gsap.timeline({
                         scrollTrigger: {
                             trigger: section,
                             start: "center center",
                             end: "+=100%",
-                            scrub: index === 1 ? 3 : 2, // ✅ Slower scrub for the second section
+                            scrub: index === 1 ? 3 : 2,
                             pin: true,
                             anticipatePin: 1,
                             pinSpacing: true,
                         },
-                        defaults: { ease: "power2.out", duration: index === 1 ? 5.0 : 3.0 }, // ✅ Longer duration for the second section
+                        defaults: { ease: "power2.out", duration: index === 1 ? 5.0 : 3.0 },
                     });
     
-                    // ✅ Reveal first image
                     tl.fromTo(
                         section.querySelector(`.${styles.afterImage}`),
                         { clipPath: "inset(0 0 0 100%)" },
                         { clipPath: "inset(0 0 0 0%)" },
-                        index * 10 // ✅ Progressive delay between sections
+                        index * 10
                     );
     
                     ScrollTrigger.refresh();
@@ -149,7 +145,6 @@ export default function Beep() {
             });
         };
     }, [isComparisonReady]);
- 
 
     return (
         <>
@@ -157,8 +152,9 @@ export default function Beep() {
                 <HeaderArea title="Beep" description="Beep"/>
 
                 <NavBar />
+                <ScrollIndex targetRef={mainRef} />
 
-                <div className={styles.main}>
+                <div className={styles.main} ref={mainRef}>
                     <ProjectHeaderSC
                         name="Beep" 
                         description="DEVELOPMENT / UX/UI DESIGN / GRAPHIC DESIGN / BRANDING" 
@@ -170,7 +166,7 @@ export default function Beep() {
                         buttonLink="https://beep-vlog.vercel.app"
                     />
 
-                    <div className={styles.problem}>
+                    <div className={styles.problem} id="problem">
                         <div className={styles.problem__state}>
                             <h1>the problem</h1>
                             <p>46% of women globally feel unsafe walking alone at night.</p>
@@ -181,11 +177,11 @@ export default function Beep() {
                         </div>
                     </div>
 
-                    <div className={styles.solution}>
+                    <div className={styles.solution} id="solution">
                         <div className={styles.problem__state}>
                             <section className={styles.horizontal} ref={horizontalRef}>
                                 <div className={styles.content}>
-                                    <p>It shouldn’t be like this.</p>
+                                    <p>It shouldn't be like this.</p>
                                 </div>
                                 <div className={`${styles.content} ${styles.content__img}`}>
                                     <img src="/img/graphic/beep/solution-elements.png" alt="Beep solution" className={styles.solution__img} />
@@ -198,64 +194,58 @@ export default function Beep() {
                             <p>Beep empowers with Assurance, Action, and Trust. Proactively preventing danger, streamlining emergency help, and delivering reliable, real-time safety data.</p>
                         </div>
                     </div>
-                        <div className={styles.overview}>
-                            <HiddenContent 
-                                imgFront="/img/graphic/beep/overview-2.png" 
-                                imgBack="/img/graphic/beep/overview-1.png" 
-                            />
-                        </div>
 
-                        <div className={styles.userFlow}>
-                            <img src="/img/graphic/beep/user-flow.png" alt="Beep user flow" />
-                        </div>
-                        
-                        <div className={styles.persona}>
-                            <VerticalSlider />
-                        </div>
+                    <div className={styles.overview} id="overview">
+                        <HiddenContent 
+                            imgFront="/img/graphic/beep/overview-2.png" 
+                            imgBack="/img/graphic/beep/overview-1.png" 
+                        />
+                    </div>
 
-                        <div className={styles.styleguide}>
-                            <img src="/img/graphic/beep/styleguide-1.png" alt="Beep styleguide 1" />
-                        </div>
+                    <div className={styles.userFlow} id="user-flow">
+                        <img src="/img/graphic/beep/user-flow.png" alt="Beep user flow" />
+                    </div>
+                    
+                    <div className={styles.persona} id="persona">
+                        <VerticalSlider />
+                    </div>
 
-                        <div className={styles.styleguide__font}>
-                            {/* <BeepText /> */}
-                            <img src="/img/graphic/beep/Typography.png" alt="Beep typography" />
-                        </div>
+                    <div className={styles.styleguide} id="styleguide">
+                        <img src="/img/graphic/beep/styleguide-1.png" alt="Beep styleguide 1" />
+                    </div>
 
-                        <div className={styles.mockup}>
-                            <img src="/img/graphic/beep/mockup.png" alt="Beep mockups" />
-                        </div>
+                    <div className={styles.styleguide__font} id="typography">
+                        <img src="/img/graphic/beep/Typography.png" alt="Beep typography" />
+                    </div>
 
-                        {/* FIRST COMPARISON SECTION */}
-                        <section ref={(el) => (comparisonSections.current[0] = el)} className={styles.comparisonSection}>
-                            <div className={`${styles.comparisonImage} ${styles.beforeImage}`}>
-                                <img src="/img/graphic/beep/Lo-fi.png" alt="Beep Lo-fi Wireframes" />
-                            </div>
-                            <div className={`${styles.comparisonImage} ${styles.afterImage}`}>
-                                <img src="/img/graphic/beep/Hi-fi.webp" alt="Beep Hi-fi Wireframes" />
-                            </div>
-                        </section>
+                    <div className={styles.mockup} id="mockup">
+                        <img src="/img/graphic/beep/mockup.png" alt="Beep mockups" />
+                    </div>
 
-                        <div className={styles.bisCard}>
-                            <img src="/img/graphic/beep/bis-card.webp" alt="Beep business cards" />
+                    <section ref={(el) => (comparisonSections.current[0] = el)} className={styles.comparisonSection}>
+                        <div className={`${styles.comparisonImage} ${styles.beforeImage}`}>
+                            <img src="/img/graphic/beep/Lo-fi.png" alt="Beep Lo-fi Wireframes" />
                         </div>
+                        <div className={`${styles.comparisonImage} ${styles.afterImage}`}>
+                            <img src="/img/graphic/beep/Hi-fi.webp" alt="Beep Hi-fi Wireframes" />
+                        </div>
+                    </section>
 
-                        {/* SECOND COMPARISON SECTION */}
-                        <div className={styles.comparison}>
-                            <section ref={(el) => (comparisonSections.current[1] = el)} className={styles.comparisonSection}>
-                                <div className={`${styles.comparisonImageVer2} ${styles.beforeImage}`}>
-                                    <img src="/img/graphic/beep/brochure-front.webp" alt="Brochure Front" />
-                                </div>
-                                <div className={`${styles.comparisonImageVer2} ${styles.afterImage}`}>
-                                    <img src="/img/graphic/beep/brochure-back.webp" alt="Brochure Back" />
-                                </div>
-                            </section>
+                    <div className={styles.bisCard}>
+                        <img src="/img/graphic/beep/bis-card.webp" alt="Beep business cards" />
+                    </div>
+
+                    <section ref={(el) => (comparisonSections.current[1] = el)} className={styles.comparisonSection}>
+                        <div className={`${styles.comparisonImageVer2} ${styles.beforeImage}`}>
+                            <img src="/img/graphic/beep/brochure-front.webp" alt="Brochure Front" />
                         </div>
+                        <div className={`${styles.comparisonImageVer2} ${styles.afterImage}`}>
+                            <img src="/img/graphic/beep/brochure-back.webp" alt="Brochure Back" />
+                        </div>
+                    </section>
                 </div>
 
                 <MenuOverlay />
-                
-
                 <Footer />
             </div>
         </>

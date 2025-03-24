@@ -52,6 +52,13 @@
   --beep-bod-320: 200px 'Switzer-Bold', sans-serif;
   --font-roboto: "Roboto", sans-serif;
 
+  --canvas: white;
+  --canvasText: black;
+  --progress: 0;
+  --content-width: fit-content;
+  --content-height: fit-content;
+  --popover-bg: hsl(0 0% 8%);
+  --progress-bg: hsl(0 0% 35%);
 }
 
 * {
@@ -66,4 +73,37 @@
 
 html {
   /* padding: 0 30px; */
+}
+
+/*** ScrollIndex ***/
+:root {
+  --progress: 0;
+}
+
+@keyframes scroll-progress {
+  to {
+    --progress: 100;
+  }
+}
+
+:root {
+  --progress: 0;
+  counter-reset: progress var(--progress);
+  timeline-scope: --content;
+}
+
+body {
+  view-timeline: --content;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
