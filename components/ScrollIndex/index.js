@@ -64,7 +64,7 @@ export default function ScrollIndex({ targetRef }) {
                 <rect x="3" y="6" width="18" height="12" fill="white" />
               </g>
             </svg>
-            <span>
+            <span className={styles.index__wrapper}>
               <span>Index</span>
               <svg className={styles.size6} viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />

@@ -13,10 +13,10 @@
 }
 
 .trigger {
-  width: 190px;
-  height: 44px;
-  border-radius: 22px;
-  color: white;
+  width: 250px;
+  height: 60px;
+  border-radius: 100px;
+  color: var(--white);
   background: hsl(0 0% 8%);
   border: none;
   cursor: pointer;
@@ -25,14 +25,22 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0.5rem;
+  padding: 1rem;
   font-family: inherit;
+  font: var(--reg-16);
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.trigger:hover {
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+  scale: 1.05;
 }
 
 /* Expanded state */
 .open .trigger {
-  width: 220px;
-  height: 330px;
+  width: 250px;
+  height: fit-content;
   border-radius: 22px;
   flex-direction: column;
   align-items: flex-start;
@@ -50,7 +58,15 @@
 }
 
 .size6 {
-  width: 18px;
+  width: 1.5em;
+  height: 100%;
+}
+
+.index__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Scroll % pill */
@@ -93,10 +109,13 @@
 
 .listItem {
   margin-bottom: 0.5rem;
+  font: var(--reg-16);
+  text-align: left;
+  color: var(--mid-grey);
 }
 
 .listLink {
-  color: #ccc;
+  color: var(--mid-grey);
   text-decoration: none;
   display: block;
   padding-block: 0.5rem;
@@ -104,12 +123,10 @@
 }
 
 .listLink:hover,
-.listLink:focus-visible {
-  color: #fff;
-}
-
+.listLink:focus-visible,
 .listItem:has(.listLink:hover)::marker {
-  color: white;
+  color: var(--white);
+  transition: color 0.2s ease;
 }
 
 /* Line animation for SVG */
