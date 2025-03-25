@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import styles from "./VerticalTab.module.css";
+import DragVietname from "../DragVietname";
 
 export default function VerticalTab() {
   const [activeTab, setActiveTab] = useState("print");
@@ -56,6 +57,9 @@ export default function VerticalTab() {
                 allowFullScreen=""
               ></iframe>
               <p className={styles.descText}>Print Version</p>
+            </div>
+            <div className={styles.dragVietname}>
+              <DragVietname />
             </div>
           </div>
         </div>
