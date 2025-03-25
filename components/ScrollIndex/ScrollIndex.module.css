@@ -13,7 +13,7 @@
 }
 
 .trigger {
-  width: 250px;
+  width: 280px;
   height: 60px;
   border-radius: 100px;
   color: var(--white);
@@ -39,9 +39,9 @@
 
 /* Expanded state */
 .open .trigger {
-  width: 250px;
+  width: 280px;
   height: fit-content;
-  border-radius: 22px;
+  border-radius: 20px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
@@ -85,7 +85,7 @@
 
 /* List slides in */
 .popoverList {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   list-style: pad-it;
   padding-inline: 0.5rem;
   padding-left: 2.5rem;
@@ -98,6 +98,7 @@
   counter-reset: section;
   width: 100%;
   filter: blur(4px);
+  gap: 0.5rem;
 }
 
 .open .popoverList {
@@ -105,6 +106,10 @@
   transform: translateY(0);
   pointer-events: all;
   filter: blur(0);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .listItem {
@@ -120,6 +125,7 @@
   display: block;
   padding-block: 0.5rem;
   transition: color 0.2s ease;
+  padding: 0;
 }
 
 .listLink:hover,
