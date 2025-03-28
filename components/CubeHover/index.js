@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import styles from './CubeHover.module.css';
 
-export default function CubeHover() {
+export default function CubeHover({imgLink}) {
   const containerRef = useRef(null);
   const blocksRef = useRef(null);
   const blockSize = 50; // Your original 50px size
@@ -48,7 +48,7 @@ export default function CubeHover() {
     <div className={styles.main}>
       <div className={styles.img__container} ref={containerRef}>
         <div className={styles.img}>
-          <img src="/img/gallery/img1.webp" alt="Gallery Img" />
+          <img src={imgLink} alt="Gallery Img" />
         </div>
         <div className={styles.img__overlay}></div>
         <div className={styles.img__blocks} ref={blocksRef}>
