@@ -6,7 +6,7 @@ import GalleryProduct from "@/components/GalleryProduct";
 export default function Test() {
     return (
         <>
-        <GalleryProduct />
+        <CubeHover />
         </>
     )
 }
