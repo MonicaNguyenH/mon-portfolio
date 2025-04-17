@@ -58,9 +58,9 @@ export default function VerticalTab() {
               ></iframe>
               <p className={styles.descText}>Print Version</p>
             </div>
-            <div className={styles.dragVietname}>
+            {/* <div className={styles.dragVietname}>
               <DragVietname />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

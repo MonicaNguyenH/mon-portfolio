@@ -47,9 +47,9 @@ export default function Vietname() {
                         </div>
                     </div> */}
 
-                    {/* <div>
+                    <div>
                         <VerticalTab />
-                    </div> */}
+                    </div>
 
                 </div>
 
