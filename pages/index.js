@@ -108,7 +108,7 @@ export default function Home() {
                   <ToolTipButton text="Frontend Development" tooltipText="HTML5 | CSS3 | Next.js | React" />.
                 </p>
                 <p className={styles.text}>
-                  I bring ideas to life with bold, creative designs that don’t just look good—they feel good.
+                  I bring ideas to life with bold, creative designs that don’t just look good, they feel good.
                 </p>
               </div>
             </div>
