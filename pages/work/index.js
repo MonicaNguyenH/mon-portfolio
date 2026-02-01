@@ -28,11 +28,10 @@ export default function Work() {
 
                     <Card link="/work/forelsket" image="/img/graphic/menu/TN.png" title="FORELSKET" year="2024" gridSize="small" />
 
-                    {/* <Card link="/work/electrical-device" image="/img/graphic/object/cover.webp" title="ELECTRICAL DEVICE" year="2023" gridSize="wide" /> */}
                     <Card link="/work/product-illus" image="/img/graphic/object/cover.webp" title="PRODUCT ILLUS." year="2023" gridSize="wide" />
 
                     {/* <Card link="/work/the-starfruit-tree" image="/img/graphic/book/cover.webp" title="THE STARFRUIT TREE" year="2024" gridSize="wide" /> */}
-                    <Card image="/img/graphic/book/cover.webp" title="THE STARFRUIT TREE" year="Coming Soon" gridSize="wide" />
+                    <Card link="/work/starfruit" image="/img/graphic/starfruit/cover.webp" title="THE STARFRUIT TREE" year="2024" gridSize="wide" />
             </div>
         ),
         "UX/UI DESIGN": (
