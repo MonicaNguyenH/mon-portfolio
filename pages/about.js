@@ -42,10 +42,10 @@ export default function About () {
 
                     <div className={styles.sec2}>
                         <p>Xin chào, or hello! My name is <span className={styles.pinkText}>Monica</span>
-                            , and I’m a digital designer and web developer based in Vancouver. I’m passionate about blending aesthetic design with seamless UX/UI to enhance user experiences—not just making things look good, but ensuring they feel good too.
+                            , and I’m a digital designer and web developer based in Vancouver. I’m passionate about blending aesthetic design with seamless UX/UI to enhance user experiences. My work creates a blend of aesthetics and easy user experience.
                         </p>
-                        <p>My portfolio reflects my love for exploring visual art. Every project feels like climbing a mountain (I’m not very athletic), but that challenge fuels my curiosity. As Albert Einstein said, <span className={styles.italicText}>“A person who never made a mistake never tried anything new.”</span></p>
-                        <p>My portfolio isn’t just about design and tech—it’s a reflection of me. Each piece holds personal value, and I’m proud of them—just like every creative mind should be.</p>
+                        <p>My portfolio reflects my love for exploring visual art. While I face many challenges on my path to becoming a designer, every obstacle fuels my curiosity and desire for improvement. As Albert Einstein said, <span className={styles.italicText}>“A person who never made a mistake never tried anything new.”</span></p>
+                        <p>My portfolio isn’t just about design and tech. Every project on my portfolia contains a small piece of the puzzle that makes up my identity. Each piece holds personal value, and I’m proud of every work I've completed. However, the project I'm most proud of is my next one.</p>
                         <p className={styles.pinkText}>
                             Best, 
                             <br/>
