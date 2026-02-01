@@ -93,108 +93,108 @@ export default function Marquee() {
                         <h1>I CREATE</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div> */}
-
+                    
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
 
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
-                        <img src="/img/arrow.svg" alt="Arrow graphic" />
-                    </div>
-
-                    <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
-                        <img src="/img/arrow.svg" alt="Arrow graphic" />
-                    </div>
-                    <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
-                        <img src="/img/arrow.svg" alt="Arrow graphic" />
-                    </div>
-                    <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
-                        <img src="/img/arrow.svg" alt="Arrow graphic" />
-                    </div>
-                    <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
-                        <img src="/img/arrow.svg" alt="Arrow graphic" />
-                    </div>
-                    <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
-                        <img src="/img/arrow.svg" alt="Arrow graphic" />
-                    </div>
-                    <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
-                        <img src="/img/arrow.svg" alt="Arrow graphic" />
-                    </div>
-                    <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
-                        <img src="/img/arrow.svg" alt="Arrow graphic" />
-                    </div>
-                    <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
 
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                     <div className={`${styles.marquee} marquee`}>
-                        <h1>MON ATE. PERIOD.</h1>
+                        <h1>INTENTIONAL</h1>
+                        <img src="/img/arrow.svg" alt="Arrow graphic" />
+                    </div>
+
+                    <div className={`${styles.marquee} marquee`}>
+                        <h1>INTENTIONAL</h1>
+                        <img src="/img/arrow.svg" alt="Arrow graphic" />
+                    </div>
+                    <div className={`${styles.marquee} marquee`}>
+                        <h1>INTENTIONAL</h1>
+                        <img src="/img/arrow.svg" alt="Arrow graphic" />
+                    </div>
+                    <div className={`${styles.marquee} marquee`}>
+                        <h1>INTENTIONAL</h1>
+                        <img src="/img/arrow.svg" alt="Arrow graphic" />
+                    </div>
+                    <div className={`${styles.marquee} marquee`}>
+                        <h1>INTENTIONAL</h1>
+                        <img src="/img/arrow.svg" alt="Arrow graphic" />
+                    </div>
+                    <div className={`${styles.marquee} marquee`}>
+                        <h1>INTENTIONAL</h1>
+                        <img src="/img/arrow.svg" alt="Arrow graphic" />
+                    </div>
+                    <div className={`${styles.marquee} marquee`}>
+                        <h1>INTENTIONAL</h1>
+                        <img src="/img/arrow.svg" alt="Arrow graphic" />
+                    </div>
+                    <div className={`${styles.marquee} marquee`}>
+                        <h1>INTENTIONAL</h1>
+                        <img src="/img/arrow.svg" alt="Arrow graphic" />
+                    </div>
+                    <div className={`${styles.marquee} marquee`}>
+                        <h1>INTENTIONAL</h1>
                         <img src="/img/arrow.svg" alt="Arrow graphic" />
                     </div>
                 </div>
