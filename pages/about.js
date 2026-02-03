@@ -33,7 +33,7 @@ export default function About () {
                                     <p>hai phong city</p>
                                 </div>
                                 <div className={`${styles.desc__right} ${styles.desc_info}`}>
-                                    <p>2025</p>
+                                    <p>2026</p>
                                     <p>monica Nguyen</p>
                                 </div>
                             </div>
