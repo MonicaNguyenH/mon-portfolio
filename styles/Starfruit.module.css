@@ -2,3 +2,9 @@
     background-color: var(--white);
     overflow: hidden;
 }
+
+.vn {
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}

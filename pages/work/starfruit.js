@@ -16,10 +16,14 @@ export default function Starfruit() {
                 <NavBar />
                 <div className={styles.main}>
                     <ProjectHeader
-                        name="The Starfruit Tree"
+                        name="Starfruit Tree"
                         description="GRAPHIC DESIGN"
                         img="/img/graphic/starfruit/cover.webp"
-                        introduction={`Product Illus. is a product-focused vector study recreated from a reference photo in Adobe Illustrator. The cassette deck is constructed from simple geometry, then refined with accurate proportions, layered shading, and color to achieve a polished, realistic finish. Attention to small details like highlights, depth, and material texture helps the illustration feel dimensional rather than flat. A pink to blue gradient accent adds brand consistency and visual impact.`}
+                        introduction=
+                        {<>
+                            Starfruit Tree Interactive Book is a collaborative digital storybook based on the Vietnamese folktale The Starfruit Tree{" "}
+                            <span className={styles.vn}>(Sự tích cây khế)</span>. The project uses a childlike, comic-inspired illustration style to keep the story approachable and playful, while the color palette balances muted, earthy tones with brighter accents to evoke a rustic, old Vietnam feel without losing energy. Simple interactive navigation and on-screen text support an easy reading flow and an engaging page-by-page experience.
+                        </>}
                         tools={projectTools}
                         date="Dec 2024"
                     />

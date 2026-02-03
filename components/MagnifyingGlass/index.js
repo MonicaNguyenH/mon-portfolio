@@ -75,7 +75,7 @@ export default function MagnifyingGlass({
 
         {/* Hover Hint */}
         <div className={`${styles.hoverHint} ${showHint ? styles.hintVisible : styles.hintHidden}`}>
-          Hover over the image to zoom
+          [Hover over the image to zoom]
         </div>
 
         {/* Magnifying Glass */}

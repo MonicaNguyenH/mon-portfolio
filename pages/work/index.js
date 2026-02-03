@@ -31,7 +31,7 @@ export default function Work() {
                     <Card link="/work/product-illus" image="/img/graphic/object/cover.webp" title="PRODUCT ILLUS." year="2023" gridSize="wide" />
 
                     {/* <Card link="/work/the-starfruit-tree" image="/img/graphic/book/cover.webp" title="THE STARFRUIT TREE" year="2024" gridSize="wide" /> */}
-                    <Card link="/work/starfruit" image="/img/graphic/starfruit/cover.webp" title="THE STARFRUIT TREE" year="2024" gridSize="wide" />
+                    {/* <Card link="/work/starfruit" image="/img/graphic/starfruit/cover.webp" title="STARFRUIT TREE" year="2024" gridSize="wide" /> */}
             </div>
         ),
         "UX/UI DESIGN": (
