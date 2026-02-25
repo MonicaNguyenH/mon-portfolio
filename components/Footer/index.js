@@ -30,7 +30,7 @@ export default function Footer() {
                             </a>
                         </div>
                         
-                        <div className={styles.link__container}>
+                        {/* <div className={styles.link__container}>
                             <a 
                                 href="https://www.instagram.com/amazingworldofmonica/" 
                                 target="_blank" 
@@ -39,7 +39,7 @@ export default function Footer() {
                                 className={`${styles.link} ${styles.closer}`}>
                                     INSTAGRAM
                             </a>
-                        </div>
+                        </div> */}
 
                         <div className={styles.link__container}>
                             <a 

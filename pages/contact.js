@@ -28,14 +28,14 @@ export default function Contact() {
                                 className={styles.closer}>
                                     LINKEDIN
                             </a>
-                            <a 
+                            {/* <a 
                                 href="https://www.instagram.com/amazingworldofmonica/" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 onClick={(e) => e.target.blur()}
                                 className={styles.closer}>
                                     INSTAGRAM
-                            </a>
+                            </a> */}
                             <a 
                                 href="https://www.behance.net/monicanguyen18" 
                                 target="_blank" 
