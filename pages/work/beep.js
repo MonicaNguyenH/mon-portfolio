@@ -164,8 +164,8 @@ export default function Beep() {
                         date="Sept–Dec 2024"
                         buttonText1="Beep Blog" 
                         buttonLink1="https://beep-vlog.vercel.app"
-                        buttonText2="UI Screens & Components (Figma)"
-                        buttonLink2="https://www.figma.com/design/7NT94Us1jQRtRqSwHE7LUR/Beep---Monica-Nguyen?node-id=6002-24562&t=LyHDmTtbgUhDCJEn-1"
+                        buttonText2="Beep Prototype"
+                        buttonLink2="https://www.figma.com/proto/7NT94Us1jQRtRqSwHE7LUR/Beep---Monica-Nguyen?node-id=6002-26808&p=f&t=IHtV2g6iCQJmMUWR-1&scaling=scale-down&content-scaling=fixed&page-id=6002%3A24562&starting-point-node-id=6002%3A26806"
                     />
 
                     <div className={styles.problem} id="problem">
