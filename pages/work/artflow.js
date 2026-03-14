@@ -1,10 +1,11 @@
 import styles from '@/styles/Artflow.module.css';
 import HeaderArea from '@/components/HeadArea';
 import NavBar from '@/components/NavBar';
-import ProjectHeaderSC from '@/components/ProjectHeaderSC';
+import ProjectHeaderSC2 from '@/components/ProjectHeaderSC2';
 import MenuOverlay from "@/components/MenuOverlay";
 import { useState, useRef, useEffect } from 'react';
 import Footer from '@/components/Footer';
+import ProjectHeaderSC2 from '@/components/ProjectHeaderSC2';
 
 export default function Artflow() {
     const projectTools = ["Figma", "Next.js", "Adobe Photoshop", "Adobe Illustrator"];
@@ -105,15 +106,17 @@ export default function Artflow() {
                 <NavBar />
 
                 <div className={styles.main}>
-                    <ProjectHeaderSC
+                    <ProjectHeaderSC2
                         name="Artflow" 
                         description="DEVELOPMENT / UX/UI DESIGN" 
                         img="/img/graphic/artflow/cover.webp" 
                         introduction={`ArtFlow is a digital art app designed for anyone who wants to create, whether you're just starting or already experienced. It features an easy-to-use drawing canvas, AI-generated prompts to spark ideas, and a habit tracker to help you stay consistent. You can share your artwork with friends through built-in messaging and keep track of your progress on your profile page. With a simple interface and smart tools, ArtFlow makes drawing and creativity more fun, accessible, and organized.`}
                         tools={projectTools}
                         date="Jan–May 2024"
-                        buttonText="Artflow app" 
-                        buttonLink="https://artflow-d3.vercel.app/"
+                        buttonText1="Artflow Prototype" 
+                        buttonLink1="https://www.figma.com/proto/F0oEWQeN0snreUcpZYsyCA/ArtFlow---Monica-Nguyen?node-id=2642-3521&p=f&t=bNcxVNV91buGSV3V-1&scaling=scale-down&content-scaling=fixed&page-id=2642%3A2023&starting-point-node-id=2642%3A3521"
+                        buttonText2="Artflow app" 
+                        buttonLink2="https://artflow-d3.vercel.app/"
                     />
 
                     <div className={styles.logo}>
