@@ -1,7 +1,6 @@
 import styles from '@/styles/Artflow.module.css';
 import HeaderArea from '@/components/HeadArea';
 import NavBar from '@/components/NavBar';
-import ProjectHeaderSC2 from '@/components/ProjectHeaderSC2';
 import MenuOverlay from "@/components/MenuOverlay";
 import { useState, useRef, useEffect } from 'react';
 import Footer from '@/components/Footer';
