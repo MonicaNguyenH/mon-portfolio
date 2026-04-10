@@ -90,7 +90,7 @@ export default function Home() {
               <div className={styles.sec2__button}>
                 <TypingText />
                 <div className={styles.button}>
-                  <ButtonFilledBlack href="/#">
+                  <ButtonFilledBlack href="/work">
                     Featured work
                   </ButtonFilledBlack> 
                 </div>
