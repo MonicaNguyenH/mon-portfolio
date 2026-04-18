@@ -120,23 +120,22 @@ export default function Beep() {
                             trigger: section,
                             start: "center center",
                             end: "+=100%",
-                            scrub: index === 1 ? 3 : 2,
+                            scrub: 2,
                             pin: true,
                             anticipatePin: 1,
                             pinSpacing: true,
                         },
-                        defaults: { ease: "power2.out", duration: index === 1 ? 5.0 : 3.0 },
+                        defaults: { ease: "power2.out", duration: 3.0 },
                     });
     
                     tl.fromTo(
                         section.querySelector(`.${styles.afterImage}`),
                         { clipPath: "inset(0 0 0 100%)" },
-                        { clipPath: "inset(0 0 0 0%)" },
-                        index * 10
+                        { clipPath: "inset(0 0 0 0%)" }
                     );
-    
-                    ScrollTrigger.refresh();
                 });
+    
+                ScrollTrigger.refresh();
             });
         });
     
