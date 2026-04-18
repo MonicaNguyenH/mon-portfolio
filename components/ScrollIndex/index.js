@@ -74,14 +74,17 @@ export default function ScrollIndex({ targetRef }) {
           </div>
         ) : (
           <ol className={styles.popoverList}>
-            <li className={styles.listItem}><a href="#problem" className={styles.listLink}>Problem Statement</a></li>
-            <li className={styles.listItem}><a href="#solution" className={styles.listLink}>Solution</a></li>
             <li className={styles.listItem}><a href="#overview" className={styles.listLink}>Overview</a></li>
-            <li className={styles.listItem}><a href="#user-flow" className={styles.listLink}>User Flow</a></li>
-            <li className={styles.listItem}><a href="#persona" className={styles.listLink}>Persona</a></li>
-            <li className={styles.listItem}><a href="#styleguide" className={styles.listLink}>Styleguide</a></li>
-            <li className={styles.listItem}><a href="#typography" className={styles.listLink}>Typography</a></li>
-            <li className={styles.listItem}><a href="#mockup" className={styles.listLink}>Mockups</a></li>
+            <li className={styles.listItem}><a href="#p1" className={styles.listLink}>part 1</a></li>
+            <li className={styles.listItem}><a href="#p2" className={styles.listLink}>part 2</a></li>
+            <li className={styles.listItem}><a href="#p3" className={styles.listLink}>part 3</a></li>
+            <li className={styles.listItem}><a href="#p4" className={styles.listLink}>part 4</a></li>
+            <li className={styles.listItem}><a href="#p5" className={styles.listLink}>part 5</a></li>
+            <li className={styles.listItem}><a href="#p6" className={styles.listLink}>part 6</a></li>
+            <li className={styles.listItem}><a href="#p7" className={styles.listLink}>part 7</a></li>
+
+            
+            
           </ol>
         )}
       </button>

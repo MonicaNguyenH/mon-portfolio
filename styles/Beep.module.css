@@ -3,45 +3,6 @@
     overflow: hidden;
 }
 
-/*** PROBLEM ***/
-.problem {
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--black);
-    color: var(--white);
-    padding: 100px 30px;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 100px;
-}
-
-.problem__state,
-.problem__gap {
-    width: 60%;
-}
-
-.problem__state h1,
-.problem__gap h1 {
-    font: var(--reg-40);
-    color: var(--beep-pink);
-    text-transform: uppercase;
-}
-
-.problem__state p,
-.problem__gap p {
-    font: var(--reg-40);
-}
-
-/*** SOLUTION ***/
-    /*** SLIDER ***/
-/* .horizontal {
-    background-color: var(--black);
-    width: 200vw;
-} */
-
 .content {
     width: 100vw;
     height: 100vh;
@@ -111,6 +72,401 @@
     width: 100vw;
 }
 
+/*** P1 THE PROBLEM SPACE ***/
+.problem {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--beep-black);
+    color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 310px;
+}
+
+.problem .header {
+    font: var(--reg-40);
+    color: var(--white);
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+
+.problem .dash {
+    color: var(--beep-purple); 
+}
+
+.problem .bodycopy {
+    color: var(--white);
+    font: var(--reg-16);
+    margin-bottom: 50px;
+}
+
+.stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.stats img {
+    width: 260px;
+    height: 208px;
+}
+
+.solution img{
+    width: 100vw;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/*** P2 UNDERSTANDING THE LANDSCAPE ***/
+.p2 {
+    background-color: var(--white);
+    width: 100vw;
+    height: auto;
+    color: var(--black);
+    font: var(--reg-16);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 310px;
+}
+
+.p2 .headerSection .header {
+    font: var(--reg-40);
+    color: var(--black);
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+
+.p2 .headerSection .dash {
+    color: var(--beep-purple); 
+}
+
+.p2 .headerSection .bodycopy {
+    color: var(--black);
+    font: var(--reg-16);
+    margin-bottom: 50px;
+}
+
+.tables {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableHeader {
+    color: var(--beep-purple);
+    font: var(--bod-20);
+    text-transform: uppercase;
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+.tables img {
+    width: 100vw;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    padding: 0 30px;
+    padding-bottom: 50px;
+}
+
+.tables p {
+    margin-bottom: 30px;
+}
+
+/*** P3 TURNING INSIGHT INTO PRODUCT ***/
+.p3 {
+    background-color: var(--beep-purple);
+    width: 100vw;
+    height: auto;
+    color: var(--white);
+    font: var(--reg-16);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.p3 .headerSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 310px;
+}
+
+.p3 .headerSection .header {
+    font: var(--reg-40);
+    color: var(--white);
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+
+.p3 .headerSection .dash {
+    color: var(--white); 
+}
+
+.p3 .headerSection .bodycopy {
+    color: var(--white);
+    font: var(--reg-16);
+}
+
+.p3 img{
+    width: 100vw;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/*** P4 VISUAL SYSTEM ***/ 
+/*** P5 INTERFACE DEVELOPMENT ***/
+.p4,
+.p5 {
+    background-color: var(--beep-white);
+    width: 100vw;
+    height: auto;
+    color: var(--black);
+    font: var(--reg-16);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.p4 .headerSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 310px;
+    padding-bottom: 0;
+}
+
+.p5 .headerSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 310px;
+}
+
+.p4 .headerSection .header,
+.p5 .headerSection .header {
+    font: var(--reg-40);
+    color: var(--black);
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+
+.p4 .headerSection .dash,
+.p5 .headerSection .dash {
+    color: var(--beep-purple); 
+}
+
+.p4 .headerSection .bodycopy,
+.p5 .headerSection .bodycopy {
+    color: var(--black);
+    font: var(--reg-16);
+}
+
+.p4 img,
+.p5 img {
+    width: 100vw;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/*** P5 INTERFACE DEVELOPMENT ***/
+/* .figmaPrototype {
+  background-image: url("/img/graphic/beep/prototype.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100vw;
+  height: 100vh;
+} */
+
+.figmaPrototype {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bepp-white);
+
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin: 0;
+    font-family: "Satoshi", sans-serif;
+    font-weight: 700;
+    line-height: 0.88;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    font-size: calc((100vw - 40px) / 8.2);
+}
+
+/*** Figma ***/
+.phoneProtoWrap {
+  position: relative;
+  width: 5vw;
+  height: 5vh;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.phoneProto {
+  position: absolute;
+  top: -60px;
+  left: -435px;
+  width: 1200px;
+  height: 1000px;
+  border: 0;
+
+  transform: scale(1.08);
+  transform-origin: top left;
+}
+
+/*** P6 BEYOND THE APP ***/
+.p6 {
+    background-color: var(--beep-purple);
+    width: 100vw;
+    height: auto;
+    color: var(--white);
+    font: var(--reg-16);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.p6 .headerSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 310px;
+    padding-bottom: 0;
+}
+
+.p6 .headerSection .header {
+    font: var(--reg-40);
+    color: var(--white);
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+
+.p6 .headerSection .dash {
+    color: var(--white); 
+}
+
+.p6 .headerSection .bodycopy {
+    color: var(--white);
+    font: var(--reg-16);
+}
+
+.p6 img{
+    width: 100vw;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/*** P7 OUTCOME & REFLECTION ***/
+.p7 {
+    background-color: var(--beep-black);
+    width: 100vw;
+    height: auto;
+    color: var(--white);
+    font: var(--reg-16);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 310px;
+}
+
+.p7 .headerSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+.p7 .headerSection .header {
+    font: var(--reg-40);
+    color: var(--white);
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+
+.p7 .headerSection .dash {
+    color: var(--beep-purple); 
+}
+
+.photoWDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.photoWDescription img {
+    width: 100%;
+}
+
+.photoWDescription p {
+    color: rgba(217, 217, 217, 0.60);
+    font: var(--reg-16);
+    text-transform: uppercase;
+}
+
+.p7 .description {
+    margin: 50px 0;
+}
+
+#teamPhoto img {
+    width: 120%;
+    height: auto;
+}
+
+.igLetter {
+    padding: 0 30px 100px 30px;
+    background-color: var(--beep-black);
+}
+
+.igLetter img {
+    width: 100%;
+    height: auto;
+}
+
 
 /*** USE FLOW ***/
 .userFlow {
@@ -132,22 +488,6 @@
     justify-content: center;
     align-items: center;
 }
-
-/*** STYLEGUIDE ***/
-
-/*** FONT ***/
-/* .styleguide__font {
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--beep-purple);
-} */
-
-/* .styleguide__font img{
-    width: 100vw;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-} */
 
 /*** MOCKUP ***/
 
