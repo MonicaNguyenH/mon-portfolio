@@ -175,7 +175,7 @@ export default function Beep() {
                         />
                     </div>
 
-                    <div className={styles.p1} id="P1">
+                    <div className={styles.p1} id="p1">
                         <div className={styles.problem}>
                             <p className={styles.header}>
                                 [01] <span className={styles.dash}>⸺</span> The Problem Space
@@ -198,7 +198,7 @@ export default function Beep() {
                         </div>
                     </div>
                     
-                    <div className={styles.p2} id="P2">
+                    <div className={styles.p2} id="p2">
                         <div className={styles.headerSection}>
                             <p className={styles.header}>
                                 [02] <span className={styles.dash}>⸺</span> Understanding the Landscape
@@ -229,7 +229,7 @@ export default function Beep() {
                         
                     </div>
 
-                    <div className={styles.p3} id="P3">
+                    <div className={styles.p3} id="p3">
                         <div className={styles.headerSection}>
                             <p className={styles.header}>
                                 [03] <span className={styles.dash}>⸺</span> Turning Insight Into Product
@@ -250,7 +250,7 @@ export default function Beep() {
                         </div>
                     </div>
 
-                    <div className={styles.p4} id="P4">
+                    <div className={styles.p4} id="p4">
                         <div className={styles.headerSection}>
                             <p className={styles.header}>
                                 [04] <span className={styles.dash}>⸺</span> Visual System
@@ -270,7 +270,7 @@ export default function Beep() {
                         </div>
                     </div>
 
-                    <div className={styles.p5} id="P5">
+                    <div className={styles.p5} id="p5">
                         <div className={styles.headerSection}>
                             <p className={styles.header}>
                                 [05] <span className={styles.dash}>⸺</span> Visual System
@@ -390,42 +390,6 @@ export default function Beep() {
                     <div className={styles.igLetter}>
                             <img src="/img/graphic/beep/beep-letter.webp" alt="Beep team" />
                     </div>
-
-
-
-                    
-                    
-
-                    {/* <section ref={(el) => (comparisonSections.current[1] = el)} className={styles.comparisonSection}>
-                            <div className={`${styles.comparisonImageVer2} ${styles.beforeImage}`}>
-                                <img src="/img/graphic/beep/brochure-front.webp" alt="Brochure Front" />
-                            </div>
-                            <div className={`${styles.comparisonImageVer2} ${styles.afterImage}`}>
-                                <img src="/img/graphic/beep/brochure-back.webp" alt="Brochure Back" />
-                            </div>
-                    </section> */}
-
-
-                    
-
-                    {/* <section ref={(el) => (comparisonSections.current[0] = el)} className={styles.comparisonSection}>
-                        <div className={`${styles.comparisonImage} ${styles.beforeImage}`}>
-                            <img src="/img/graphic/beep/Lo-fi.png" alt="Beep Lo-fi Wireframes" />
-                        </div>
-                        <div className={`${styles.comparisonImage} ${styles.afterImage}`}>
-                            <img src="/img/graphic/beep/Hi-fi.webp" alt="Beep Hi-fi Wireframes" />
-                        </div>
-                    </section> */}
-
-
-                    {/* <section ref={(el) => (comparisonSections.current[1] = el)} className={styles.comparisonSection}>
-                        <div className={`${styles.comparisonImageVer2} ${styles.beforeImage}`}>
-                            <img src="/img/graphic/beep/brochure-front.webp" alt="Brochure Front" />
-                        </div>
-                        <div className={`${styles.comparisonImageVer2} ${styles.afterImage}`}>
-                            <img src="/img/graphic/beep/brochure-back.webp" alt="Brochure Back" />
-                        </div>
-                    </section> */}
                 </div>
 
                 <MenuOverlay />
