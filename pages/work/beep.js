@@ -253,7 +253,7 @@ export default function Beep() {
                     <div className={styles.p4} id="p4">
                         <div className={styles.headerSection}>
                             <p className={styles.header}>
-                                [04] <span className={styles.dash}>⸺</span> Visual System
+                                [04] <span className={styles.dash}>⸺</span> Design Process
                             </p>
                             <p className={styles.bodycopy}>
                                 A visual system was established early to define how Beep should look, feel, and communicate across the product. The goal was to create a direction that felt clear, reliable, and easy to navigate in a safety-focused context.

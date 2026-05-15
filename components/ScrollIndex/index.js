@@ -94,7 +94,7 @@ export default function ScrollIndex({ targetRef }) {
             <ol className={styles.numberedList}>
               <li className={styles.listItem}><a href="#p1" className={styles.listLink}>Problem Space</a></li>
               <li className={styles.listItem}><a href="#p2" className={styles.listLink}>Landscape</a></li>
-              <li className={styles.listItem}><a href="#p3" className={styles.listLink}>Direction</a></li>
+              <li className={styles.listItem}><a href="#p3" className={styles.listLink}>Process</a></li>
               <li className={styles.listItem}><a href="#p4" className={styles.listLink}>Visual System</a></li>
               <li className={styles.listItem}><a href="#p5" className={styles.listLink}>Interface</a></li>
               <li className={styles.listItem}><a href="#p6" className={styles.listLink}>Extensions</a></li>
